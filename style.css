@@ -45,7 +45,7 @@ main {
     padding: 50px 20px;
     max-width: 1200px;
     margin: 0 auto;
-    text-align: left; /* Décale le texte vers la gauche */
+    text-align: left; /* Tout le contenu sera aligné à gauche */
 }
 
 .about-content {
@@ -68,9 +68,9 @@ main {
 /* --- SOCIAL LINKS --- */
 .social-links-grid {
     display: flex;
-    justify-content: center; /* Centre la grille */
-    gap: 20px; /* Espace entre les boutons */
-    flex-wrap: wrap; /* Permet de passer à la ligne si nécessaire */
+    flex-direction: column; /* Les éléments sont empilés verticalement */
+    align-items: flex-start; /* Aligne les éléments à gauche */
+    gap: 15px; /* Espace entre les boutons */
     margin-top: 20px;
 }
 
