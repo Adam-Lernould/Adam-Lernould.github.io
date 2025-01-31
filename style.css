@@ -11,8 +11,8 @@ body {
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
-    background-color: #121212; /* Fond sombre */
-    color: #e0e0e0; /* Texte clair */
+    background-color: #121212;
+    color: #e0e0e0;
     line-height: 1.6;
 }
 
@@ -23,27 +23,17 @@ main {
 /* --- NAVBAR --- */
 .navbar {
     display: flex;
-    justify-content: space-between; /* Espacement entre les éléments */
-    align-items: center;
-    padding: 15px 30px;
+    justify-content: center; /* Centre les boutons du menu */
+    align-items: center; /* Centre verticalement */
+    padding: 15px 0;
     background-color: #1e1e1e;
     border-bottom: 1px solid #333;
 }
 
-/* Logo à gauche */
-.logo {
-    font-size: 18px;
-    font-weight: bold;
-    color: #e0e0e0;
-}
-
-/* Liens du menu centrés */
 .nav-links {
     list-style: none;
     display: flex;
-    justify-content: center; /* Centre les liens */
-    flex: 1; /* Prend tout l'espace disponible pour centrer */
-    gap: 20px; /* Espace entre les liens */
+    gap: 20px; /* Espace entre les boutons */
 }
 
 .nav-links li a {
@@ -57,23 +47,6 @@ main {
     font-weight: bold;
 }
 
-/* Icône à droite */
-.right-icon {
-    display: flex;
-    align-items: center;
-}
-
-.right-icon a {
-    color: #e0e0e0;
-    font-size: 24px; /* Taille de l'icône */
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.right-icon a:hover {
-    color: #00bcd4;
-}
-
 /* --- SECTIONS --- */
 .section {
     padding: 50px 20px;
@@ -84,7 +57,7 @@ main {
 .social-links {
     display: flex;
     justify-content: center; /* Centre les liens sociaux */
-    gap: 20px; /* Espace entre les liens sociaux */
+    gap: 20px; /* Espace entre les boutons */
     margin-top: 20px;
 }
 
@@ -98,11 +71,11 @@ main {
 }
 
 .social-link i {
-    font-size: 20px;
+    font-size: 20px; /* Taille des icônes */
 }
 
 .social-link:hover {
-    color: #00bcd4;
+    color: #00bcd4; /* Changement de couleur au survol */
 }
 
 /* --- FOOTER --- */
