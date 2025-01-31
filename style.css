@@ -1,14 +1,57 @@
-/* Conteneur principal */
-.content-container {
+/* Style général */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0d1117; /* Fond sombre */
+    color: #c9d1d9; /* Texte clair */
+    min-height: 100vh;
     display: flex;
-    justify-content: space-between; /* Sépare la partie gauche et droite */
-    align-items: flex-start; /* Aligne les contenus en haut */
-    padding: 100px 20px; /* Espace sous la navbar */
+    flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #161b22;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid #30363d;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li a {
+    color: #c9d1d9;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 5px 10px;
+}
+
+.nav-links li a.active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Section principale */
+.section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 100px 20px 40px; /* Espace sous la navbar */
 }
 
 /* Partie gauche : texte et réseaux sociaux */
 .about-content {
-    width: 60%; /* 60% pour le texte */
+    width: 60%; /* 60% de la largeur pour le texte */
 }
 
 .main-title {
@@ -49,7 +92,7 @@
 
 /* Partie droite : CV et bouton */
 .right-content {
-    width: 35%; /* 35% pour le CV */
+    width: 35%; /* 35% de la largeur pour le CV */
     text-align: center; /* Centre le bouton sous le CV */
 }
 
