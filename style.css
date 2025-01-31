@@ -51,7 +51,7 @@ body {
 
 /* Left content (text and links) */
 .left-content {
-    max-width: 60%;
+    width: 60%; /* 60% de la largeur pour le contenu à gauche */
 }
 
 .main-title {
@@ -92,13 +92,13 @@ body {
 
 /* Right content (CV and button) */
 .right-content {
-    max-width: 35%;
+    width: 35%; /* 35% de la largeur pour le CV à droite */
     text-align: center;
 }
 
 .cv-preview {
-    width: 100%;
-    height: 400px;
+    width: 100%; /* Occupe toute la largeur du container */
+    height: 500px; /* Taille fixe pour le CV */
     border: 1px solid #30363d;
     border-radius: 8px;
     margin-bottom: 20px;
