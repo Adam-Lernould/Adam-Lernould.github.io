@@ -26,5 +26,18 @@
             <li>Projet 3 : <strong>Sécurisation d'un réseau</strong></li>
         </ul>
     </section>
+    <script>
+        if (document.referrer === "" || document.referrer.indexOf(window.location.hostname) === -1) {
+            window.location.href = "index.html"; // Redirection vers l'accueil
+        }
+    </script>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        if (!params.has("access")) {
+            window.location.href = "index.html"; // Redirige si pas d'accès
+        }
+    </script>
+    
+    
 </body>
 </html>

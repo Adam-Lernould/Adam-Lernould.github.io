@@ -12,8 +12,8 @@
         <nav>
             <ul>
                 <li><a href="index.html">Accueil</a></li>
-                <li><a href="cv.html">Mon CV</a></li>
-                <li><a href="projets.html">Mes Projets</a></li>
+                <li><a href="cv.html?access=true">Mon CV</a></li>
+                <li><a href="projets.html?access=true">Mes Projets</a></li>
             </ul>
         </nav>
     </header>
@@ -32,5 +32,26 @@
         <p>💼 LinkedIn : <a href="https://linkedin.com/in/adamlernould" target="_blank">Mon profil</a></p>
         <p>📍 Localisation : Béthune, France</p>
     </section>
+    <button onclick="showSection('cv')">Voir mon CV</button>
+<button onclick="showSection('projets')">Voir mes Projets</button>
+
+<section id="cv" style="display: none;">
+    <h2>Mon CV</h2>
+    <p>Ici, tu mets ton CV.</p>
+</section>
+
+<section id="projets" style="display: none;">
+    <h2>Mes Projets</h2>
+    <p>Ici, tu listes tes projets.</p>
+</section>
+
+<script>
+    function showSection(id) {
+        document.getElementById("cv").style.display = "none";
+        document.getElementById("projets").style.display = "none";
+        document.getElementById(id).style.display = "block";
+    }
+</script>
+
 </body>
 </html>
