@@ -1,30 +1,23 @@
 /* --- GLOBAL STYLES --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    margin: 0;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    margin: 0;
-    background-color: #121212;
-    color: #e0e0e0;
-    line-height: 1.6;
 }
 
 main {
-    flex: 1; /* Pousse le footer vers le bas */
+    flex: 1;
 }
 
 /* --- NAVBAR --- */
 .navbar {
     display: flex;
-    justify-content: center; /* Centre les boutons du menu */
-    align-items: center; /* Centre verticalement */
+    justify-content: center;
+    align-items: center;
     padding: 15px 0;
     background-color: #1e1e1e;
     border-bottom: 1px solid #333;
@@ -33,7 +26,7 @@ main {
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 20px; /* Espace entre les boutons */
+    gap: 20px;
 }
 
 .nav-links li a {
@@ -47,35 +40,52 @@ main {
     font-weight: bold;
 }
 
-/* --- SECTIONS --- */
+/* --- SECTION ABOUT --- */
 .section {
     padding: 50px 20px;
-    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left; /* Décale le texte vers la gauche */
+}
+
+.main-title {
+    font-size: 36px; /* Grande taille pour le titre principal */
+    font-weight: bold; /* Gras */
+    margin-bottom: 15px;
+    color: #e0e0e0;
+}
+
+.subtitle {
+    font-size: 18px; /* Plus petite taille pour le sous-titre */
+    color: #b0b0b0; /* Texte plus clair pour le contraste */
+    margin-bottom: 30px;
+    line-height: 1.8; /* Meilleure lisibilité */
 }
 
 /* --- SOCIAL LINKS --- */
-.social-links {
-    display: flex;
-    justify-content: center; /* Centre les liens sociaux */
-    gap: 20px; /* Espace entre les boutons */
+.social-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Grille responsive */
+    gap: 15px; /* Espacement entre les liens */
     margin-top: 20px;
 }
 
 .social-link {
     color: #e0e0e0;
-    font-size: 16px;
+    font-size: 18px; /* Taille des textes */
     text-decoration: none;
     display: flex;
     align-items: center;
-    gap: 8px; /* Espace entre l'icône et le texte */
+    gap: 10px; /* Espace entre l'icône et le texte */
+    transition: color 0.3s ease;
 }
 
 .social-link i {
-    font-size: 20px; /* Taille des icônes */
+    font-size: 24px; /* Taille des icônes */
 }
 
 .social-link:hover {
-    color: #00bcd4; /* Changement de couleur au survol */
+    color: #00bcd4; /* Couleur au survol */
 }
 
 /* --- FOOTER --- */
