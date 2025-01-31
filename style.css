@@ -20,49 +20,58 @@ main {
     flex: 1; /* Pousse le footer vers le bas */
 }
 
-a {
-    color: #00bcd4; /* Bleu clair */
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: #008c9e;
-}
-
 /* --- NAVBAR --- */
 .navbar {
     display: flex;
-    justify-content: center; /* Centre les boutons du menu */
+    justify-content: space-between; /* Espacement entre les éléments */
     align-items: center;
     padding: 15px 30px;
     background-color: #1e1e1e;
     border-bottom: 1px solid #333;
 }
 
+/* Logo à gauche */
 .logo {
-    position: absolute; /* Fixe le logo à gauche */
-    left: 30px;
     font-size: 18px;
     font-weight: bold;
     color: #e0e0e0;
 }
 
+/* Liens du menu centrés */
 .nav-links {
     list-style: none;
     display: flex;
+    justify-content: center; /* Centre les liens */
+    flex: 1; /* Prend tout l'espace disponible pour centrer */
     gap: 20px; /* Espace entre les liens */
 }
 
 .nav-links li a {
     color: #e0e0e0;
-    font-size: 16px;
     text-decoration: none;
+    font-size: 16px;
 }
 
 .nav-links li a.active {
     color: #00bcd4;
     font-weight: bold;
+}
+
+/* Icône à droite */
+.right-icon {
+    display: flex;
+    align-items: center;
+}
+
+.right-icon a {
+    color: #e0e0e0;
+    font-size: 24px; /* Taille de l'icône */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.right-icon a:hover {
+    color: #00bcd4;
 }
 
 /* --- SECTIONS --- */
@@ -74,7 +83,7 @@ a:hover {
 /* --- SOCIAL LINKS --- */
 .social-links {
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Centre les liens sociaux */
     gap: 20px; /* Espace entre les liens sociaux */
     margin-top: 20px;
 }
