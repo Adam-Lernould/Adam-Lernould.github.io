@@ -4,104 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Adam Lernould</title>
-    <link rel="stylesheet" href="s876hf.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Bienvenue sur mon Portfolio</h1>
-        <nav>
-            <ul>
-                <li><a href="#" onclick="showSection('home')">Accueil</a></li>
-                <li><a href="#" onclick="showSection('cv')">Mon CV</a></li>
-                <li><a href="#" onclick="showSection('projets')">Mes Projets</a></li>
-                <li><a href="#" onclick="showSection('contact')">Contact</a></li>
+        <nav class="navbar">
+            <div class="logo">Adam Lernould</div>
+            <ul class="nav-links">
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- SECTION HOME -->
-    <section id="home" class="section">
-        <h2>Adam Lernould</h2>
-        <p>Étudiant dynamique en Réseaux et Télécommunications, passionné par les innovations technologiques, les réseaux et la cybersécurité.</p>
-        <p>Actuellement à la recherche d’un stage, je souhaite mettre en pratique mes connaissances et renforcer mes compétences.</p>
-    
-        <a href="cv.pdf" class="btn">Télécharger mon CV</a>
-    
-        <h3>Mes Compétences</h3>
-        <ul class="skills">
-            <li><i class="fas fa-network-wired"></i> Réseaux et Sécurité</li>
-            <li><i class="fas fa-laptop-code"></i> Développement Web (HTML, CSS, JS)</li>
-            <li><i class="fas fa-server"></i> Administration Systèmes</li>
-        </ul>
-    </section> <!-- !!! FERMETURE MANQUANTE CORRIGÉE !!! -->
+    <main>
+        <!-- Section Home -->
+        <section id="home" class="section">
+            <h1 class="main-title">Étudiant en Réseaux & Télécommunications</h1>
+            <p class="subtitle">Je suis passionné par les réseaux, la cybersécurité, et le développement web.</p>
+            <div class="social-links">
+                <a href="#">GitHub</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Twitter</a>
+            </div>
+        </section>
 
-    <!-- SECTION CV -->
-    <section id="cv" class="section hidden">
-        <h2>Mon CV</h2>
-        <p>Voici mon CV. Vous pouvez aussi le télécharger :</p>
-        <a href="cv.pdf" class="btn">Télécharger mon CV</a>
-    </section>
-    
-    <!-- SECTION PROJETS -->
-    <section id="projets" class="section hidden">
-        <h2>Mes Projets</h2>
-        <ul>
-            <li>📡 <strong>Installation d'un réseau local</strong></li>
-            <li>💻 <strong>Développement d'un site web</strong></li>
-            <li>🔒 <strong>Sécurisation d'un réseau</strong></li>
-        </ul>
-    </section>
+        <!-- Section About -->
+        <section id="about" class="section">
+            <h2>À propos</h2>
+            <p>
+                Étudiant motivé en 2e année de BUT Réseaux et Télécommunications, je cherche à appliquer mes compétences techniques 
+                dans un environnement professionnel stimulant. Curieux, j'aime résoudre des défis complexes liés aux réseaux et à la cybersécurité.
+            </p>
+        </section>
 
-    <!-- SECTION CONTACT -->
-    <section id="contact" class="section hidden">
-        <h2>Me Contacter</h2>
-        <p>N'hésitez pas à me contacter via ce formulaire, je vous répondrai dès que possible.</p>
-    
-        <form action="https://formspree.io/f/adam.lernould@gmail.com" method="POST">
-            <div class="form-group">
-                <label for="name">Nom :</label>
-                <input type="text" id="name" name="name" required>
+        <!-- Section Projects -->
+        <section id="projects" class="section">
+            <h2>Projets</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Projet 1</h3>
+                    <p>Installation d'un réseau local sécurisé pour une PME.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Projet 2</h3>
+                    <p>Développement d'un site web interactif en HTML, CSS, et JavaScript.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Projet 3</h3>
+                    <p>Sécurisation d'un serveur web avec des certificats SSL.</p>
+                </div>
             </div>
-    
-            <div class="form-group">
-                <label for="email">Email :</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-    
-            <div class="form-group">
-                <label for="message">Message :</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-            </div>
-    
-            <button type="submit" class="btn">Envoyer</button>
-        </form>
-    </section>
-    
-    
+        </section>
+
+        <!-- Section Contact -->
+        <section id="contact" class="section">
+            <h2>Me Contacter</h2>
+            <form>
+                <input type="text" placeholder="Votre nom" required>
+                <input type="email" placeholder="Votre email" required>
+                <textarea placeholder="Votre message" rows="5" required></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
+        </section>
+    </main>
 
     <footer>
         <p>&copy; 2024 Adam Lernould. Tous droits réservés.</p>
-        <p>📧 <a href="mailto:adam.lernould@gmail.com">Me contacter</a> | 🔗 <a href="https://linkedin.com/in/adamlernould" target="_blank">LinkedIn</a></p>
     </footer>
-    
-
-
-    <!-- SCRIPT -->
-    <script>
-        function showSection(sectionId) {
-            // Masquer toutes les sections
-            document.querySelectorAll('.section').forEach(section => {
-                section.classList.add('hidden');
-            });
-            // Afficher la section sélectionnée
-            document.getElementById(sectionId).classList.remove('hidden');
-        }
-        
-        // Afficher la section "home" par défaut au chargement
-        document.addEventListener("DOMContentLoaded", function() {
-            showSection('home');
-        });
-    </script>
-
 </body>
 </html>
