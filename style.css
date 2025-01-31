@@ -2,7 +2,7 @@
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 100vh; /* Assure que le body occupe toute la hauteur */
     margin: 0;
     background-color: #121212;
     color: #e0e0e0;
@@ -21,9 +21,10 @@ footer {
 }
 
 
+
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Centre les boutons du menu */
     align-items: center;
     padding: 15px 30px;
     background-color: #1e1e1e;
@@ -33,8 +34,7 @@ footer {
 .nav-links {
     list-style: none;
     display: flex;
-    justify-content: center; /* Centre les liens */
-    gap: 15px;
+    gap: 20px; /* Espace entre les liens */
 }
 
 .nav-links li a {
@@ -47,6 +47,7 @@ footer {
     color: #00bcd4;
     font-weight: bold;
 }
+
 
 
 /* --- SECTIONS --- */
@@ -71,7 +72,7 @@ footer {
 .social-links {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 20px; /* Espace entre les liens */
     margin-top: 20px;
 }
 
