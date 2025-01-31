@@ -1,18 +1,24 @@
 /* Style général */
-body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #0d1117; /* Fond sombre */
-    color: #c9d1d9; /* Texte clair */
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+/* Fond sombre avec effet texturé */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #0d1117; /* Fond sombre principal */
+    background-image: url('https://via.placeholder.com/1920x1080'); /* Remplacez par l'URL de votre fond texturé si besoin */
+    background-size: cover; /* Ajuste l'image pour couvrir tout l'écran */
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Le fond reste fixe au scroll */
+    opacity: 0.9; /* Légère transparence pour un effet subtil */
+    z-index: -1; /* Place l'arrière-plan derrière tout le contenu */
 }
 
-/* Navbar */
+/* Correction pour les liens du menu */
 .navbar {
-    background-color: #161b22;
+    background-color: #161b22; /* Fond sombre de la barre de navigation */
     padding: 10px 20px;
     position: fixed;
     top: 0;
@@ -21,20 +27,17 @@ body {
     border-bottom: 1px solid #30363d;
 }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
-    padding: 0;
-    margin: 0;
-}
-
 .nav-links li a {
-    color: #c9d1d9;
+    color: #c9d1d9; /* Couleur claire pour les liens */
     text-decoration: none;
     font-size: 18px;
     padding: 5px 10px;
 }
+
+.nav-links li a:hover {
+    color: #58a6ff; /* Changement de couleur au survol */
+}
+
 
 .nav-links li a.active {
     font-weight: bold;
