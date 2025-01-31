@@ -92,19 +92,21 @@ footer {
     color: #c9d1d9;
     text-align: center;
     padding: 10px 0;
-    margin-top: auto; /* Place le footer en bas */
+    position: fixed; /* Fixe le footer */
+    bottom: 0;
+    width: 100%;
     border-top: 1px solid #30363d;
 }
 
-/* Background effet */
+/* Fond sombre avec effet texturé */
 body::before {
     content: "";
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background-image: url('https://your-background-image-url.com'); /* Remplacez avec l'URL de votre image */
-    opacity: 0.1; /* Transparence pour un effet subtil */
+    opacity: 0.2; /* Transparence pour un effet subtil */
     z-index: -1;
 }
