@@ -1,24 +1,18 @@
 /* Style général */
-/* Fond sombre avec effet texturé */
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #0d1117; /* Fond sombre principal */
-    background-image: url('https://via.placeholder.com/1920x1080'); /* Remplacez par l'URL de votre fond texturé si besoin */
-    background-size: cover; /* Ajuste l'image pour couvrir tout l'écran */
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* Le fond reste fixe au scroll */
-    opacity: 0.9; /* Légère transparence pour un effet subtil */
-    z-index: -1; /* Place l'arrière-plan derrière tout le contenu */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0d1117; /* Fond sombre */
+    color: #c9d1d9; /* Texte clair */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Correction pour les liens du menu */
+/* Navbar */
 .navbar {
-    background-color: #161b22; /* Fond sombre de la barre de navigation */
+    background-color: #161b22;
     padding: 10px 20px;
     position: fixed;
     top: 0;
@@ -27,17 +21,20 @@ body::before {
     border-bottom: 1px solid #30363d;
 }
 
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+}
+
 .nav-links li a {
-    color: #c9d1d9; /* Couleur claire pour les liens */
+    color: #c9d1d9;
     text-decoration: none;
     font-size: 18px;
     padding: 5px 10px;
 }
-
-.nav-links li a:hover {
-    color: #58a6ff; /* Changement de couleur au survol */
-}
-
 
 .nav-links li a.active {
     font-weight: bold;
@@ -52,9 +49,9 @@ body::before {
     padding: 100px 20px 40px; /* Espace sous la navbar */
 }
 
-/* Partie gauche : texte et réseaux sociaux */
-.about-content {
-    width: 60%; /* 60% de la largeur pour le texte */
+/* Left content (text and links) */
+.left-content {
+    width: 60%; /* 60% de la largeur pour le contenu à gauche */
 }
 
 .main-title {
@@ -65,7 +62,7 @@ body::before {
 .subtitle {
     font-size: 1.2rem;
     margin-bottom: 20px;
-    max-width: 800px;
+    max-width: 800px; /* Limite la largeur */
 }
 
 .social-links {
@@ -93,15 +90,15 @@ body::before {
     border-radius: 50%;
 }
 
-/* Partie droite : CV et bouton */
+/* Right content (CV and button) */
 .right-content {
-    width: 35%; /* 35% de la largeur pour le CV */
-    text-align: center; /* Centre le bouton sous le CV */
+    width: 35%; /* 35% de la largeur pour le CV à droite */
+    text-align: center;
 }
 
 .cv-preview {
-    width: 100%; /* Occupe toute la largeur disponible */
-    height: 500px; /* Taille fixe du CV */
+    width: 100%; /* Occupe toute la largeur du container */
+    height: 500px; /* Taille fixe pour le CV */
     border: 1px solid #30363d;
     border-radius: 8px;
     margin-bottom: 20px;
@@ -130,8 +127,21 @@ footer {
     color: #c9d1d9;
     text-align: center;
     padding: 10px 0;
-    position: fixed;
+    position: fixed; /* Fixe le footer */
     bottom: 0;
     width: 100%;
     border-top: 1px solid #30363d;
+}
+
+/* Fond sombre avec effet texturé */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://your-background-image-url.com'); /* Remplacez avec l'URL de votre image */
+    opacity: 0.2; /* Transparence pour un effet subtil */
+    z-index: -1;
 }
