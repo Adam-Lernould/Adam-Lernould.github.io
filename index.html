@@ -55,15 +55,28 @@
     <!-- SECTION CONTACT -->
     <section id="contact" class="section hidden">
         <h2>Me Contacter</h2>
-        <p>📧 Email : <a href="mailto:adam.lernould@example.com">adam.lernould@example.com</a></p>
-        <p>💼 LinkedIn : <a href="https://linkedin.com/in/adamlernould" target="_blank">Mon profil</a></p>
-        <p>📍 Localisation : Béthune, France</p>
+        <p>N'hésitez pas à me contacter via ce formulaire, je vous répondrai dès que possible.</p>
+    
+        <form action="https://formspree.io/f/{TON_EMAIL}" method="POST">
+            <label for="name">Nom :</label>
+            <input type="text" id="name" name="name" required>
+    
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required>
+    
+            <label for="message">Message :</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+    
+            <button type="submit" class="btn">Envoyer</button>
+        </form>
     </section>
+    
 
     <footer>
         <p>&copy; 2024 Adam Lernould. Tous droits réservés.</p>
-        <p>💌 <a href="mailto:adam.lernould@example.com">Me contacter</a> | 🔗 <a href="https://linkedin.com/in/adamlernould" target="_blank">LinkedIn</a></p>
+        <p>💌 <a href="mailto:adam.lernould@gmail.com">Me contacter</a> | 🔗 <a href="https://linkedin.com/in/adamlernould" target="_blank">LinkedIn</a></p>
     </footer>
+    
 
 
     <!-- SCRIPT -->
