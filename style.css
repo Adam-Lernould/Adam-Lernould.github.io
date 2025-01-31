@@ -3,14 +3,22 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: #0d1117; /* Fond sombre */
+    color: #c9d1d9; /* Texte clair */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Navbar */
 .navbar {
-    background-color: #0366d6;
+    background-color: #161b22;
     padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid #30363d;
 }
 
 .nav-links {
@@ -22,9 +30,10 @@ body {
 }
 
 .nav-links li a {
-    color: white;
+    color: #c9d1d9;
     text-decoration: none;
     font-size: 18px;
+    padding: 5px 10px;
 }
 
 .nav-links li a.active {
@@ -34,8 +43,10 @@ body {
 
 /* Section principale */
 .section {
-    padding: 40px 20px;
-    text-align: center;
+    padding: 100px 20px 40px; /* Espace sous la navbar */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligne les éléments à gauche */
 }
 
 .main-title {
@@ -45,46 +56,55 @@ body {
 
 .subtitle {
     font-size: 1.2rem;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+    max-width: 800px; /* Limite la largeur */
 }
 
 /* Liens sociaux */
-.social-links-grid {
+.social-links {
     display: flex;
-    justify-content: center;
     gap: 20px;
 }
 
-.social-icon {
-    width: 24px; /* Réduit la largeur */
-    height: 24px; /* Réduit la hauteur */
-    border-radius: 50%; /* Arrondi pour un effet visuel agréable */
-    object-fit: contain; /* Ajuste sans distorsion */
-    margin-right: 8px; /* Espacement avec le texte */
-    vertical-align: middle; /* Alignement vertical avec le texte */
-}
-
 .social-link {
-    display: flex; /* Mise en ligne avec flexbox */
-    align-items: center; /* Aligne verticalement l’icône et le texte */
-    text-decoration: none; /* Pas de soulignement */
-    color: #333; /* Couleur du texte */
-    font-size: 16px; /* Taille du texte */
-    gap: 8px; /* Espacement entre l’icône et le texte */
-    transition: color 0.3s ease; /* Effet au survol */
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #c9d1d9;
+    font-size: 18px;
+    gap: 8px;
+    transition: color 0.3s ease;
 }
 
 .social-link:hover {
-    color: #0366d6; /* Couleur au survol */
+    color: #58a6ff;
 }
 
-
+.social-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
 
 /* Footer */
 footer {
-    background-color: #0366d6;
-    color: white;
+    background-color: #161b22;
+    color: #c9d1d9;
     text-align: center;
     padding: 10px 0;
-    margin-top: 40px;
+    margin-top: auto; /* Place le footer en bas */
+    border-top: 1px solid #30363d;
+}
+
+/* Background effet */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://your-background-image-url.com'); /* Remplacez avec l'URL de votre image */
+    opacity: 0.1; /* Transparence pour un effet subtil */
+    z-index: -1;
 }
