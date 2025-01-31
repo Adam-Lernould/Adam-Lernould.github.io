@@ -7,13 +7,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        if (!params.has("access")) {
+            window.location.href = "index.html"; // Redirige si pas d'accès
+        }
+    </script>
+
     <header>
         <h1>Mon CV</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Accueil</a></li>
-                <li><a href="cv.html">Mon CV</a></li>
-                <li><a href="projets.html">Mes Projets</a></li>
+                <li><a href="cv.html?access=true">Mon CV</a></li>
+                <li><a href="projets.html?access=true">Mes Projets</a></li>
             </ul>
         </nav>
     </header>
@@ -22,17 +29,5 @@
         <h2>Mon CV</h2>
         <p><a href="cv.pdf" download>Télécharger mon CV en PDF</a></p>
     </section>
-    <script>
-        if (document.referrer === "" || document.referrer.indexOf(window.location.hostname) === -1) {
-            window.location.href = "index.html"; // Redirection vers l'accueil
-        }
-    </script>
-    <script>
-        const params = new URLSearchParams(window.location.search);
-        if (!params.has("access")) {
-            window.location.href = "index.html"; // Redirige si pas d'accès
-        }
-    </script>
-    
 </body>
 </html>
