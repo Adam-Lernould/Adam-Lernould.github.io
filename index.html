@@ -33,10 +33,15 @@
             <li><i class="fas fa-server"></i> Administration Systèmes</li>
         </ul>
     
-    
         <h3>À propos de moi</h3>
         <p>Je suis un étudiant motivé en Réseaux et Télécommunications, curieux et passionné par les nouvelles technologies.</p>
         <a href="#" onclick="showSection('projets')" class="btn">Voir mes projets</a>
+    </section>
+
+    <section id="cv" class="section hidden">
+        <h2>Mon CV</h2>
+        <p>Voici mon CV. Vous pouvez aussi le télécharger :</p>
+        <a href="cv.pdf" class="btn">Télécharger mon CV</a>
     </section>
     
     <section id="projets" class="section hidden">
@@ -57,11 +62,18 @@
 
     <script>
         function showSection(sectionId) {
+            // Masquer toutes les sections
             document.querySelectorAll('.section').forEach(section => {
                 section.classList.add('hidden');
             });
+            // Afficher la section sélectionnée
             document.getElementById(sectionId).classList.remove('hidden');
         }
+        
+        // Afficher la section "home" par défaut au chargement
+        document.addEventListener("DOMContentLoaded", function() {
+            showSection('home');
+        });
     </script>
 </body>
 </html>
