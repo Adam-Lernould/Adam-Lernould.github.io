@@ -1,27 +1,36 @@
-/* --- GLOBAL --- */
+/* --- GLOBAL STYLES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
+    font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Assure que le body occupe toute la hauteur */
+    min-height: 100vh;
     margin: 0;
-    background-color: #121212;
-    color: #e0e0e0;
+    background-color: #121212; /* Fond sombre */
+    color: #e0e0e0; /* Texte clair */
+    line-height: 1.6;
 }
 
 main {
-    flex: 1; /* Prend l'espace restant pour pousser le footer en bas */
+    flex: 1; /* Pousse le footer vers le bas */
 }
 
-footer {
-    background-color: #1e1e1e;
-    text-align: center;
-    padding: 10px 0;
-    border-top: 1px solid #333;
-    font-size: 14px;
+a {
+    color: #00bcd4; /* Bleu clair */
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
+a:hover {
+    color: #008c9e;
+}
 
-
+/* --- NAVBAR --- */
 .navbar {
     display: flex;
     justify-content: center; /* Centre les boutons du menu */
@@ -29,6 +38,14 @@ footer {
     padding: 15px 30px;
     background-color: #1e1e1e;
     border-bottom: 1px solid #333;
+}
+
+.logo {
+    position: absolute; /* Fixe le logo à gauche */
+    left: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #e0e0e0;
 }
 
 .nav-links {
@@ -39,8 +56,8 @@ footer {
 
 .nav-links li a {
     color: #e0e0e0;
-    text-decoration: none;
     font-size: 16px;
+    text-decoration: none;
 }
 
 .nav-links li a.active {
@@ -48,31 +65,17 @@ footer {
     font-weight: bold;
 }
 
-
-
 /* --- SECTIONS --- */
 .section {
     padding: 50px 20px;
     text-align: center;
 }
 
-/* --- PROJECTS --- */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.project-card {
-    background-color: #1e1e1e;
-    padding: 20px;
-    border-radius: 8px;
-}
-
+/* --- SOCIAL LINKS --- */
 .social-links {
     display: flex;
     justify-content: center;
-    gap: 20px; /* Espace entre les liens */
+    gap: 20px; /* Espace entre les liens sociaux */
     margin-top: 20px;
 }
 
@@ -83,7 +86,6 @@ footer {
     display: flex;
     align-items: center;
     gap: 8px; /* Espace entre l'icône et le texte */
-    transition: color 0.3s;
 }
 
 .social-link i {
@@ -92,4 +94,13 @@ footer {
 
 .social-link:hover {
     color: #00bcd4;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: #1e1e1e;
+    text-align: center;
+    padding: 10px 0;
+    border-top: 1px solid #333;
+    font-size: 14px;
 }
