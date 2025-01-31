@@ -91,17 +91,17 @@ body {
 }
 
 /* Right content (CV as image and button) */
-/* Right content (CV as image and button) */
 .right-content {
     max-width: 35%; /* Réduit l'espace occupé à droite */
     text-align: center;
+    margin-bottom: 20px; /* Ajoute un espace supplémentaire pour éviter tout chevauchement */
 }
 
 .cv-preview {
     width: 100%; /* L'image prend toute la largeur de son conteneur */
-    height: 300px; /* Hauteur ajustée à 350px */
+    height: 350px; /* Hauteur ajustée à 350px */
     border-radius: 8px;
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Espace entre l'image et le bouton */
     border: 1px solid #30363d; /* Bordure subtile autour de l'image */
 }
 
@@ -115,6 +115,7 @@ body {
     text-decoration: none;
     border-radius: 8px;
     transition: background-color 0.3s ease;
+    margin-bottom: 20px; /* Ajoute de l'espace sous le bouton */
 }
 
 .download-button:hover {
@@ -122,6 +123,13 @@ body {
     color: #fff;
 }
 
+/* Section principale */
+.section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 100px 20px 80px; /* Augmente l'espace en bas de la section */
+}
 
 /* Footer */
 footer {
@@ -133,7 +141,9 @@ footer {
     bottom: 0;
     width: 100%;
     border-top: 1px solid #30363d;
+    z-index: 100; /* Assure que le footer est au-dessus du fond */
 }
+
 
 /* Fond sombre avec effet texturé */
 body::before {
