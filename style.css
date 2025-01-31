@@ -1,17 +1,18 @@
 /* --- GLOBAL STYLES --- */
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #121212;
-    color: #e0e0e0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    font-family: 'Roboto', sans-serif; /* Garde la police */
+    background-color: #121212; /* Garde la couleur de fond */
+    color: #e0e0e0; /* Garde la couleur du texte */
+    margin: 0; /* Garde les marges à 0 */
+    display: flex; /* Ajoute le comportement flex */
+    flex-direction: column; /* Empile les éléments verticalement */
+    min-height: 100vh; /* S'assure que le contenu prend toute la hauteur de la fenêtre */
 }
 
 main {
-    flex: 1;
+    flex: 1; /* Permet à la section principale de prendre tout l'espace disponible */
 }
+
 
 /* --- NAVBAR --- */
 .navbar {
@@ -45,7 +46,7 @@ main {
     padding: 50px 20px;
     max-width: 1200px;
     margin: 0 auto;
-    text-align: left; /* Tout le contenu sera aligné à gauche */
+    text-align: left; /* Alignement à gauche */
 }
 
 .about-content {
@@ -60,23 +61,23 @@ main {
 }
 
 .subtitle {
-    font-size: 18px; /* Plus petite taille pour le sous-titre */
-    color: #b0b0b0; /* Texte plus clair pour le contraste */
-    line-height: 1.8; /* Meilleure lisibilité */
+    font-size: 18px;
+    color: #b0b0b0;
+    line-height: 1.8;
+    max-width: 600px; /* Limite la largeur pour qu'elle corresponde au titre principal */
 }
 
 /* --- SOCIAL LINKS --- */
 .social-links-grid {
     display: flex;
     flex-direction: column; /* Les éléments sont empilés verticalement */
-    align-items: flex-start; /* Aligne les éléments à gauche */
     gap: 15px; /* Espace entre les boutons */
     margin-top: 20px;
 }
 
 .social-link {
     color: #e0e0e0;
-    font-size: 16px; /* Taille des textes */
+    font-size: 16px;
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -84,12 +85,13 @@ main {
     transition: color 0.3s ease;
 }
 
-.social-link i {
-    font-size: 24px; /* Taille des icônes */
-}
-
 .social-link:hover {
     color: #00bcd4; /* Couleur au survol */
+}
+
+.social-icon {
+    width: 24px; /* Taille des logos */
+    height: 24px;
 }
 
 /* --- FOOTER --- */
