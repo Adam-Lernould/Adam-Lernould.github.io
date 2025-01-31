@@ -39,3 +39,24 @@ section {
 h1, h2 {
     text-align: center;
 }
+
+.profile-pic {
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.intro, .contact {
+    text-align: center;
+}
+
+.contact a {
+    color: #007bff;
+    text-decoration: none;
+}
+.contact a:hover {
+    text-decoration: underline;
+}
