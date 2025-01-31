@@ -99,7 +99,7 @@ body {
 
 .cv-preview {
     width: 100%; /* L'image prend toute la largeur de son conteneur */
-    height: 350px; /* Hauteur ajustée à 350px */
+    height: 300px; /* Hauteur ajustée à 350px */
     border-radius: 8px;
     margin-bottom: 20px;
     border: 1px solid #30363d; /* Bordure subtile autour de l'image */
