@@ -1,104 +1,85 @@
-/* --- GLOBAL STYLES --- */
+/* Style général */
 body {
-    font-family: 'Roboto', sans-serif; /* Garde la police */
-    background-color: #121212; /* Garde la couleur de fond */
-    color: #e0e0e0; /* Garde la couleur du texte */
-    margin: 0; /* Garde les marges à 0 */
-    display: flex; /* Ajoute le comportement flex */
-    flex-direction: column; /* Empile les éléments verticalement */
-    min-height: 100vh; /* S'assure que le contenu prend toute la hauteur de la fenêtre */
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
 }
 
-main {
-    flex: 1; /* Permet à la section principale de prendre tout l'espace disponible */
-}
-
-
-/* --- NAVBAR --- */
+/* Navbar */
 .navbar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 15px 0;
-    background-color: #1e1e1e;
-    border-bottom: 1px solid #333;
+    background-color: #0366d6;
+    padding: 10px 20px;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 20px;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
 }
 
 .nav-links li a {
-    color: #e0e0e0;
+    color: white;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .nav-links li a.active {
-    color: #00bcd4;
     font-weight: bold;
+    text-decoration: underline;
 }
 
-/* --- SECTION ABOUT --- */
+/* Section principale */
 .section {
-    padding: 50px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: left; /* Alignement à gauche */
-}
-
-.about-content {
-    margin-bottom: 30px; /* Espace entre le texte et les réseaux sociaux */
+    padding: 40px 20px;
+    text-align: center;
 }
 
 .main-title {
-    font-size: 36px; /* Grande taille pour le titre principal */
-    font-weight: bold; /* Gras */
-    margin-bottom: 15px;
-    color: #e0e0e0;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
 }
 
 .subtitle {
-    font-size: 18px;
-    color: #b0b0b0;
-    line-height: 1.8;
-    max-width: 600px; /* Limite la largeur pour qu'elle corresponde au titre principal */
+    font-size: 1.2rem;
+    margin-bottom: 40px;
 }
 
-/* --- SOCIAL LINKS --- */
+/* Liens sociaux */
 .social-links-grid {
     display: flex;
-    flex-direction: column; /* Les éléments sont empilés verticalement */
-    gap: 15px; /* Espace entre les boutons */
-    margin-top: 20px;
+    justify-content: center;
+    gap: 20px;
 }
 
 .social-link {
-    color: #e0e0e0;
-    font-size: 16px;
-    text-decoration: none;
     display: flex;
     align-items: center;
-    gap: 10px; /* Espace entre l'icône et le texte */
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    gap: 8px;
     transition: color 0.3s ease;
 }
 
 .social-link:hover {
-    color: #00bcd4; /* Couleur au survol */
+    color: #0366d6;
 }
 
 .social-icon {
-    width: 24px; /* Taille des logos */
+    width: 24px;
     height: 24px;
+    border-radius: 50%;
 }
 
-/* --- FOOTER --- */
+/* Footer */
 footer {
-    background-color: #1e1e1e;
+    background-color: #0366d6;
+    color: white;
     text-align: center;
     padding: 10px 0;
-    border-top: 1px solid #333;
-    font-size: 14px;
+    margin-top: 40px;
 }
