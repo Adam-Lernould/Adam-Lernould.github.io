@@ -11,26 +11,49 @@
         <h1>Bienvenue sur mon Portfolio</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="cv.html?access=true">Mon CV</a></li>
-                <li><a href="projets.html?access=true">Mes Projets</a></li>
+                <li><a href="#" onclick="showSection('home')">Accueil</a></li>
+                <li><a href="#" onclick="showSection('cv')">Mon CV</a></li>
+                <li><a href="#" onclick="showSection('projets')">Mes Projets</a></li>
+                <li><a href="#" onclick="showSection('contact')">Contact</a></li>
             </ul>
         </nav>
     </header>
-    
-    <section class="intro">
+
+    <section id="home" class="section">
         <img src="images/photo.jpg" alt="Photo de Adam Lernould" class="profile-pic">
         <h2>Adam Lernould</h2>
         <p>Étudiant en 2ème année de BUT Réseaux et Télécommunications à l'IUT de Béthune.</p>
         <p>Passionné par l'informatique, les réseaux et la cybersécurité, je suis à la recherche d'une alternance.</p>
-        <p>Explorez mon CV et mes projets pour en savoir plus sur mon parcours !</p>
     </section>
 
-    <section class="contact">
+    <section id="cv" class="section hidden">
+        <h2>Mon CV</h2>
+        <p><a href="cv.pdf" download>Télécharger mon CV en PDF</a></p>
+    </section>
+
+    <section id="projets" class="section hidden">
+        <h2>Mes Projets</h2>
+        <ul>
+            <li>📡 <strong>Installation d'un réseau local</strong></li>
+            <li>💻 <strong>Développement d'un site web</strong></li>
+            <li>🔒 <strong>Sécurisation d'un réseau</strong></li>
+        </ul>
+    </section>
+
+    <section id="contact" class="section hidden">
         <h2>Me Contacter</h2>
         <p>📧 Email : <a href="mailto:adam.lernould@example.com">adam.lernould@example.com</a></p>
         <p>💼 LinkedIn : <a href="https://linkedin.com/in/adamlernould" target="_blank">Mon profil</a></p>
         <p>📍 Localisation : Béthune, France</p>
     </section>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
+    </script>
 </body>
 </html>

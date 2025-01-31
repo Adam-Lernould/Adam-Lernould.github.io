@@ -3,12 +3,12 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    text-align: center;
 }
 
 header {
     background-color: #333;
     color: white;
-    text-align: center;
     padding: 15px 0;
 }
 
@@ -25,9 +25,10 @@ nav ul li {
 nav ul li a {
     color: white;
     text-decoration: none;
+    cursor: pointer;
 }
 
-section {
+.section {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
@@ -36,27 +37,13 @@ section {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-h1, h2 {
-    text-align: center;
+.hidden {
+    display: none;
 }
 
 .profile-pic {
-    display: block;
-    margin: 0 auto;
     width: 150px;
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
-}
-
-.intro, .contact, .cv, .projets {
-    text-align: center;
-}
-
-.contact a {
-    color: #007bff;
-    text-decoration: none;
-}
-.contact a:hover {
-    text-decoration: underline;
 }
