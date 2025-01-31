@@ -70,10 +70,13 @@ body {
 }
 
 .social-icon {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
+    width: 24px; /* Ajuste la largeur */
+    height: 24px; /* Ajuste la hauteur */
+    border-radius: 50%; /* Ajoute un arrondi */
+    object-fit: cover; /* Évite les distorsions */
+    margin-right: 8px; /* Ajoute de l'espace avec le texte */
 }
+
 
 /* Footer */
 footer {
