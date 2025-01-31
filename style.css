@@ -48,6 +48,10 @@ main {
     text-align: left; /* Décale le texte vers la gauche */
 }
 
+.about-content {
+    margin-bottom: 30px; /* Espace entre le texte et les réseaux sociaux */
+}
+
 .main-title {
     font-size: 36px; /* Grande taille pour le titre principal */
     font-weight: bold; /* Gras */
@@ -58,21 +62,21 @@ main {
 .subtitle {
     font-size: 18px; /* Plus petite taille pour le sous-titre */
     color: #b0b0b0; /* Texte plus clair pour le contraste */
-    margin-bottom: 30px;
     line-height: 1.8; /* Meilleure lisibilité */
 }
 
 /* --- SOCIAL LINKS --- */
 .social-links-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Grille responsive */
-    gap: 15px; /* Espacement entre les liens */
+    display: flex;
+    justify-content: center; /* Centre la grille */
+    gap: 20px; /* Espace entre les boutons */
+    flex-wrap: wrap; /* Permet de passer à la ligne si nécessaire */
     margin-top: 20px;
 }
 
 .social-link {
     color: #e0e0e0;
-    font-size: 18px; /* Taille des textes */
+    font-size: 16px; /* Taille des textes */
     text-decoration: none;
     display: flex;
     align-items: center;
