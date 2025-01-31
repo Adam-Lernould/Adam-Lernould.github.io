@@ -91,6 +91,7 @@ body {
 }
 
 /* Right content (CV as image and button) */
+/* Right content (CV as image and button) */
 .right-content {
     max-width: 35%; /* Réduit l'espace occupé à droite */
     text-align: center;
@@ -98,6 +99,7 @@ body {
 
 .cv-preview {
     width: 100%; /* L'image prend toute la largeur de son conteneur */
+    height: 350px; /* Hauteur ajustée à 350px */
     border-radius: 8px;
     margin-bottom: 20px;
     border: 1px solid #30363d; /* Bordure subtile autour de l'image */
@@ -119,6 +121,7 @@ body {
     background-color: #1f6feb;
     color: #fff;
 }
+
 
 /* Footer */
 footer {
