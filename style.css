@@ -126,10 +126,12 @@ body {
 /* Section principale */
 .section {
     display: flex;
+    flex-wrap: nowrap; /* Empêche le repli des blocs */
     justify-content: space-between;
     align-items: flex-start;
-    padding: 100px 20px 80px; /* Augmente l'espace en bas de la section */
+    padding: 100px 20px 80px; /* On garde le padding souhaité */
 }
+
 
 /* Footer */
 footer {
