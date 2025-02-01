@@ -199,7 +199,7 @@ footer {
    Bouton Projet (cliquable)
 =========================== */
 .project-button {
-    width: 50%;                   /* Le bouton prend toute la largeur du conteneur */
+    width: 40%;                   /* Le bouton prend toute la largeur du conteneur */
     display: flex;
     align-items: left;
     background-color: #161b22;     /* Couleur de fond du bouton */
