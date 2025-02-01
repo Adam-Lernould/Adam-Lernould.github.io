@@ -194,3 +194,55 @@ footer {
     text-align: left;
     margin-bottom: 30px;
 }
+
+/* ===========================
+   Bouton Projet (cliquable)
+=========================== */
+.project-button {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    background-color: #161b22; /* Fond du bouton */
+    padding: 15px 20px;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px; /* Espace entre les projets */
+}
+
+.project-button:hover {
+    background-color: #1f6feb;
+}
+
+/* Logo du projet à gauche */
+.project-logo {
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.project-logo img {
+    width: 50px;   /* Ajuste la taille selon tes besoins */
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Bloc d'informations sur le projet */
+.project-info {
+    text-align: left;
+}
+
+/* Titre du projet */
+.project-title {
+    margin: 0;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #c9d1d9;
+}
+
+/* Description du projet */
+.project-description {
+    margin: 5px 0 0 0;
+    font-size: 1rem;
+    color: #c9d1d9;
+}
