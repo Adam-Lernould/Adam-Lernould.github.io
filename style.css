@@ -1,4 +1,6 @@
-/* Style général */
+/* ===========================
+   Style général
+=========================== */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -10,7 +12,21 @@ body {
     flex-direction: column;
 }
 
-/* Navbar */
+/* Effet de fond texturé */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #0d1117; /* Fond sombre principal */
+    z-index: -1;
+}
+
+/* ===========================
+   Navbar
+=========================== */
 .navbar {
     background-color: #161b22;
     padding: 10px 20px;
@@ -41,15 +57,21 @@ body {
     text-decoration: underline;
 }
 
-/* Section principale */
+/* ===========================
+   Section principale
+=========================== */
+/* Utilisé par les pages générales qui utilisent le layout en deux colonnes */
 .section {
     display: flex;
+    flex-wrap: nowrap; /* Empêche le repli des blocs */
     justify-content: space-between;
     align-items: flex-start;
-    padding: 100px 20px 40px; /* Espace sous la navbar */
+    padding: 100px 20px 80px; /* Espace sous la navbar */
 }
 
-/* Left content (text and links) */
+/* ===========================
+   Contenu gauche
+=========================== */
 .left-content {
     max-width: 60%;
 }
@@ -65,6 +87,7 @@ body {
     max-width: 800px; /* Limite la largeur */
 }
 
+/* Liens sociaux */
 .social-links {
     display: flex;
     gap: 20px;
@@ -90,16 +113,18 @@ body {
     border-radius: 50%;
 }
 
-/* Right content (CV as image and button) */
+/* ===========================
+   Contenu droit (CV)
+=========================== */
 .right-content {
     max-width: 35%; /* Réduit l'espace occupé à droite */
     text-align: center;
-    margin-bottom: 20px; /* Ajoute un espace supplémentaire pour éviter tout chevauchement */
+    margin-bottom: 20px; /* Pour éviter tout chevauchement */
 }
 
 .cv-preview {
     width: 90%; /* L'image prend toute la largeur de son conteneur */
-    height: 800px; /* Hauteur ajustée à 350px */
+    height: 800px; /* Hauteur de l'image - à ajuster si nécessaire */
     border-radius: 8px;
     margin-bottom: 20px; /* Espace entre l'image et le bouton */
     border: 1px solid #30363d; /* Bordure subtile autour de l'image */
@@ -115,7 +140,7 @@ body {
     text-decoration: none;
     border-radius: 8px;
     transition: background-color 0.3s ease;
-    margin-bottom: 20px; /* Ajoute de l'espace sous le bouton */
+    margin-bottom: 20px;
 }
 
 .download-button:hover {
@@ -123,17 +148,9 @@ body {
     color: #fff;
 }
 
-/* Section principale */
-.section {
-    display: flex;
-    flex-wrap: nowrap; /* Empêche le repli des blocs */
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 100px 20px 80px; /* On garde le padding souhaité */
-}
-
-
-/* Footer */
+/* ===========================
+   Footer
+=========================== */
 footer {
     background-color: #161b22;
     color: #c9d1d9;
@@ -143,21 +160,12 @@ footer {
     bottom: 0;
     width: 100%;
     border-top: 1px solid #30363d;
-    z-index: 100; /* Assure que le footer est au-dessus du fond */
+    z-index: 100;
 }
 
-
-/* Fond sombre avec effet texturé */
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #0d1117; /* Fond sombre principal */
-    z-index: -1;
-}
+/* ===========================
+   Titres et sous-titres généraux
+=========================== */
 .page-title {
     text-align: left;
     font-weight: bold;
@@ -171,29 +179,18 @@ body::before {
     margin-bottom: 30px;
     max-width: 800px;
 }
-/* Styles spécifiques à la page Projets */
 
-/* Section contenant l'en-tête et la grille des projets */
+/* ===========================
+   Styles spécifiques à la page Projets
+=========================== */
+/* Section Projets */
 .projects-section {
     padding: 100px 20px 80px;
 }
 
-/* Conteneur de l'en-tête avec un espace vide à gauche */
+/* En-tête de la section Projets avec espace vide à gauche */
 .section-header {
-    padding-left: 20px;  /* Ajuste cette valeur pour obtenir l'espace souhaité */
+    padding-left: 20px;  /* Ajustez cette valeur pour l'espace souhaité */
     text-align: left;
     margin-bottom: 30px;
-}
-
-/* Style du titre "Projets" */
-.page-title {
-    font-weight: bold;
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-}
-
-/* Style du sous-texte */
-.page-subtitle {
-    font-size: 1.2rem;
-    max-width: 800px;
 }
