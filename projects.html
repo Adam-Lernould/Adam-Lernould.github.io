@@ -6,6 +6,26 @@
     <title>Projets - Adam Lernould</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        /* Style spécifique à la page projects */
+        .projects-section {
+            display: block; /* On passe en display block pour empiler verticalement */
+            padding: 100px 20px 80px;
+        }
+        .section-header {
+            text-align: left;
+            margin-bottom: 30px;
+        }
+        .page-title {
+            font-weight: bold;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        .page-subtitle {
+            font-size: 1.2rem;
+            max-width: 800px;
+        }
+    </style>
 </head>
 <body>
     <!-- Navbar -->
@@ -21,27 +41,22 @@
 
     <!-- Main Content -->
     <main>
-        <section class="section">
-            <!-- Titre et description de la section -->
-            <h2 class="page-title">Projets</h2>
-            <p class="page-subtitle">
-                Au fil des années, j'ai réalisé de nombreux projets, petits et grands, mais ceux-ci représentent mes plus belles réussites. La plupart sont open-source : si l'un d'eux éveille votre curiosité, explorez le code et n'hésitez pas à proposer vos idées pour l'améliorer.
-            </p>
+        <section class="projects-section">
+            <!-- En-tête de la section -->
+            <div class="section-header">
+                <h2 class="page-title">Projets</h2>
+                <p class="page-subtitle">
+                    Au fil des années, j'ai réalisé de nombreux projets, petits et grands. Parmi eux, certains représentent mes plus belles réussites. La majorité étant open-source, n'hésitez pas à explorer le code et à proposer des améliorations si une idée vous inspire.
+                </p>
+            </div>
 
             <!-- Grille des projets -->
             <div class="projects-grid">
                 <div class="project-card">
-                    <h3>Projet 1</h3>
-                    <p>Installation d'un réseau local sécurisé pour une PME.</p>
+                    <h3>SAE</h3>
+                    <p>Installation d'un ...</p>
                 </div>
-                <div class="project-card">
-                    <h3>Projet 2</h3>
-                    <p>Développement d'un site web interactif en HTML, CSS, et JavaScript.</p>
-                </div>
-                <div class="project-card">
-                    <h3>Projet 3</h3>
-                    <p>Sécurisation d'un serveur web avec des certificats SSL.</p>
-                </div>
+                <!-- D'autres projets ici -->
             </div>
         </section>
     </main>
