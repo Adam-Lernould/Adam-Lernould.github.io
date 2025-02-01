@@ -199,37 +199,40 @@ footer {
    Bouton Projet (cliquable)
 =========================== */
 .project-button {
+    width: 100%;                   /* Le bouton prend toute la largeur du conteneur */
     display: flex;
     align-items: center;
-    text-decoration: none;
-    background-color: #161b22; /* Fond du bouton */
+    background-color: #161b22;     /* Couleur de fond du bouton */
     padding: 15px 20px;
-    border: 1px solid #30363d;
+    border: none;                  /* Pas de bordure par défaut */
+    border: 1px solid #30363d;     /* Bordure subtile */
     border-radius: 8px;
+    text-align: left;
+    cursor: pointer;
+    margin-bottom: 20px;           /* Espace entre les boutons */
     transition: background-color 0.3s ease;
-    margin-bottom: 20px; /* Espace entre les projets */
 }
 
 .project-button:hover {
     background-color: #1f6feb;
 }
 
-/* Logo du projet à gauche */
+/* Logo du projet (à gauche) */
 .project-logo {
-    margin-right: 20px;
     flex-shrink: 0;
+    margin-right: 20px;
 }
 
 .project-logo img {
-    width: 50px;   /* Ajuste la taille selon tes besoins */
+    width: 50px;                   /* Ajuste la taille du logo si nécessaire */
     height: 50px;
     object-fit: cover;
-    border-radius: 50%;
+    border-radius: 8px;            /* Ou 50% pour un logo circulaire */
 }
 
-/* Bloc d'informations sur le projet */
+/* Bloc d'informations du projet */
 .project-info {
-    text-align: left;
+    flex: 1;
 }
 
 /* Titre du projet */
