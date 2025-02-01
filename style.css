@@ -158,3 +158,16 @@ body::before {
     background-color: #0d1117; /* Fond sombre principal */
     z-index: -1;
 }
+.page-title {
+    text-align: left;
+    font-weight: bold;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.page-subtitle {
+    text-align: left;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 800px;
+}
