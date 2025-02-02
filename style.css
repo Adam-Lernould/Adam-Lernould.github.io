@@ -199,19 +199,21 @@ footer {
    Bouton Projet (cliquable)
 =========================== */
 .project-button {
-    width: calc(50% - 10px);  /* Chaque bouton occupe la moitié de l'espace moins la moitié du gap */
+    /* Retirer la largeur fixe et utiliser flex pour partager l'espace */
+    flex: 1;  
     display: flex;
-    align-items: flex-start;  /* Utilisez flex-start pour aligner à gauche */
+    align-items: center;  /* Vous pouvez aussi utiliser flex-start si vous préférez un alignement en haut */
     background-color: #161b22;
     padding: 15px 20px;
-    border: none;
     border: 1px solid #30363d;
     border-radius: 8px;
     text-align: left;
     cursor: pointer;
     margin-bottom: 20px;
     transition: background-color 0.3s ease;
+    text-decoration: none;  /* Supprime le soulignement pour les liens */
 }
+
 
 
 .project-button:hover {
