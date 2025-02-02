@@ -251,7 +251,9 @@ footer {
     margin: 5px 0 0 0;
     font-size: 1rem;
     color: #c9d1d9;
+    font-weight: normal; /* Ajout pour forcer le texte en style normal */
 }
+
 /* ===========================
    Grille des projets
 =========================== */
