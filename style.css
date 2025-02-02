@@ -204,7 +204,7 @@ footer {
     display: flex;
     align-items: center;  /* Vous pouvez aussi utiliser flex-start si vous préférez un alignement en haut */
     background-color: #161b22;
-    padding: 25px 20px;
+    padding: 35px 20px;
     border: 1px solid #30363d;
     border-radius: 8px;
     text-align: left;
