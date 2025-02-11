@@ -58,25 +58,27 @@
     </footer>
 
     <script>
-    document.getElementById('contact-form').addEventListener('submit', function(event) {
-        event.preventDefault();
-
-        if (typeof emailjs === "undefined") {
-            alert("❌ Erreur : EmailJS ne s'est pas chargé correctement !");
-            return;
-        }
-
-        const serviceID = 'service_e7uo765';  // Remplace par ton Service ID
-        const templateID = 'template_y1k27vc';  // Remplace par ton Template ID
-
-        emailjs.sendForm(serviceID, templateID, this)
-          .then(function() {
-              alert('✅ Message envoyé avec succès !');
-          }, function(error) {
-              console.error("❌ Erreur EmailJS :", error);
-              alert('❌ Erreur lors de l\'envoi du message. Vérifie la console pour plus d\'informations.');
-          });
-    });
-    </script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+        
+            if (typeof emailjs === "undefined") {
+                alert("❌ Erreur : EmailJS ne s'est pas chargé correctement !");
+                return;
+            }
+        
+            const serviceID = 'ton_service_id_correct';  // Remplace par ton Service ID
+            const templateID = 'ton_template_id_correct';  // Remplace par ton Template ID
+        
+            emailjs.sendForm(serviceID, templateID, this)
+              .then(function() {
+                  alert('✅ Message envoyé avec succès !');
+                  document.getElementById('contact-form').reset(); // 🧹 Vide le formulaire après envoi
+              }, function(error) {
+                  console.error("❌ Erreur EmailJS :", error);
+                  alert('❌ Erreur lors de l\'envoi du message. Vérifie la console pour plus d\'informations.');
+              });
+        });
+        </script>
+        
 </body>
 </html>
