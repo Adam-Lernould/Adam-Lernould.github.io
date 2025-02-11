@@ -5,7 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Adam Lernould</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/3.0.0/email.min.js"></script>
+    <script type="text/javascript">
+       (function(){
+          emailjs.init("_1yMuCS6m46OjkvND"); // Utilisez votre Public Key ici
+       })();
+    </script>
 </head>
 <body>
     <!-- Navbar -->
@@ -24,7 +29,7 @@
     <main>
         <section class="section contact-section">
             <h2 class="page-title">Me Contacter</h2>
-            <form class="contact-form">
+            <form id="contact-form">
                 <div class="form-group">
                     <input type="text" id="name" name="name" placeholder="Nom" required>
                 </div>
@@ -43,5 +48,21 @@
     <footer>
         <p>&copy; 2024 Adam Lernould. Tous droits réservés.</p>
     </footer>
+
+    <script>
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const serviceID = 'service_e7u0765'; // Utilisez votre Service ID ici
+        const templateID = 'template_ykz27vc'; // Utilisez votre Template ID ici
+
+        emailjs.sendForm(serviceID, templateID, this)
+          .then(function() {
+              alert('Message envoyé avec succès!');
+          }, function(error) {
+              alert('Erreur lors de l\'envoi du message: ' + error);
+          });
+    });
+    </script>
 </body>
 </html>
