@@ -277,32 +277,36 @@ footer {
     width: 100%;
     max-width: 600px;
     background-color: #161b22;
-    padding: 20px;
+    padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
 }
 
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #30363d;
     border-radius: 4px;
     background-color: #0d1117;
     color: #c9d1d9;
     font-size: 16px;
+    transition: border-color 0.3s ease;
 }
 
-.form-group textarea {
-    resize: vertical;
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #58a6ff;
+    outline: none;
 }
 
 .submit-button {
-    padding: 10px 20px;
+    padding: 12px 20px;
     background-color: #58a6ff;
     color: #0d1117;
     border: none;
