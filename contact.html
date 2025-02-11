@@ -5,11 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Adam Lernould</title>
     <link rel="stylesheet" href="style.css">
-    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/3.0.0/email.min.js"></script>
-    <script type="text/javascript">
-       (function(){
-          emailjs.init("_1yMuCS6m46OjkvND"); // Utilisez votre Public Key ici
-       })();
+    
+    <!-- Chargement correct de EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            if (typeof emailjs !== "undefined") {
+                console.log("✅ EmailJS chargé avec succès !");
+                emailjs.init("_1yMuCS6m46OjkvND"); // Remplace par ta clé publique
+            } else {
+                console.error("❌ Erreur : EmailJS ne s'est pas chargé !");
+            }
+        });
     </script>
 </head>
 <body>
@@ -53,14 +61,20 @@
     document.getElementById('contact-form').addEventListener('submit', function(event) {
         event.preventDefault();
 
-        const serviceID = 'service_e7u0765'; // Utilisez votre Service ID ici
-        const templateID = 'template_ykz27vc'; // Utilisez votre Template ID ici
+        if (typeof emailjs === "undefined") {
+            alert("❌ Erreur : EmailJS ne s'est pas chargé correctement !");
+            return;
+        }
+
+        const serviceID = 'service_e7u0765';  // Remplace par ton Service ID
+        const templateID = 'template_ykz27vc';  // Remplace par ton Template ID
 
         emailjs.sendForm(serviceID, templateID, this)
           .then(function() {
-              alert('Message envoyé avec succès!');
+              alert('✅ Message envoyé avec succès !');
           }, function(error) {
-              alert('Erreur lors de l\'envoi du message: ' + error);
+              console.error("❌ Erreur EmailJS :", error);
+              alert('❌ Erreur lors de l\'envoi du message. Vérifie la console pour plus d\'informations.');
           });
     });
     </script>
