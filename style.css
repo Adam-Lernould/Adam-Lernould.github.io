@@ -319,3 +319,102 @@ footer {
 .submit-button:hover {
     background-color: #1f6feb;
 }
+/* ===========================
+   Animations (Effet Fade-in)
+=========================== */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out forwards;
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===========================
+   CTA (Call-To-Action)
+=========================== */
+.cta-button {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+.cta-button:hover {
+    background-color: #45a049;
+}
+
+/* ===========================
+   Compétences (Skills)
+=========================== */
+.skills-section {
+    text-align: center;
+    padding: 60px 20px;
+}
+.skills-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+.skills-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    flex-wrap: wrap;
+}
+.skills-list li {
+    background-color: #222;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+/* ===========================
+   Effet interactif sur les icônes sociales
+=========================== */
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.2s;
+}
+.social-links a:hover {
+    transform: scale(1.1);
+}
+.social-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* ===========================
+   Ajustement du Contenu Principal
+=========================== */
+.left-content {
+    max-width: 60%;
+    text-align: left;
+}
+.main-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+.subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    max-width: 800px;
+}
