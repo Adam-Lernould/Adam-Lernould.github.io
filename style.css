@@ -35,6 +35,9 @@ body::before {
     width: 100%;
     z-index: 1000;
     border-bottom: 1px solid #30363d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .nav-links {
@@ -57,13 +60,27 @@ body::before {
     text-decoration: underline;
 }
 
+/* Menu hamburger pour les petits écrans */
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-icon div {
+    width: 25px;
+    height: 3px;
+    background-color: #c9d1d9;
+    margin: 4px;
+    transition: all 0.3s ease;
+}
+
 /* ===========================
    Section principale
 =========================== */
-/* Utilisé par les pages générales qui utilisent le layout en deux colonnes */
 .section {
     display: flex;
-    flex-wrap: nowrap; /* Empêche le repli des blocs */
+    flex-wrap: wrap; /* Permet le repli des blocs */
     justify-content: space-between;
     align-items: flex-start;
     padding: 100px 20px 80px; /* Espace sous la navbar */
@@ -73,7 +90,8 @@ body::before {
    Contenu gauche
 =========================== */
 .left-content {
-    max-width: 60%;
+    max-width: 100%;
+    flex: 1;
 }
 
 .main-title {
@@ -84,13 +102,14 @@ body::before {
 .subtitle {
     font-size: 1.2rem;
     margin-bottom: 20px;
-    max-width: 800px; /* Limite la largeur */
+    max-width: 100%; /* Limite la largeur */
 }
 
 /* Liens sociaux */
 .social-links {
     display: flex;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .social-link {
@@ -117,14 +136,14 @@ body::before {
    Contenu droit (CV)
 =========================== */
 .right-content {
-    max-width: 35%; /* Réduit l'espace occupé à droite */
+    max-width: 100%; /* Réduit l'espace occupé à droite */
     text-align: center;
     margin-bottom: 20px; /* Pour éviter tout chevauchement */
 }
 
 .cv-preview {
-    width: 90%; /* L'image prend toute la largeur de son conteneur */
-    height: 800px; /* Hauteur de l'image - à ajuster si nécessaire */
+    width: 100%; /* L'image prend toute la largeur de son conteneur */
+    height: auto; /* Hauteur automatique */
     border-radius: 8px;
     margin-bottom: 20px; /* Espace entre l'image et le bouton */
     border: 1px solid #30363d; /* Bordure subtile autour de l'image */
@@ -177,13 +196,12 @@ footer {
     text-align: left;
     font-size: 1.2rem;
     margin-bottom: 30px;
-    max-width: 800px;
+    max-width: 100%;
 }
 
 /* ===========================
    Styles spécifiques à la page Projets
 =========================== */
-/* Section Projets */
 .projects-section {
     padding: 100px 20px 80px;
 }
@@ -199,22 +217,20 @@ footer {
    Bouton Projet (cliquable)
 =========================== */
 .project-button {
-    /* Retirer la largeur fixe et utiliser flex pour partager l'espace */
-    flex: 1;  
+    flex: 1;
     display: flex;
-    align-items: center;  /* Vous pouvez aussi utiliser flex-start si vous préférez un alignement en haut */
+    flex-direction: column;
+    align-items: center;
     background-color: #161b22;
     padding: 25px 20px;
     border: 1px solid #30363d;
     border-radius: 8px;
-    text-align: left;
+    text-align: center;
     cursor: pointer;
     margin-bottom: 20px;
     transition: background-color 0.3s ease;
-    text-decoration: none;  /* Supprime le soulignement pour les liens */
+    text-decoration: none;
 }
-
-
 
 .project-button:hover {
     background-color: #1f6feb;
@@ -222,15 +238,14 @@ footer {
 
 /* Logo du projet (à gauche) */
 .project-logo {
-    flex-shrink: 0;
-    margin-right: 20px;
+    margin-bottom: 10px;
 }
 
 .project-logo img {
-    width: 50px;                   /* Ajuste la taille du logo si nécessaire */
+    width: 50px;
     height: 50px;
     object-fit: cover;
-    border-radius: 8px;            /* Ou 50% pour un logo circulaire */
+    border-radius: 8px;
 }
 
 /* Bloc d'informations du projet */
@@ -251,7 +266,7 @@ footer {
     margin: 5px 0 0 0;
     font-size: 1rem;
     color: #c9d1d9;
-    font-weight: normal; /* Ajout pour forcer le texte en style normal */
+    font-weight: normal;
 }
 
 /* ===========================
@@ -259,10 +274,11 @@ footer {
 =========================== */
 .projects-grid {
     display: flex;
-    gap: 20px;      /* Espace de 20px entre les boutons */
+    gap: 20px;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
 }
+
 /* Contact Section */
 .contact-section {
     display: flex;
@@ -319,6 +335,7 @@ footer {
 .submit-button:hover {
     background-color: #1f6feb;
 }
+
 /* ===========================
    Animations (Effet Fade-in)
 =========================== */
@@ -327,6 +344,7 @@ footer {
     transform: translateY(20px);
     animation: fadeInUp 1s ease-out forwards;
 }
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -352,6 +370,7 @@ footer {
     transition: background-color 0.3s ease;
     margin-top: 10px;
 }
+
 .cta-button:hover {
     background-color: #45a049;
 }
@@ -363,10 +382,12 @@ footer {
     text-align: center;
     padding: 60px 20px;
 }
+
 .skills-title {
     font-size: 2rem;
     margin-bottom: 20px;
 }
+
 .skills-list {
     list-style: none;
     display: flex;
@@ -375,6 +396,7 @@ footer {
     padding: 0;
     flex-wrap: wrap;
 }
+
 .skills-list li {
     background-color: #222;
     padding: 10px 20px;
@@ -394,9 +416,11 @@ footer {
     color: white;
     transition: transform 0.2s;
 }
+
 .social-links a:hover {
     transform: scale(1.1);
 }
+
 .social-icon {
     width: 20px;
     height: 20px;
@@ -406,15 +430,65 @@ footer {
    Ajustement du Contenu Principal
 =========================== */
 .left-content {
-    max-width: 60%;
+    max-width: 100%;
     text-align: left;
 }
+
 .main-title {
     font-size: 2.5rem;
     margin-bottom: 20px;
 }
+
 .subtitle {
     font-size: 1.2rem;
     margin-bottom: 20px;
-    max-width: 800px;
+    max-width: 100%;
+}
+
+/* ===========================
+   Media Queries
+=========================== */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin-bottom: 10px;
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+
+    .section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-content, .right-content {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .cv-preview {
+        width: 100%;
+        height: auto;
+    }
+
+    .projects-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-button {
+        width: 100%;
+    }
 }

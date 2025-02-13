@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Adam Lernould</title>
     <link rel="stylesheet" href="style.css">
-    
+
     <!-- Chargement correct de EmailJS -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
@@ -24,6 +24,11 @@
     <!-- Navbar -->
     <header>
         <nav class="navbar">
+            <div class="menu-icon">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
             <ul class="nav-links">
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="about_me.html">À propos de moi</a></li>
@@ -60,15 +65,15 @@
     <script>
         document.getElementById('contact-form').addEventListener('submit', function(event) {
             event.preventDefault();
-        
+
             if (typeof emailjs === "undefined") {
                 alert("❌ Erreur : EmailJS ne s'est pas chargé correctement !");
                 return;
             }
-        
-            const serviceID = 'service_e7uo765'; 
-            const templateID = 'template_y1k27vc'; 
-        
+
+            const serviceID = 'service_e7uo765';
+            const templateID = 'template_y1k27vc';
+
             emailjs.sendForm(serviceID, templateID, this)
               .then(function() {
                   alert('✅ Message envoyé avec succès !');
@@ -78,7 +83,13 @@
                   alert('❌ Erreur lors de l\'envoi du message. Vérifie la console pour plus d\'informations.');
               });
         });
-        </script>
-        
+
+        const menuIcon = document.querySelector('.menu-icon');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuIcon.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>

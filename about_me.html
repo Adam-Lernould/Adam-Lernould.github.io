@@ -11,12 +11,16 @@
     <!-- Navbar -->
     <header>
         <nav class="navbar">
+            <div class="menu-icon">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
             <ul class="nav-links">
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="about_me.html" class="active">À propos de moi</a></li>
                 <li><a href="projects.html">Projets</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                
             </ul>
         </nav>
     </header>
@@ -36,7 +40,6 @@
                 <p>
                     En dehors de mes études, j'aime faire du vélo pour me détendre. J'apprécie également les jeux vidéo stratégiques qui me permettent de développer des compétences en résolution de problèmes et en planification.
                 </p>
-                
             </div>
 
             <!-- Right content (Image CV and download button) -->
@@ -51,5 +54,14 @@
     <footer>
         <p>&copy; 2024 Adam Lernould. Tous droits réservés.</p>
     </footer>
+
+    <script>
+        const menuIcon = document.querySelector('.menu-icon');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuIcon.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>

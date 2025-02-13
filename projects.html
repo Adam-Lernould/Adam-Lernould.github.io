@@ -11,6 +11,11 @@
     <!-- Navbar -->
     <header>
         <nav class="navbar">
+            <div class="menu-icon">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
             <ul class="nav-links">
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="about_me.html">À propos de moi</a></li>
@@ -45,7 +50,7 @@
                       </p>
                   </div>
               </button>
-          
+
               <!-- Projet 2 : Téléchargement d'un fichier ZIP -->
               <a href="Archive-SAE3.03.zip" download class="project-button">
                   <div class="project-logo">
@@ -59,12 +64,6 @@
                   </div>
               </a>
           </div>
-          
-
-
-  </div>
-  
-              
         </section>
     </main>
 
@@ -72,5 +71,14 @@
     <footer>
         <p>&copy; 2024 Adam Lernould. Tous droits réservés.</p>
     </footer>
+
+    <script>
+        const menuIcon = document.querySelector('.menu-icon');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuIcon.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
