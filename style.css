@@ -43,9 +43,10 @@ body::before {
 .nav-links {
     list-style: none;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-around; /* Répartit les éléments uniformément */
     padding: 0;
     margin: 0;
+    width: 100%; /* Prend toute la largeur disponible */
 }
 
 .nav-links li a {
@@ -136,13 +137,14 @@ body::before {
    Contenu droit (CV)
 =========================== */
 .right-content {
-    max-width: 100%; /* Réduit l'espace occupé à droite */
+    max-width: 45%; /* Limite la largeur sur les grands écrans */
     text-align: center;
-    margin-bottom: 20px; /* Pour éviter tout chevauchement */
+    margin-bottom: 20px;
 }
 
 .cv-preview {
     width: 100%; /* L'image prend toute la largeur de son conteneur */
+    max-width: 400px; /* Limite la largeur maximale de l'image */
     height: auto; /* Hauteur automatique */
     border-radius: 8px;
     margin-bottom: 20px; /* Espace entre l'image et le bouton */
