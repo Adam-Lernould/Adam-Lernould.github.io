@@ -46,8 +46,9 @@ body::before {
     justify-content: space-around; /* Répartit les éléments uniformément */
     padding: 0;
     margin: 0;
-    width: 100%; /* Prend toute la largeur disponible */
+    width: 100%; /* <-- Cette ligne force la liste à prendre toute la largeur */
 }
+
 
 .nav-links li a {
     color: #c9d1d9;
@@ -481,9 +482,14 @@ footer {
     }
 
     .cv-preview {
-        width: 100%;
+        width: 100%;       /* L'image occupe 100% de son conteneur */
+        max-width: 300px;  /* Limite la largeur maximale à 300px */
         height: auto;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        border: 1px solid #30363d;
     }
+    
 
     .projects-grid {
         flex-direction: column;
