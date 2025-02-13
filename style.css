@@ -138,14 +138,18 @@ body::before {
    Contenu droit (CV)
 =========================== */
 .right-content {
-    max-width: 45%; /* Limite la largeur sur les grands écrans */
+    max-width: 45%;
     text-align: center;
     margin-bottom: 20px;
+    display: flex;             /* Active le flexbox */
+    flex-direction: column;    /* Les éléments s'empilent en colonne */
+    align-items: center;       /* Centre horizontalement l'image et le bouton */
 }
+
 
 .cv-preview {
     width: 100%; /* L'image prend toute la largeur de son conteneur */
-    max-width: 400px; /* Limite la largeur maximale de l'image */
+    max-width: 600px; /* Limite la largeur maximale de l'image */
     height: auto; /* Hauteur automatique */
     border-radius: 8px;
     margin-bottom: 20px; /* Espace entre l'image et le bouton */
