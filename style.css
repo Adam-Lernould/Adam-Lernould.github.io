@@ -286,6 +286,17 @@ footer {
     justify-content: center;
 }
 
+.project-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.project-row .project-button {
+    flex: 1;
+}
+
 /* Contact Section */
 .contact-section {
     display: flex;
