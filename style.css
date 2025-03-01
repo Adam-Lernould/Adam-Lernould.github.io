@@ -95,57 +95,65 @@ body::before {
 =========================== */
 .projects-section {
     padding: 50px 10%;
+    max-width: 1200px; /* Limite la largeur maximale */
+    margin: 0 auto; /* Centre la section */
 }
 
 /* Grille des projets */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
-    gap: 30px; /* Espacement entre les projets */
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 colonnes égales */
+    grid-template-rows: repeat(2, 1fr); /* 2 lignes égales */
+    gap: 40px; /* Espacement uniforme entre les projets */
     justify-content: center;
-    align-items: start;
+    align-items: stretch; /* Étire les éléments verticalement */
 }
 
 /* Boutons projets */
 .project-button, .projects-grid a {
     width: 100%;
-    min-height: 220px; /* Hauteur uniforme */
+    height: 300px; /* Hauteur fixe pour tous les boutons */
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: 30px;
     background-color: #161b22;
     border: 1px solid #30363d;
     border-radius: 8px;
     transition: background-color 0.3s ease;
     text-decoration: none;
     color: #c9d1d9;
+    box-sizing: border-box; /* Inclut padding et border dans la largeur/hauteur */
 }
 
 .project-button:hover {
     background-color: #1f6feb;
+    transform: translateY(-2px); /* Léger effet de survol */
 }
 
 /* Logo des projets */
 .project-logo img {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     object-fit: cover;
     border-radius: 8px;
+    margin-bottom: 15px;
 }
 
 /* Informations des projets */
 .project-title {
     font-size: 1.5rem;
-    margin: 10px 0;
+    margin: 15px 0;
+    width: 100%; /* Assure une largeur uniforme */
 }
 
 .project-description {
     font-size: 1rem;
     text-align: center;
-    max-width: 90%;
+    width: 90%; /* Largeur uniforme pour toutes les descriptions */
+    margin: 0 auto;
 }
 
 /* ===========================
