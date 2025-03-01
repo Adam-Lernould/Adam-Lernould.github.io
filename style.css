@@ -10,6 +10,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    padding-bottom: 50px; /* Empêche le chevauchement avec le footer */
 }
 
 /* Effet de fond texturé */
@@ -20,7 +21,7 @@ body::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #0d1117; /* Fond sombre principal */
+    background-color: #0d1117;
     z-index: -1;
 }
 
@@ -43,12 +44,11 @@ body::before {
 .nav-links {
     list-style: none;
     display: flex;
-    justify-content: space-around; /* Répartit les éléments uniformément */
+    justify-content: space-around;
     padding: 0;
     margin: 0;
-    width: 100%; /* <-- Cette ligne force la liste à prendre toute la largeur */
+    width: 100%;
 }
-
 
 .nav-links li a {
     color: #c9d1d9;
@@ -62,136 +62,19 @@ body::before {
     text-decoration: underline;
 }
 
-/* Menu hamburger pour les petits écrans */
-.menu-icon {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.menu-icon div {
-    width: 25px;
-    height: 3px;
-    background-color: #c9d1d9;
-    margin: 4px;
-    transition: all 0.3s ease;
-}
-
 /* ===========================
    Section principale
 =========================== */
 .section {
     display: flex;
-    flex-wrap: wrap; /* Permet le repli des blocs */
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 100px 20px 80px; /* Espace sous la navbar */
+    padding: 100px 10% 80px; /* Ajout d'un padding pour éviter les bords */
 }
 
 /* ===========================
-   Contenu gauche
-=========================== */
-.left-content {
-    max-width: 100%;
-    flex: 1;
-}
-
-.main-title {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-.subtitle {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    max-width: 80%; /* Limite la largeur */
-    text-align: left;
-}
-
-/* Liens sociaux */
-.social-links {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.social-link {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: #c9d1d9;
-    font-size: 18px;
-    gap: 8px;
-    transition: color 0.3s ease;
-}
-
-.social-link:hover {
-    color: #58a6ff;
-}
-
-.social-icon {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-}
-
-/* ===========================
-   Contenu droit (CV)
-=========================== */
-.right-content {
-    max-width: 45%;
-    text-align: center;
-    margin-bottom: 20px;
-    display: flex;             /* Active le flexbox */
-    flex-direction: column;    /* Les éléments s'empilent en colonne */
-    align-items: center;       /* Centre horizontalement l'image et le bouton */
-}
-
-
-.cv-preview {
-    width: 100%; /* L'image prend toute la largeur de son conteneur */
-    max-width: 600px; /* Limite la largeur maximale de l'image */
-    height: auto; /* Hauteur automatique */
-    border-radius: 8px;
-    margin-bottom: 20px; /* Espace entre l'image et le bouton */
-    border: 1px solid #30363d; /* Bordure subtile autour de l'image */
-}
-
-.download-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #58a6ff;
-    color: #0d1117;
-    font-size: 16px;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
-    margin-bottom: 20px;
-}
-
-.download-button:hover {
-    background-color: #1f6feb;
-    color: #fff;
-}
-
-/* ===========================
-   Footer
-=========================== */
-footer {
-    background-color: #161b22;
-    color: #c9d1d9;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed; /* Fixe le footer */
-    bottom: 0;
-    width: 100%;
-    border-top: 1px solid #30363d;
-    z-index: 100;
-}
-
-/* ===========================
-   Titres et sous-titres généraux
+   Titres et sous-titres
 =========================== */
 .page-title {
     text-align: left;
@@ -204,96 +87,34 @@ footer {
     text-align: left;
     font-size: 1.2rem;
     margin-bottom: 30px;
-    max-width: 100%;
+    max-width: 80%;
 }
 
 /* ===========================
-   Styles spécifiques à la page Projets
+   Section Projets
 =========================== */
 .projects-section {
-    padding: 100px 20px 80px;
+    padding: 50px 10%;
 }
 
-/* En-tête de la section Projets avec espace vide à gauche */
-.section-header {
-    padding-left: 20px;  /* Ajustez cette valeur pour l'espace souhaité */
-    text-align: left;
-    margin-bottom: 30px;
-}
-
-/* ===========================
-   Bouton Projet (cliquable)
-=========================== */
-.project-button {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #161b22;
-    padding: 25px 20px;
-    border: 1px solid #30363d;
-    border-radius: 8px;
-    text-align: center;
-    cursor: pointer;
-    margin-bottom: 20px;
-    transition: background-color 0.3s ease;
-    text-decoration: none;
-}
-
-.project-button:hover {
-    background-color: #1f6feb;
-}
-
-/* Logo du projet (à gauche) */
-.project-logo {
-    margin-bottom: 10px;
-}
-
-.project-logo img {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-/* Bloc d'informations du projet */
-.project-info {
-    flex: 1;
-}
-
-/* Titre du projet */
-.project-title {
-    margin: 0;
-    font-weight: bold;
-    font-size: 1.5rem;
-    color: #c9d1d9;
-}
-
-/* Description du projet */
-.project-description {
-    margin: 5px 0 0 0;
-    font-size: 1rem;
-    color: #c9d1d9;
-    font-weight: normal;
-}
-
-/* ===========================
-   Grille des projets
-=========================== */
+/* Grille des projets */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
-    gap: 20px; /* Espacement entre les projets */
+    gap: 30px; /* Espacement entre les projets */
     justify-content: center;
-    align-items: center;
+    align-items: start;
 }
 
+/* Boutons projets */
 .project-button, .projects-grid a {
-    width: 100%; /* S'assurer que les boutons remplissent leur conteneur */
+    width: 100%;
+    min-height: 220px; /* Hauteur uniforme */
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     padding: 20px;
     background-color: #161b22;
     border: 1px solid #30363d;
@@ -307,6 +128,7 @@ footer {
     background-color: #1f6feb;
 }
 
+/* Logo des projets */
 .project-logo img {
     width: 50px;
     height: 50px;
@@ -314,222 +136,47 @@ footer {
     border-radius: 8px;
 }
 
-
-/* Contact Section */
-.contact-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 100px 20px;
+/* Informations des projets */
+.project-title {
+    font-size: 1.5rem;
+    margin: 10px 0;
 }
 
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 600px;
-    background-color: #161b22;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    margin-top: 20px;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #30363d;
-    border-radius: 4px;
-    background-color: #0d1117;
-    color: #c9d1d9;
-    font-size: 16px;
-    transition: border-color 0.3s ease;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    border-color: #58a6ff;
-    outline: none;
-}
-
-.submit-button {
-    padding: 12px 20px;
-    background-color: #58a6ff;
-    color: #0d1117;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.submit-button:hover {
-    background-color: #1f6feb;
-}
-
-/* ===========================
-   Animations (Effet Fade-in)
-=========================== */
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s ease-out forwards;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* ===========================
-   CTA (Call-To-Action)
-=========================== */
-.cta-button {
-    display: inline-block;
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px 24px;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    margin-top: 10px;
-}
-
-.cta-button:hover {
-    background-color: #45a049;
-}
-
-/* ===========================
-   Compétences (Skills)
-=========================== */
-.skills-section {
+.project-description {
+    font-size: 1rem;
     text-align: center;
-    padding: 60px 20px;
-}
-
-.skills-title {
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-.skills-list {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 0;
-    flex-wrap: wrap;
-}
-
-.skills-list li {
-    background-color: #222;
-    padding: 10px 20px;
-    border-radius: 5px;
-    color: white;
-    font-weight: bold;
+    max-width: 90%;
 }
 
 /* ===========================
-   Effet interactif sur les icônes sociales
-=========================== */
-.social-links a {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    text-decoration: none;
-    color: white;
-    transition: transform 0.2s;
-}
-
-.social-links a:hover {
-    transform: scale(1.1);
-}
-
-.social-icon {
-    width: 20px;
-    height: 20px;
-}
-
-/* ===========================
-   Ajustement du Contenu Principal
-=========================== */
-.left-content {
-    max-width: 100%;
-    text-align: left;
-}
-
-.main-title {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-.subtitle {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    max-width: 100%;
-}
-
-/* ===========================
-   Media Queries
+   Responsive Design
 =========================== */
 @media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        text-align: center;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .nav-links li {
-        margin-bottom: 10px;
-    }
-
-    .menu-icon {
-        display: flex;
+    .projects-grid {
+        grid-template-columns: 1fr; /* 1 seule colonne sur mobile */
+        gap: 20px;
     }
 
     .section {
-        flex-direction: column;
-        align-items: center;
+        padding: 100px 5%; /* Réduit l'espace sur les côtés */
     }
 
-    .left-content, .right-content {
+    .page-subtitle {
         max-width: 100%;
-        text-align: center;
     }
+}
 
-    .cv-preview {
-        width: 100%;       /* L'image occupe 100% de son conteneur */
-        max-width: 300px;  /* Limite la largeur maximale à 300px */
-        height: auto;
-        border-radius: 8px;
-        margin-bottom: 20px;
-        border: 1px solid #30363d;
-    }
-    
-
-    .projects-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .project-button {
-        width: 100%;
-    }
+/* ===========================
+   Footer
+=========================== */
+footer {
+    background-color: #161b22;
+    color: #c9d1d9;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #30363d;
+    z-index: 100;
 }
