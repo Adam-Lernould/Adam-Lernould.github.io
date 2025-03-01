@@ -98,29 +98,26 @@ body::before {
 .section {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Centrer le contenu */
+    justify-content: space-between;
     align-items: flex-start;
     padding: 100px 10% 80px;
-    text-align: center;
 }
 
 /* ===========================
    Titres et sous-titres
 =========================== */
 .page-title {
-    text-align: center;
+    text-align: left; /* Alignement à gauche */
     font-weight: bold;
     font-size: 2.5rem;
     margin-bottom: 10px;
 }
 
 .page-subtitle {
-    text-align: center;
+    text-align: left; /* Alignement à gauche */
     font-size: 1.2rem;
     margin-bottom: 30px;
     max-width: 80%;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 /* ===========================
@@ -182,14 +179,14 @@ body::before {
 /* Boutons projets */
 .project-button, .projects-grid a {
     width: 100%;
-    height: 140px; /* Augmenté légèrement */
-    max-width: 520px; /* Élargissement */
+    height: 150px; /* Légèrement plus grand */
+    max-width: 650px; /* Élargi de +25% */
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: 25px; /* Plus d'espace intérieur */
     background-color: #161b22;
     border: 1px solid #30363d;
     border-radius: 10px;
