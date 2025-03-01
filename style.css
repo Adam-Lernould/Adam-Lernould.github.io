@@ -104,7 +104,8 @@ body::before {
 .subtitle {
     font-size: 1.2rem;
     margin-bottom: 20px;
-    max-width: 100%; /* Limite la largeur */
+    max-width: 80%; /* Limite la largeur */
+    text-align: left;
 }
 
 /* Liens sociaux */
