@@ -162,32 +162,32 @@ body::before {
    Section Projets
 =========================== */
 .projects-section {
-    padding: 50px 10%;
-    max-width: 1300px; /* Permet plus d'espace */
+    padding: 50px 8%;
+    max-width: 1400px; /* Largeur max augmentée */
     margin: 0 auto;
 }
 
 /* Grille des projets */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(2, 48%); /* 2 colonnes avec 48% de largeur chacune */
-    gap: 40px; /* Plus d'espace entre les projets */
+    grid-template-columns: repeat(2, 50%); /* 2 colonnes à 50% */
+    gap: 50px; /* Espacement augmenté */
     justify-content: center;
     align-items: center;
 }
 
 /* Boutons projets */
 .project-button, .projects-grid a {
-    width: 100%; /* Prend toute la largeur disponible */
-    min-width: 450px; /* Forcé pour élargir */
-    max-width: 100%; /* Permet de s'adapter */
-    height: 230px; /* Plus de hauteur */
+    width: 100%; /* Utilisation de toute la place dispo */
+    min-width: 500px; /* Encore plus large */
+    max-width: 100%; /* Adaptatif */
+    height: 180px; /* Hauteur réduite */
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 45px; /* Ajout d'espace intérieur */
+    padding: 30px; /* Espace intérieur réduit */
     background-color: #161b22;
     border: 1px solid #30363d;
     border-radius: 12px;
@@ -204,25 +204,26 @@ body::before {
 
 /* Logo des projets */
 .project-logo img {
-    width: 70px;
-    height: 70px;
+    width: 50px; /* Logo réduit */
+    height: 50px;
     object-fit: cover;
     border-radius: 8px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 /* Informations des projets */
 .project-title {
-    font-size: 1.6rem;
-    margin: 8px 0;
+    font-size: 1.3rem; /* Taille du titre réduite */
+    margin: 5px 0;
 }
 
 .project-description {
-    font-size: 1.1rem;
+    font-size: 0.9rem; /* Texte plus petit */
     text-align: center;
-    width: 90%;
+    width: 85%;
     margin: 0 auto;
 }
+
 /* ===========================
    Formulaire de contact
 =========================== */
@@ -292,10 +293,24 @@ body::before {
     }
 
     .project-button, .projects-grid a {
-        height: 210px; /* Ajustement en mobile */
+        height: 160px; /* Hauteur encore réduite pour mobile */
         min-width: 100%;
     }
+
+    .project-logo img {
+        width: 45px; /* Logo encore plus petit sur mobile */
+        height: 45px;
+    }
+
+    .project-title {
+        font-size: 1.2rem;
+    }
+
+    .project-description {
+        font-size: 0.85rem;
+    }
 }
+
 /* ===========================
    Footer
 =========================== */
