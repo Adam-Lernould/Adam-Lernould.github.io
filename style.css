@@ -163,14 +163,14 @@ body::before {
 =========================== */
 .projects-section {
     padding: 50px 8%;
-    max-width: 1400px; /* Largeur max augmentée */
+    max-width: 1500px; /* Augmente l'espace disponible */
     margin: 0 auto;
 }
 
 /* Grille des projets */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(2, 50%); /* 2 colonnes à 50% */
+    grid-template-columns: repeat(2, 48%); /* Augmenter la largeur des colonnes */
     gap: 50px; /* Espacement augmenté */
     justify-content: center;
     align-items: center;
@@ -178,16 +178,16 @@ body::before {
 
 /* Boutons projets */
 .project-button, .projects-grid a {
-    width: 100%; /* Utilisation de toute la place dispo */
-    min-width: 500px; /* Encore plus large */
-    max-width: 100%; /* Adaptatif */
-    height: 180px; /* Hauteur réduite */
+    width: 100%; /* Utiliser toute la largeur de la colonne */
+    min-width: 600px; /* Force une largeur plus grande */
+    max-width: 800px; /* Évite que ce soit trop grand */
+    height: 160px; /* Hauteur réduite */
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 30px; /* Espace intérieur réduit */
+    padding: 25px; /* Réduit l'espace intérieur */
     background-color: #161b22;
     border: 1px solid #30363d;
     border-radius: 12px;
@@ -197,6 +197,13 @@ body::before {
     box-sizing: border-box;
 }
 
+/* S'assurer que rien ne contraint la largeur */
+.project-button, .projects-grid a {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+}
+
 .project-button:hover {
     background-color: #1f6feb;
     transform: translateY(-3px);
@@ -204,23 +211,23 @@ body::before {
 
 /* Logo des projets */
 .project-logo img {
-    width: 50px; /* Logo réduit */
-    height: 50px;
+    width: 40px; /* Réduction du logo */
+    height: 40px;
     object-fit: cover;
     border-radius: 8px;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 /* Informations des projets */
 .project-title {
-    font-size: 1.3rem; /* Taille du titre réduite */
-    margin: 5px 0;
+    font-size: 1.2rem; /* Réduction du titre */
+    margin: 3px 0;
 }
 
 .project-description {
-    font-size: 0.9rem; /* Texte plus petit */
+    font-size: 0.85rem; /* Réduction du texte */
     text-align: center;
-    width: 85%;
+    width: 80%;
     margin: 0 auto;
 }
 
@@ -286,6 +293,18 @@ body::before {
 /* ===========================
    Responsive Design
 =========================== */
+@media (max-width: 1100px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 45%);
+        gap: 30px;
+    }
+
+    .project-button, .projects-grid a {
+        min-width: 500px; /* Ajustement */
+        height: 140px; /* Hauteur plus réduite */
+    }
+}
+
 @media (max-width: 900px) {
     .projects-grid {
         grid-template-columns: 1fr; /* 1 seule colonne en mobile */
@@ -293,21 +312,21 @@ body::before {
     }
 
     .project-button, .projects-grid a {
-        height: 160px; /* Hauteur encore réduite pour mobile */
         min-width: 100%;
+        height: 130px; /* Hauteur plus réduite */
     }
 
     .project-logo img {
-        width: 45px; /* Logo encore plus petit sur mobile */
-        height: 45px;
+        width: 35px;
+        height: 35px;
     }
 
     .project-title {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 
     .project-description {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
     }
 }
 
