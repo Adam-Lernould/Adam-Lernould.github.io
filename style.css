@@ -163,33 +163,34 @@ body::before {
 =========================== */
 .projects-section {
     padding: 50px 10%;
-    max-width: 1200px;
+    max-width: 1300px; /* Permet plus d'espace */
     margin: 0 auto;
 }
 
 /* Grille des projets */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
-    gap: 30px; /* Espacement ajusté */
+    grid-template-columns: repeat(2, 48%); /* 2 colonnes avec 48% de largeur chacune */
+    gap: 40px; /* Plus d'espace entre les projets */
     justify-content: center;
     align-items: center;
 }
 
 /* Boutons projets */
 .project-button, .projects-grid a {
-    width: 100%; /* Utilise toute la place disponible */
-    max-width: 900px; /* Encore plus large */
-    height: 220px; /* Ajustement de la hauteur */
+    width: 100%; /* Prend toute la largeur disponible */
+    min-width: 450px; /* Forcé pour élargir */
+    max-width: 100%; /* Permet de s'adapter */
+    height: 230px; /* Plus de hauteur */
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 40px; /* Ajout d'espace intérieur */
+    padding: 45px; /* Ajout d'espace intérieur */
     background-color: #161b22;
     border: 1px solid #30363d;
-    border-radius: 10px;
+    border-radius: 12px;
     transition: background-color 0.3s ease, transform 0.2s ease;
     text-decoration: none;
     color: #c9d1d9;
@@ -203,26 +204,25 @@ body::before {
 
 /* Logo des projets */
 .project-logo img {
-    width: 65px;
-    height: 65px;
+    width: 70px;
+    height: 70px;
     object-fit: cover;
     border-radius: 8px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 /* Informations des projets */
 .project-title {
-    font-size: 1.5rem;
-    margin: 5px 0;
+    font-size: 1.6rem;
+    margin: 8px 0;
 }
 
 .project-description {
-    font-size: 1rem;
+    font-size: 1.1rem;
     text-align: center;
     width: 90%;
     margin: 0 auto;
 }
-
 /* ===========================
    Formulaire de contact
 =========================== */
@@ -285,18 +285,17 @@ body::before {
 /* ===========================
    Responsive Design
 =========================== */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .projects-grid {
-        grid-template-columns: 1fr; /* 1 colonne en mobile */
+        grid-template-columns: 1fr; /* 1 seule colonne en mobile */
         gap: 20px;
     }
 
     .project-button, .projects-grid a {
-        height: 200px; /* Ajustement en mobile */
-        max-width: 100%;
+        height: 210px; /* Ajustement en mobile */
+        min-width: 100%;
     }
 }
-
 /* ===========================
    Footer
 =========================== */
