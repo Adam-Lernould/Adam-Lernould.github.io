@@ -170,33 +170,32 @@ body::before {
 /* Grille des projets */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px; /* ESPACEMENT REDUIT ENTRE LES BOUTONS */
+    grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
+    gap: 10px; /* ESPACEMENT MINIMISÉ ENTRE LES BOUTONS */
     justify-content: center;
     align-items: center;
 }
 
 /* Boutons projets */
 .project-button, .projects-grid a {
-    width: 100%;
-    height: 120px; /* HAUTEUR RÉDUITE */
+    width: 100%; /* Largeur max des boutons */
+    height: 110px; /* HAUTEUR LÉGÈREMENT RÉDUITE */
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 15px; /* ESPACEMENT INTÉRIEUR REDUIT */
+    padding: 10px; /* ESPACEMENT INTÉRIEUR MINIMISÉ */
     background-color: #161b22;
     border: 1px solid #30363d;
-    border-radius: 10px; /* Coins légèrement adoucis */
+    border-radius: 10px;
     transition: background-color 0.3s ease, transform 0.2s ease;
     text-decoration: none;
     color: #c9d1d9;
     box-sizing: border-box;
-    flex-grow: 1;
 }
 
-/* Appliquer une largeur forcée pour éviter les restrictions */
+/* Largeur garantie des boutons */
 .project-button, .projects-grid a {
     flex-grow: 1;
     flex-basis: auto;
@@ -209,17 +208,17 @@ body::before {
 
 /* Logo des projets */
 .project-logo img {
-    width: 50px !important; /* LOGOS PLUS GRANDS (FORCÉ) */
-    height: 50px !important;
+    width: 55px !important; /* LOGOS AGRANDIS (Forcé) */
+    height: 55px !important;
     object-fit: cover;
     border-radius: 8px;
-    margin-bottom: 3px;
+    margin-bottom: 2px;
 }
 
 /* Informations des projets */
 .project-title {
     font-size: 1rem; /* TEXTE UN PEU PLUS PETIT */
-    margin: 2px 0;
+    margin: 1px 0;
 }
 
 .project-description {
@@ -288,22 +287,23 @@ body::before {
     background-color: #1f6feb;
 }
 
+
 /* ===========================
    Responsive Design
 =========================== */
 @media (max-width: 900px) {
     .projects-grid {
         grid-template-columns: 1fr;
-        gap: 8px; /* ESPACEMENT ENCORE RÉDUIT EN MOBILE */
+        gap: 5px; /* ESPACEMENT MINIMISÉ EN MOBILE */
     }
 
     .project-button, .projects-grid a {
-        height: 110px; /* HAUTEUR ENCORE RÉDUITE EN MOBILE */
+        height: 100px; /* HAUTEUR ENCORE RÉDUITE EN MOBILE */
     }
 
     .project-logo img {
-        width: 45px !important; /* LOGOS ENCORE PLUS PETITS EN MOBILE */
-        height: 45px !important;
+        width: 50px !important; /* LOGOS ENCORE PLUS PETITS EN MOBILE */
+        height: 50px !important;
     }
 
     .project-title {
@@ -314,7 +314,6 @@ body::before {
         font-size: 0.7rem;
     }
 }
-
 /* ===========================
    Footer
 =========================== */
