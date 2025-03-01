@@ -178,9 +178,8 @@ body::before {
 
 /* Boutons projets */
 .project-button, .projects-grid a {
-    width: 100%;
+    width: 300px;
     height: 150px; /* Légèrement plus grand */
-    max-width: 650px; /* Élargi de +25% */
     text-align: center;
     display: flex;
     flex-direction: column;
