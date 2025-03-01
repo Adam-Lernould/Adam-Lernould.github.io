@@ -103,8 +103,7 @@ body::before {
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 colonnes égales */
-    grid-template-rows: repeat(2, 1fr); /* 2 lignes égales */
-    gap: 40px; /* Espacement uniforme entre les projets */
+    gap: 20px; /* Espacement entre les projets */
     justify-content: center;
     align-items: stretch; /* Étire les éléments verticalement */
 }
@@ -112,13 +111,13 @@ body::before {
 /* Boutons projets */
 .project-button, .projects-grid a {
     width: 100%;
-    height: 200px; /* Hauteur fixe pour tous les boutons */
+    height: 120px; /* Hauteur réduite de moitié */
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 30px;
+    padding: 15px;
     background-color: #161b22;
     border: 1px solid #30363d;
     border-radius: 8px;
@@ -135,24 +134,24 @@ body::before {
 
 /* Logo des projets */
 .project-logo img {
-    width: 60px;
-    height: 60px;
+    width: 40px; /* Réduction du logo */
+    height: 40px;
     object-fit: cover;
     border-radius: 8px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 /* Informations des projets */
 .project-title {
-    font-size: 1.5rem;
-    margin: 15px 0;
-    width: 100%; /* Assure une largeur uniforme */
+    font-size: 1.2rem; /* Réduction de la taille du titre */
+    margin: 5px 0;
+    width: 100%;
 }
 
 .project-description {
-    font-size: 1rem;
+    font-size: 0.9rem; /* Réduction du texte */
     text-align: center;
-    width: 90%; /* Largeur uniforme pour toutes les descriptions */
+    width: 85%; /* Largeur uniforme */
     margin: 0 auto;
 }
 
@@ -162,7 +161,7 @@ body::before {
 @media (max-width: 768px) {
     .projects-grid {
         grid-template-columns: 1fr; /* 1 seule colonne sur mobile */
-        gap: 20px;
+        gap: 15px;
     }
 
     .section {
@@ -171,6 +170,10 @@ body::before {
 
     .page-subtitle {
         max-width: 100%;
+    }
+
+    .project-button, .projects-grid a {
+        height: 150px; /* Augmente légèrement la taille sur mobile */
     }
 }
 
