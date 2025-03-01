@@ -171,7 +171,7 @@ body::before {
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px; /* Réduction de l'espace entre les boutons */
+    gap: 12px; /* ESPACEMENT REDUIT ENTRE LES BOUTONS */
     justify-content: center;
     align-items: center;
 }
@@ -179,21 +179,27 @@ body::before {
 /* Boutons projets */
 .project-button, .projects-grid a {
     width: 100%;
-    height: 130px; /* Hauteur légèrement réduite */
+    height: 120px; /* HAUTEUR RÉDUITE */
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 18px; /* Moins d’espace intérieur */
+    padding: 15px; /* ESPACEMENT INTÉRIEUR REDUIT */
     background-color: #161b22;
     border: 1px solid #30363d;
-    border-radius: 12px;
+    border-radius: 10px; /* Coins légèrement adoucis */
     transition: background-color 0.3s ease, transform 0.2s ease;
     text-decoration: none;
     color: #c9d1d9;
     box-sizing: border-box;
     flex-grow: 1;
+}
+
+/* Appliquer une largeur forcée pour éviter les restrictions */
+.project-button, .projects-grid a {
+    flex-grow: 1;
+    flex-basis: auto;
 }
 
 .project-button:hover {
@@ -203,23 +209,23 @@ body::before {
 
 /* Logo des projets */
 .project-logo img {
-    width: 45px; /* Augmenté (de 35px à 45px) */
-    height: 45px;
+    width: 50px !important; /* LOGOS PLUS GRANDS (FORCÉ) */
+    height: 50px !important;
     object-fit: cover;
     border-radius: 8px;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
 }
 
 /* Informations des projets */
 .project-title {
-    font-size: 1.1rem;
-    margin: 3px 0;
+    font-size: 1rem; /* TEXTE UN PEU PLUS PETIT */
+    margin: 2px 0;
 }
 
 .project-description {
-    font-size: 0.8rem;
+    font-size: 0.75rem; /* TEXTE RÉDUIT */
     text-align: center;
-    width: 85%;
+    width: 80%;
     margin: 0 auto;
 }
 
@@ -288,24 +294,24 @@ body::before {
 @media (max-width: 900px) {
     .projects-grid {
         grid-template-columns: 1fr;
-        gap: 10px;
+        gap: 8px; /* ESPACEMENT ENCORE RÉDUIT EN MOBILE */
     }
 
     .project-button, .projects-grid a {
-        height: 120px;
+        height: 110px; /* HAUTEUR ENCORE RÉDUITE EN MOBILE */
     }
 
     .project-logo img {
-        width: 40px;
-        height: 40px;
+        width: 45px !important; /* LOGOS ENCORE PLUS PETITS EN MOBILE */
+        height: 45px !important;
     }
 
     .project-title {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     .project-description {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
     }
 }
 
