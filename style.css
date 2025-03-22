@@ -135,12 +135,13 @@ body::before {
 
 .cv-preview {
     width: 100%;
-    max-width: 500px;
+    max-width: 500px;  /* limite la largeur du CV */
     height: auto;
     border-radius: 8px;
     margin-bottom: 20px;
     border: 1px solid #30363d;
-}
+  }
+  
 
 .download-button {
     padding: 10px 20px;
@@ -157,10 +158,11 @@ body::before {
     background-color: #1f6feb;
     color: #fff;
 }
+
 .cv-toggle-button {
     padding: 10px 20px;
-    background-color: #58a6ff;
-    color: #0d1117;
+    background-color: #58a6ff;  /* même couleur que .download-button */
+    color: #0d1117;             /* texte sombre sur fond clair */
     font-size: 16px;
     font-weight: bold;
     border: none;
@@ -168,11 +170,14 @@ body::before {
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-bottom: 20px;
-}
-
-.cv-toggle-button:hover {
-    background-color: #1f6feb;
-}
+    text-align: center;
+  }
+  
+  .cv-toggle-button:hover {
+    background-color: #1f6feb;  /* survol */
+    color: #fff;
+  }
+  
 
 /* ===========================
    Section Projets
@@ -345,3 +350,14 @@ footer {
     border-top: 1px solid #30363d;
     z-index: 100;
 }
+
+/* Section "À propos" en une seule colonne centrée */
+.about-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;       /* centre horizontalement */
+    padding: 100px 10% 80px;   /* marge haute pour ne pas être caché par la navbar */
+    max-width: 800px;          /* limite la largeur du contenu */
+    margin: 0 auto;            /* centre la section */
+  }
+  

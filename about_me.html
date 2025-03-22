@@ -1,84 +1,85 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>À propos de moi - Adam Lernould</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>À propos de moi - Adam Lernould</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navbar -->
-    <header>
-        <nav class="navbar">
-            <div class="menu-icon">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="about_me.html" class="active">À propos de moi</a></li>
-                <li><a href="projects.html">Projets</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="menu-icon">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="about_me.html" class="active">À propos de moi</a></li>
+        <li><a href="projects.html">Projets</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- Main Content -->
-    <main>
-        <section class="section">
-            <!-- Left content (Title, subtitle, and social links) -->
-            <div class="left-content">
-                <h1 class="main-title">À propos de moi</h1>
-                <p class="subtitle">
-                    Je suis Adam Lernould, étudiant en 2ème année de BUT Réseaux et Télécommunications à l'IUT de Béthune. Passionné par la cybersécurité et les réseaux informatiques, j'aime explorer de nouvelles technologies et relever des défis techniques.
-                </p>
-                <p>
-                    Récemment, je me suis mis à suivre des cours de cybersécurité en ligne sur Hack The Box, ce qui m'a permis d'acquérir des compétences pratiques et de participer à des challenges et des CTF (Capture The Flag) sur ROOTME. Ces expériences m'ont aidé à développer une compréhension plus approfondie des vulnérabilités et des techniques de protection des systèmes informatiques.
-                </p>
-                <p>
-                    En dehors de mes études, j'aime faire du vélo pour me détendre. J'apprécie également les jeux vidéo stratégiques qui me permettent de développer des compétences en résolution de problèmes et en planification.
-                </p>
-            </div>
+  <!-- Main Content -->
+  <main>
+    <section class="about-section">
+      <h1 class="main-title">À propos de moi</h1>
+      <p class="subtitle">
+        Je suis Adam Lernould, étudiant en 2ème année de BUT Réseaux et Télécommunications à l'IUT de Béthune. 
+        Passionné par la cybersécurité et les réseaux informatiques, j'aime explorer de nouvelles technologies 
+        et relever des défis techniques.
+      </p>
+      <p>
+        Récemment, je me suis mis à suivre des cours de cybersécurité en ligne sur Hack The Box, 
+        ce qui m'a permis d'acquérir des compétences pratiques et de participer à des challenges et des CTF 
+        (Capture The Flag) sur ROOTME. 
+      </p>
+      <p>
+        En dehors de mes études, j'aime faire du vélo pour me détendre. 
+        J'apprécie également les jeux vidéo stratégiques qui me permettent de développer 
+        des compétences en résolution de problèmes et en planification.
+      </p>
 
-            <!-- Right content (Bouton pour dérouler le CV, CV en PNG et bouton de téléchargement) -->
-<div class="right-content">
-    <button id="toggle-cv" class="cv-toggle-button">Afficher mon CV</button>
-    <div id="cv-container" style="display: none;">
-         <img src="images/CV - Adam Lernould.png" alt="Aperçu de mon CV" class="cv-preview">
-         <a href="images/CV - Adam Lernould.png" download class="download-button">Télécharger mon CV</a>
-    </div>
-</div>
+      <!-- Bouton pour dérouler le CV et conteneur du CV -->
+      <button id="toggle-cv" class="cv-toggle-button">Afficher mon CV</button>
+      <div id="cv-container" style="display: none;">
+        <img src="images/CV - Adam Lernould.png" alt="Aperçu de mon CV" class="cv-preview">
+        <a href="images/CV - Adam Lernould.pdf" download class="download-button">
+          Télécharger mon CV
+        </a>
+      </div>
+    </section>
+  </main>
 
-        </section>
-    </main>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Adam Lernould. Tous droits réservés.</p>
+  </footer>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Adam Lernould. Tous droits réservés.</p>
-    </footer>
+  <script>
+    // Gestion de l'affichage/masquage du CV
+    document.getElementById('toggle-cv').addEventListener('click', function() {
+      const cvContainer = document.getElementById('cv-container');
+      if (cvContainer.style.display === "none" || cvContainer.style.display === "") {
+        cvContainer.style.display = "block";
+        this.textContent = "Masquer mon CV";
+      } else {
+        cvContainer.style.display = "none";
+        this.textContent = "Afficher mon CV";
+      }
+    });
 
-    <script>
-        const menuIcon = document.querySelector('.menu-icon');
-        const navLinks = document.querySelector('.nav-links');
-
-        menuIcon.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-    </script>
-    <script>
-        document.getElementById('toggle-cv').addEventListener('click', function() {
-            var cvContainer = document.getElementById('cv-container');
-            if (cvContainer.style.display === "none" || cvContainer.style.display === "") {
-                cvContainer.style.display = "block";
-                this.textContent = "Masquer mon CV";
-            } else {
-                cvContainer.style.display = "none";
-                this.textContent = "Afficher mon CV";
-            }
-        });
-        </script>
-        
+    // Gestion du menu hamburger (si nécessaire)
+    const menuIcon = document.querySelector('.menu-icon');
+    const navLinks = document.querySelector('.nav-links');
+    menuIcon.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
