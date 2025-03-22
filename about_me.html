@@ -67,5 +67,18 @@
             navLinks.classList.toggle('active');
         });
     </script>
+    <script>
+        document.getElementById('toggle-cv').addEventListener('click', function() {
+            var cvContainer = document.getElementById('cv-container');
+            if (cvContainer.style.display === "none" || cvContainer.style.display === "") {
+                cvContainer.style.display = "block";
+                this.textContent = "Masquer mon CV";
+            } else {
+                cvContainer.style.display = "none";
+                this.textContent = "Afficher mon CV";
+            }
+        });
+        </script>
+        
 </body>
 </html>
