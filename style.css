@@ -93,7 +93,7 @@ body::before {
 }
 
 /* ===========================
-   Section principale
+   Section principale (utilisé par d'autres pages)
 =========================== */
 .section {
     display: flex;
@@ -107,14 +107,14 @@ body::before {
    Titres et sous-titres
 =========================== */
 .page-title {
-    text-align: left; /* Alignement à gauche */
+    text-align: left;
     font-weight: bold;
     font-size: 2.5rem;
     margin-bottom: 10px;
 }
 
 .page-subtitle {
-    text-align: left; /* Alignement à gauche */
+    text-align: left;
     font-size: 1.2rem;
     margin-bottom: 30px;
     max-width: 80%;
@@ -135,14 +135,19 @@ body::before {
 
 .cv-preview {
     width: 100%;
-    max-width: 500px;  /* limite la largeur du CV */
+    max-width: 500px;
     height: auto;
     border-radius: 8px;
     margin-bottom: 20px;
     border: 1px solid #30363d;
-  }
-  
 
+    /* Centrage horizontal */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Bouton de téléchargement du CV */
 .download-button {
     padding: 10px 20px;
     background-color: #58a6ff;
@@ -159,26 +164,6 @@ body::before {
     color: #fff;
 }
 
-.cv-toggle-button {
-    padding: 10px 20px;
-    background-color: #58a6ff;  /* même couleur que .download-button */
-    color: #0d1117;             /* texte sombre sur fond clair */
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  .cv-toggle-button:hover {
-    background-color: #1f6feb;  /* survol */
-    color: #fff;
-  }
-  
-
 /* ===========================
    Section Projets
 =========================== */
@@ -192,7 +177,7 @@ body::before {
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px; /* ESPACEMENT REDUIT ENTRE LES BOUTONS */
+    gap: 12px; /* Espacement réduit entre les boutons */
     justify-content: center;
     align-items: center;
 }
@@ -200,13 +185,13 @@ body::before {
 /* Boutons projets */
 .project-button, .projects-grid a {
     width: 100%;
-    height: 120px; /* HAUTEUR RÉDUITE */
+    height: 120px; /* Hauteur réduite */
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 15px; /* ESPACEMENT INTÉRIEUR REDUIT */
+    padding: 15px; /* Espacement intérieur réduit */
     background-color: #161b22;
     border: 1px solid #30363d;
     border-radius: 10px; /* Coins légèrement adoucis */
@@ -214,11 +199,6 @@ body::before {
     text-decoration: none;
     color: #c9d1d9;
     box-sizing: border-box;
-    flex-grow: 1;
-}
-
-/* Appliquer une largeur forcée pour éviter les restrictions */
-.project-button, .projects-grid a {
     flex-grow: 1;
     flex-basis: auto;
 }
@@ -230,7 +210,7 @@ body::before {
 
 /* Logo des projets */
 .project-logo img {
-    width: 50px !important; /* LOGOS PLUS GRANDS (FORCÉ) */
+    width: 50px !important; /* Logos plus grands (forcé) */
     height: 50px !important;
     object-fit: cover;
     border-radius: 8px;
@@ -239,12 +219,12 @@ body::before {
 
 /* Informations des projets */
 .project-title {
-    font-size: 1.1rem; /* TEXTE UN PEU PLUS PETIT */
+    font-size: 1.1rem; /* Texte un peu plus petit */
     margin: 2px 0;
 }
 
 .project-description {
-    font-size: 0.85rem; /* TEXTE RÉDUIT */
+    font-size: 0.85rem; /* Texte réduit */
     text-align: center;
     width: 80%;
     margin: 0 auto;
@@ -315,15 +295,15 @@ body::before {
 @media (max-width: 900px) {
     .projects-grid {
         grid-template-columns: 1fr;
-        gap: 8px; /* ESPACEMENT ENCORE RÉDUIT EN MOBILE */
+        gap: 8px; /* Espacement encore réduit en mobile */
     }
 
     .project-button, .projects-grid a {
-        height: 110px; /* HAUTEUR ENCORE RÉDUITE EN MOBILE */
+        height: 110px; /* Hauteur encore réduite en mobile */
     }
 
     .project-logo img {
-        width: 45px !important; /* LOGOS ENCORE PLUS PETITS EN MOBILE */
+        width: 45px !important; /* Logos encore plus petits en mobile */
         height: 45px !important;
     }
 
@@ -351,13 +331,38 @@ footer {
     z-index: 100;
 }
 
-/* Section "À propos" en une seule colonne centrée */
+/* ===========================
+   About Section (about_me.html)
+=========================== */
 .about-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;       /* centre horizontalement */
-    padding: 100px 10% 80px;   /* marge haute pour ne pas être caché par la navbar */
-    max-width: 800px;          /* limite la largeur du contenu */
-    margin: 0 auto;            /* centre la section */
-  }
-  
+    margin: 120px auto 80px auto; /* Espace en haut pour la navbar fixe, espace en bas avant le footer */
+    padding: 0 10%;               /* "Air" à gauche et à droite */
+    max-width: 900px;            /* Limite la largeur pour éviter trop de longueur sur grand écran */
+    text-align: left;
+}
+
+/* Bouton "Afficher mon CV" (même thème que le site) */
+.cv-toggle-button {
+    display: block;
+    margin: 20px auto;       /* Centre horizontalement le bouton */
+    padding: 10px 20px;
+    background-color: #58a6ff;
+    color: #0d1117;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cv-toggle-button:hover {
+    background-color: #1f6feb;
+    color: #fff;
+}
+
+/* Conteneur du CV (affiché après clic) */
+#cv-container {
+    margin-top: 20px;
+    text-align: center; /* Centre le texte et les éléments à l'intérieur */
+}
