@@ -42,11 +42,15 @@
                 </p>
             </div>
 
-            <!-- Right content (Image CV and download button) -->
-            <div class="right-content">
-                <img src="images/CV - Adam Lernould.png" alt="Aperçu de mon CV" class="cv-preview">
-                <a href="images/CV - Adam Lernould.pdf" download class="download-button">Télécharger mon CV</a>
-            </div>
+            <!-- Right content (Bouton pour dérouler le CV, CV en PNG et bouton de téléchargement) -->
+<div class="right-content">
+    <button id="toggle-cv" class="cv-toggle-button">Afficher mon CV</button>
+    <div id="cv-container" style="display: none;">
+         <img src="images/CV - Adam Lernould.png" alt="Aperçu de mon CV" class="cv-preview">
+         <a href="images/CV - Adam Lernould.png" download class="download-button">Télécharger mon CV</a>
+    </div>
+</div>
+
         </section>
     </main>
 
