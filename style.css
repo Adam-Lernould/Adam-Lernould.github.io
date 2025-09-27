@@ -294,7 +294,7 @@ body::before {
    Section Rapport de Stage (grille)
 =========================== */
 .stage-section {
-    
+    margin: 40px auto;
     padding: 0 5%;
     max-width: 1200px;
 }
