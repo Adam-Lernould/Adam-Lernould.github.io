@@ -295,47 +295,53 @@ body::before {
 =========================== */
 .stage-section {
     margin: 60px auto;
-    padding: 20px;
-    max-width: 900px;
-    text-align: center;
+    padding: 0 5%;
+    max-width: 1000px;
+}
+
+.stage-card {
+    display: block;
+    padding: 25px;
     background-color: #161b22;
     border: 1px solid #30363d;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    color: #c9d1d9;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.stage-card:hover {
+    background-color: #1f6feb;
+    transform: translateY(-5px);
+    color: #fff;
 }
 
 .stage-title {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     color: #58a6ff;
 }
 
-.stage-button {
-    display: inline-block;
-    padding: 12px 25px;
-    background-color: #58a6ff;
-    color: #0d1117;
-    font-size: 16px;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.stage-button:hover {
-    background-color: #1f6feb;
-    color: #fff;
-    transform: translateY(-3px);
-}
-
 .stage-description {
-    margin-top: 20px;
     font-size: 1rem;
-    line-height: 1.6;
-    text-align: justify;
-    color: #c9d1d9;
+    line-height: 1.5;
+    margin-bottom: 20px;
 }
+
+.stage-link {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #58a6ff;
+    margin-top: 10px;
+}
+
+.stage-card:hover .stage-link {
+    color: #fff;
+}
+
 
 
 /* ===========================
