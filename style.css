@@ -203,27 +203,6 @@ body::before {
     flex-basis: auto;
 }
 
-/* Boutons projets */
-.stage-button, .projects-grid a {
-    width: 200%;
-    height: 200px; /* Hauteur réduite */
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 15px; /* Espacement intérieur réduit */
-    background-color: #161b22;
-    border: 1px solid #30363d;
-    border-radius: 10px; /* Coins légèrement adoucis */
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    text-decoration: none;
-    color: #c9d1d9;
-    box-sizing: border-box;
-    flex-grow: 1;
-    flex-basis: auto;
-}
-
 .project-button:hover {
     background-color: #1f6feb;
     transform: translateY(-3px);
