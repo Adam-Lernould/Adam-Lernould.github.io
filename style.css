@@ -318,6 +318,12 @@ body::before {
     font-size: 0.8rem; /* plus petit */
 }
 
+.stage-logo img {
+    width: 25px;  /* taille réduite */
+    height: 25px;
+    object-fit: contain;
+    margin-bottom: 6px;
+} 
 .stage-title {
     font-size: 1rem; /* réduit */
     margin-bottom: 8px;
