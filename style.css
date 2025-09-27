@@ -185,7 +185,7 @@ body::before {
 /* Boutons projets */
 .project-button, .projects-grid a {
     width: 100%;
-    min-height: 120px; /* plutôt que height fixe */
+    height: 120px; 
     text-align: center;
     display: flex;
     flex-direction: column;
