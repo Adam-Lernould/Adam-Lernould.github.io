@@ -295,8 +295,8 @@ body::before {
 =========================== */
 .stage-section {
     margin: 40px auto;
-    padding: 0 5%;
     max-width: 1200px;
+    padding: 0; /* supprime le padding latéral pour coller à gauche */
 }
 
 .stage-grid {
@@ -315,7 +315,7 @@ body::before {
     color: #c9d1d9;
     transition: background-color 0.3s ease, transform 0.2s ease;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    font-size: 0.9rem; /* texte plus petit */
+    font-size: 0.9rem;
 }
 
 .stage-card:hover {
@@ -324,30 +324,46 @@ body::before {
     color: #fff;
 }
 
+/* Logo en haut des cartes */
+.stage-logo {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.stage-logo img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    border-radius: 6px;
+}
+
 .stage-title {
-    font-size: 1.1rem; /* plus petit */
+    font-size: 1.1rem;
     font-weight: bold;
     margin-bottom: 10px;
     color: #58a6ff;
+    text-align: center;
 }
 
 .stage-description {
-    font-size: 0.85rem; /* plus compact */
+    font-size: 0.85rem;
     line-height: 1.4;
     margin-bottom: 15px;
+    text-align: justify;
 }
 
 .stage-link {
-    display: inline-block;
+    display: block;
     font-weight: bold;
     font-size: 0.9rem;
     color: #58a6ff;
+    text-align: center;
+    margin-top: 10px;
 }
 
 .stage-card:hover .stage-link {
     color: #fff;
 }
-
 
 
 /* ===========================
