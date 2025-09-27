@@ -296,13 +296,15 @@ body::before {
 .stage-section {
     padding: 50px 5%;
     max-width: 1400px;
-    margin: 0 auto;
+    ;
 }
 
 .stage-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px; /* espace entre les cartes */
+    gap: 12px; /* Espacement réduit entre les boutons */
+    justify-content: center;
+    align-items: center;
 }
 
 .stage-card {
@@ -328,6 +330,7 @@ body::before {
 .stage-logo {
     text-align: center;
     margin-bottom: 10px;
+    
 }
 
 .stage-logo img {
