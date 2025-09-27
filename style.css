@@ -176,9 +176,10 @@ body::before {
 /* Grille des projets */
 .projects-grid {
     display: grid;
-    grid-template-columns: 1fr; /* 1 bouton par ligne */
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px; /* Espacement réduit entre les boutons */
     justify-content: center;
+    align-items: center;
 }
 
 /* Boutons projets */
@@ -292,34 +293,20 @@ body::before {
 /* ===========================
    Responsive Design
 =========================== */
-@media (min-width: 1000px) {
+@media (max-width: 900px) {
     .projects-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 boutons côte à côte en grand écran */
+        grid-template-columns: 1fr;
+        gap: 8px; /* Espacement encore réduit en mobile */
     }
-}
 
-.project-button, .projects-grid a {
-    width: 100%;
-    min-height: 100px; /* un peu moins haut */
-    text-align: left; /* pour mieux lire du texte long */
-    display: flex;
-    flex-direction: row; /* logo à gauche, texte à droite */
-    align-items: center;
-    padding: 20px;
-    background-color: #161b22;
-    border: 1px solid #30363d;
-    border-radius: 10px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    text-decoration: none;
-    color: #c9d1d9;
-    box-sizing: border-box;
-}
+    .project-button, .projects-grid a {
+        height: 110px; /* Hauteur encore réduite en mobile */
+    }
 
-.project-logo img {
-    width: 60px;
-    height: 60px;
-    margin-right: 15px;
-}
+    .project-logo img {
+        width: 45px !important; /* Logos encore plus petits en mobile */
+        height: 45px !important;
+    }
 
     .project-title {
         font-size: 0.9rem;
@@ -328,6 +315,7 @@ body::before {
     .project-description {
         font-size: 0.7rem;
     }
+}
 
 /* ===========================
    Footer
