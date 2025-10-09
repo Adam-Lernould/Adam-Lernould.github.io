@@ -438,6 +438,200 @@ body::before {
     color: #fff;
 }
 
+/* ===========================
+   NOUVEAUX STYLES - PAGE D'ACCUEIL
+=========================== */
+
+/* --- Section Héros --- */
+.hero-section {
+    text-align: center;
+    padding: 120px 10%;
+}
+
+.main-title {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: 1.3rem;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    line-height: 1.6;
+}
+
+/* --- Boutons d'appel à l'action --- */
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.cta-button {
+    padding: 12px 25px;
+    background-color: #58a6ff;
+    color: #0d1117;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    border: 2px solid #58a6ff;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #1f6feb;
+    border-color: #1f6feb;
+    color: #fff;
+}
+
+.cta-button.secondary {
+    background-color: transparent;
+    color: #58a6ff;
+}
+
+.cta-button.secondary:hover {
+    background-color: #58a6ff;
+    color: #0d1117;
+}
+
+
+/* --- Sections de contenu générales --- */
+.content-section {
+    padding: 60px 10%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    color: #58a6ff;
+}
+
+/* --- Grille de compétences --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.skill-category {
+    background-color: #161b22;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #30363d;
+}
+
+.skill-category h3 {
+    margin-top: 0;
+    color: #c9d1d9;
+    border-bottom: 2px solid #58a6ff;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.skill-category p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #8b949e;
+}
+
+/* --- Projets à la une --- */
+.featured-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.project-card {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.project-card-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.project-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.project-card p {
+    font-size: 0.9rem;
+    color: #8b949e;
+    min-height: 50px; /* Pour aligner les boutons */
+}
+
+.project-card-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 16px;
+    text-decoration: none;
+    background-color: transparent;
+    border: 1px solid #58a6ff;
+    color: #58a6ff;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.project-card-button:hover {
+    background-color: #58a6ff;
+    color: #0d1117;
+}
+
+/* --- Liste d'expériences --- */
+.experience-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.experience-item {
+    background-color: #161b22;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #58a6ff;
+    margin-bottom: 20px;
+}
+
+.experience-item h3 {
+    margin: 0 0 5px 0;
+}
+
+.experience-details {
+    font-style: italic;
+    color: #8b949e;
+    margin-bottom: 10px;
+}
+
+
+/* --- Responsive pour les nouvelles sections --- */
+@media (max-width: 900px) {
+    .main-title {
+        font-size: 2.2rem;
+    }
+
+    .skills-grid, .featured-projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 
 /* ===========================
    Responsive Design
