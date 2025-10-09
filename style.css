@@ -152,6 +152,9 @@ body::before {
 
 /* Bouton de téléchargement du CV */
 .download-button {
+    display: block; /* <-- Force le bouton à prendre sa propre ligne */
+    width: fit-content; /* <-- Ajuste sa largeur au contenu */
+    margin: 20px auto 0 auto; /* <-- Ajoute 20px d'espace au-dessus et le centre */
     padding: 10px 20px;
     background-color: #58a6ff;
     color: #0d1117;
