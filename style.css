@@ -622,16 +622,7 @@ body::before {
 }
 
 
-/* --- Responsive pour les nouvelles sections --- */
-@media (max-width: 900px) {
-    .main-title {
-        font-size: 2.2rem;
-    }
 
-    .skills-grid, .featured-projects-grid {
-        grid-template-columns: 1fr;
-    }
-}
 
 /* ===========================
    NOUVEAUX STYLES - PAGE "À PROPOS"
@@ -694,39 +685,48 @@ body::before {
    Responsive Design
 =========================== */
 @media (max-width: 900px) {
+    /* --- Styles généraux --- */
+    .main-title {
+        font-size: 2.2rem;
+    }
+
+    /* --- Page d'accueil --- */
+    .skills-grid, .featured-projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* --- Page "À propos" --- */
+    .about-grid {
+        grid-template-columns: 1fr; /* Passe à une seule colonne sur mobile */
+    }
+    .about-sidebar {
+        position: static; /* Annule le sticky sur mobile */
+        margin-top: 40px;
+    }
+
+    /* --- Page Projets --- */
     .projects-grid {
         grid-template-columns: 1fr;
         gap: 8px; /* Espacement encore réduit en mobile */
     }
-    .stage-grid {
-        grid-template-columns: 1fr;
+    .project-button {
+        /* Tu avais une hauteur fixe ici, mais "auto" est mieux avec l'accordéon */
+        /* height: 120px; */ 
     }
-
-    .project-button, .projects-grid a {
-        height: 120px; /* Hauteur encore réduite en mobile */
-    }
-
     .project-logo img {
         width: 55px; /* Logos encore plus petits en mobile */
         height: 55px;
     }
-
     .project-title {
         font-size: 0.9rem;
     }
-
     .project-description {
         font-size: 0.7rem;
     }
-}
 
-    .about-grid {
-        grid-template-columns: 1fr; /* Passe à une seule colonne sur mobile */
-    }
-
-    .about-sidebar {
-        position: static; /* Annule le sticky sur mobile */
-        margin-top: 40px;
+    /* --- Section Stage --- */
+    .stage-grid {
+        grid-template-columns: 1fr;
     }
 }
 
