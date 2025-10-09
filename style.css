@@ -211,8 +211,8 @@ body::before {
 
 /* Logo des projets */
 .project-logo img {
-    width: 50px !important; /* Logos plus grands (forcé) */
-    height: 50px !important;
+    width: 60px !important; /* Logos plus grands (forcé) */
+    height: 60px !important;
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 3px;
@@ -395,8 +395,8 @@ body::before {
     }
 
     .project-logo img {
-        width: 45px !important; /* Logos encore plus petits en mobile */
-        height: 45px !important;
+        width: 55px !important; /* Logos encore plus petits en mobile */
+        height: 55px !important;
     }
 
     .project-title {
