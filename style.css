@@ -444,6 +444,7 @@ body::before {
 
 /* --- Section Héros --- */
 .hero-section {
+    display: block; 
     text-align: center;
     padding: 120px 10%;
 }
