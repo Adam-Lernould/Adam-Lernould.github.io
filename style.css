@@ -394,7 +394,6 @@ body::before {
 }
 
 .stage-card:hover {
-    background-color: #1f6feb;
     transform: translateY(-4px);
     color: #fff;
 }
@@ -437,7 +436,7 @@ body::before {
     font-size: 0.85rem; /* Un peu plus petit pour un look discret */
     color: #58a6ff;
     text-align: center;
-    margin-top: 15px; /* Un peu plus d'espace au-dessus */
+    margin-top: 10px; /* Un peu plus d'espace au-dessus */
     
     /* --- C'est ici qu'on crée la "case" --- */
     border: 1px solid #58a6ff; /* La bordure bleue */
