@@ -711,7 +711,7 @@ body::before {
     }
     .project-button {
         /* Tu avais une hauteur fixe ici, mais "auto" est mieux avec l'accordéon */
-        /* height: 120px; */ 
+        height: auto;
     }
     .project-logo img {
         width: 55px; /* Logos encore plus petits en mobile */
