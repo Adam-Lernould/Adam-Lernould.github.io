@@ -8,7 +8,6 @@
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!-- Navbar -->
     <header>
         <nav class="navbar">
             <div class="menu-icon">
@@ -25,7 +24,6 @@
         </nav>
     </header>
 
-    <!-- Main Content -->
     <main>
         <section class="projects-section">
             <div class="section-header">
@@ -35,98 +33,203 @@
                 </p>
             </div>
 
-            <!-- Grille des projets -->
             <div class="projects-grid">
-                <!-- Projet 1 -->
-                <button class="project-button" onclick="window.location.href='https://github.com/Adam-Lernould/SAE3.02'">
-                    <div class="project-logo">
-                        <img src="images/python.svg" alt="Logo Python">
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">SAE3.02 - Développer des applications communicantes</h3>
-                        <p class="project-description">
-                            Un serveur offre des services de recherche de la présence de mots donnés par des clients dans des documents texte (txt), HTML, PDF et Excel (xlsx).
-                        </p>
-                    </div>
-                </button>
 
-                <!-- Projet 2 -->
-                <a href="Archive-SAE3.03.zip" download class="project-button">
-                    <div class="project-logo">
-                        <img src="images/pepiniere.PNG" alt="Logo Projet 2">
+                <div class="project-item">
+                    <button class="project-button">
+                        <div class="project-logo">
+                            <img src="images/python.svg" alt="Logo Python">
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">SAE3.02 - Développer des applications communicantes</h3>
+                            <p class="project-description">
+                                Un serveur offre des services de recherche de la présence de mots dans divers documents.
+                            </p>
+                        </div>
+                    </button>
+                    <div class="project-details">
+                        <h4>Description détaillée</h4>
+                        <p>Ce projet d'application client-serveur a été développé en Python. Le serveur est capable de traiter des requêtes de clients multiples simultanément pour rechercher des mots-clés dans une bibliothèque de documents de formats variés (txt, HTML, PDF, xlsx), démontrant une gestion robuste des entrées/sorties et du parsing de fichiers.</p>
+                        <h4>Compétences acquises</h4>
+                        <ul>
+                            <li>Programmation réseau (Sockets)</li>
+                            <li>Développement Client-Serveur</li>
+                            <li>Parsing de fichiers multiples (PDF, Excel)</li>
+                            <li>Programmation concurrente (Threading)</li>
+                        </ul>
+                        <a href="https://github.com/Adam-Lernould/SAE3.02" target="_blank" class="action-button">Voir le code source</a>
                     </div>
-                    <div class="project-info">
-                        <h3 class="project-title">SAE3.03 : Concevoir un réseau informatique multi-sites</h3>
-                        <p class="project-description">
-                            Ce projet vise à redéployer l'infrastructure informatique d'une entreprise en expansion.
-                        </p>
-                    </div>
-                </a>
+                </div>
 
-                <!-- Projet 3 -->
-                <button class="project-button" onclick="window.location.href='https://github.com/Adam-Lernould/Network_Scanner'">
-                    <div class="project-logo">
-                        <img src="images/Network_scanner.png" alt="Logo Projet 3">
+                <div class="project-item">
+                    <button class="project-button">
+                        <div class="project-logo">
+                            <img src="images/pepiniere.PNG" alt="Logo Projet 2">
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">SAE3.03 : Concevoir un réseau informatique multi-sites</h3>
+                            <p class="project-description">
+                                Ce projet vise à redéployer l'infrastructure informatique d'une entreprise en expansion.
+                            </p>
+                        </div>
+                    </button>
+                    <div class="project-details">
+                        <h4>Description détaillée</h4>
+                        <p>Simulation du redéploiement complet de l'infrastructure réseau pour une entreprise ouvrant un nouveau site. Le projet incluait l'adressage IP, la configuration des VLANs, le routage inter-sites (OSPF), et la mise en place de listes de contrôle d'accès (ACL) pour la sécurité, le tout réalisé sur Cisco Packet Tracer.</p>
+                        <h4>Compétences acquises</h4>
+                        <ul>
+                            <li>Architecture réseau (multi-sites)</li>
+                            <li>Routage dynamique (OSPF)</li>
+                            <li>Segmentation réseau (VLANs)</li>
+                            <li>Simulation réseau (Cisco Packet Tracer)</li>
+                        </ul>
+                        <a href="Archive-SAE3.03.zip" download class="action-button">Télécharger l'archive du projet</a>
                     </div>
-                    <div class="project-info">
-                        <h3 class="project-title">Network Scanner</h3>
-                        <p class="project-description">
-                            Un outil d'analyse de réseau permettant d'identifier les failles, les hôtes et services actifs.
-                        </p>
-                    </div>
-                </button>
+                </div>
 
-                <!-- Projet 4 -->
-                <a href="Write-Up - SAE4.Cyber.01.pdf" target="_blank" class="project-button">
-                    <div class="project-logo">
-                        <img src="images/SAE4.Cyber.01.png" alt="Logo Projet 4">
+                <div class="project-item">
+                    <button class="project-button">
+                        <div class="project-logo">
+                            <img src="images/Network_scanner.png" alt="Logo Projet 3">
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Network Scanner</h3>
+                            <p class="project-description">
+                                Un outil d'analyse de réseau permettant d'identifier les failles, les hôtes et services actifs.
+                            </p>
+                        </div>
+                    </button>
+                    <div class="project-details">
+                        <h4>Description détaillée</h4>
+                        <p>Développement d'un scanner de réseau en Python utilisant des bibliothèques comme Scapy et Nmap. L'outil permet de découvrir les hôtes actifs sur un réseau, de scanner les ports ouverts, et d'identifier les services en cours d'exécution, fournissant une base pour l'audit de sécurité.</p>
+                        <h4>Compétences acquises</h4>
+                        <ul>
+                            <li>Scripting Python pour la cybersécurité</li>
+                            <li>Analyse de paquets (Scapy)</li>
+                            <li>Techniques de scan réseau</li>
+                            <li>Automatisation de tâches de sécurité</li>
+                        </ul>
+                        <a href="https://github.com/Adam-Lernould/Network_Scanner" target="_blank" class="action-button">Voir sur GitHub</a>
                     </div>
-                    <div class="project-info">
-                        <h3 class="project-title">SAE4.Cyber.01</h3>
-                        <p class="project-description">
-                            Mise en place d’un réseau inter-sites structuré avec un tunnel IPSEC GRE qui sécurise la liaison inter-site. Utilisations de DNSSEC, Web, test et recommendations ANSSI.
-                        </p>
-                    </div>
-                </a>
+                </div>
 
-                <a href="" target="_blank" class="project-button">
-                    <div class="project-logo">
-                        <img src="images/SAE_Proxmox_logo.png" alt="Logo Projet 5">
+                <div class="project-item">
+                    <button class="project-button">
+                        <div class="project-logo">
+                            <img src="images/SAE4.Cyber.01.png" alt="Logo Projet 4">
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">SAE4.Cyber.01</h3>
+                            <p class="project-description">
+                                Mise en place d’un réseau inter-sites sécurisé avec un tunnel IPSEC GRE et DNSSEC.
+                            </p>
+                        </div>
+                    </button>
+                    <div class="project-details">
+                        <h4>Description détaillée</h4>
+                        <p>Configuration avancée de la sécurité d'un réseau multi-sites. Le projet a consisté à établir un tunnel VPN IPSEC sur GRE pour chiffrer les communications entre les sites, et à déployer DNSSEC pour protéger le service DNS contre les attaques de type "man-in-the-middle". L'ensemble a été validé en suivant les recommandations de l'ANSSI.</p>
+                        <h4>Compétences acquises</h4>
+                        <ul>
+                            <li>VPN (IPSEC, GRE)</li>
+                            <li>Sécurité DNS (DNSSEC)</li>
+                            <li>Durcissement de services (Web, DNS)</li>
+                            <li>Conformité (ANSSI)</li>
+                        </ul>
+                        <a href="Write-Up - SAE4.Cyber.01.pdf" target="_blank" class="action-button">Lire le Write-Up (PDF)</a>
                     </div>
-                    <div class="project-info">
-                        <h3 class="project-title">SAE5.01 - Concevoir, réaliser et présenter une solution technique</h3>
-                        <p class="project-description">
-                            Mise en place d'une plateforme de virtualisation Proxmox avec portail web de déploiement automatisé de VM (en cours).
-                        </p>
+                </div>
+
+                <div class="project-item">
+                    <button class="project-button">
+                        <div class="project-logo">
+                            <img src="images/SAE_Proxmox_logo.png" alt="Logo Projet 5">
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">SAE5.01 - Concevoir une solution technique</h3>
+                            <p class="project-description">
+                                Plateforme de virtualisation Proxmox avec portail web de déploiement automatisé (en cours).
+                            </p>
+                        </div>
+                    </button>
+                    <div class="project-details">
+                        <h4>Description détaillée</h4>
+                        <p>Ce projet consiste à déployer un serveur Proxmox VE pour créer un système de provisionnement automatisé. L'objectif est de pouvoir instancier des machines virtuelles basées sur des templates via une interface web dédiée, simulant une petite infrastructure IaaS (Infrastructure as a Service).</p>
+                        <h4>Compétences acquises</h4>
+                        <ul>
+                            <li>Virtualisation (Proxmox VE)</li>
+                            <li>Automatisation & Scripting</li>
+                            <li>Développement d'API</li>
+                            <li>Administration système Linux</li>
+                        </ul>
+                        <a href="#" target="_blank" class="action-button">Voir le projet (en cours)</a>
                     </div>
-                </a>
+                </div>
                 
-                <a href="" target="_blank" class="project-button">
-                    <div class="project-logo">
-                        <img src="images/SAE_Portfolio_logo.png" alt="Logo Projet 6e">
+                <div class="project-item">
+                    <button class="project-button">
+                        <div class="project-logo">
+                            <img src="images/SAE_Portfolio_logo.png" alt="Logo Projet 6">
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">SAE5.PORTFOLIO - Portfolio</h3>
+                            <p class="project-description">
+                                Portfolio développé en 3ème année de BUT R&T, structuré par compétences.
+                            </p>
+                        </div>
+                    </button>
+                    <div class="project-details">
+                        <h4>Description détaillée</h4>
+                        <p>Le but de ce projet était de créer ce portfolio web moderne et responsive pour présenter mon parcours, mes compétences et mes réalisations. Il est structuré autour des 5 compétences fondamentales du BUT R&T, permettant une navigation thématique à travers mes projets.</p>
+                        <h4>Compétences acquises</h4>
+                        <ul>
+                            <li>HTML5 & CSS3</li>
+                            <li>JavaScript (pour les animations et l'interactivité)</li>
+                            <li>Responsive Design</li>
+                            <li>Déploiement web (GitHub Pages)</li>
+                        </ul>
+                        <a href="https://github.com/Adam-Lernould/VOTRE_REPO_PORTFOLIO" target="_blank" class="action-button">Voir le code source</a>
                     </div>
-                    <div class="project-info">
-                        <h3 class="project-title">SAE5.PORTFOLIO - Portfolio</h3>
-                        <p class="project-description">
-                            Portfolio développé en 3ème année de BUT R&T, structuré pour mettre en valeur mes projets à travers les 5 compétences clés du diplôme.
-                        </p>
-                    </div>
-                </a>
+                </div>
+
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2025 Adam Lernould. Tous droits réservés.</p>
     </footer>
 
     <script>
+        // --- Code pour le menu de navigation (mobile) ---
         const menuIcon = document.querySelector('.menu-icon');
         const navLinks = document.querySelector('.nav-links');
 
         menuIcon.addEventListener('click', () => {
             navLinks.classList.toggle('active');
+        });
+
+        // --- NOUVEAU Code pour l'accordéon des projets ---
+        const projectButtons = document.querySelectorAll('.project-button');
+
+        projectButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const isActive = button.classList.contains('active');
+
+                // Ferme tous les autres projets qui pourraient être ouverts
+                projectButtons.forEach(otherButton => {
+                    if (otherButton.classList.contains('active')) {
+                        otherButton.classList.remove('active');
+                        otherButton.nextElementSibling.style.maxHeight = null;
+                    }
+                });
+
+                // Si le bouton cliqué n'était pas déjà actif, on l'ouvre
+                if (!isActive) {
+                    button.classList.add('active');
+                    const detailsPanel = button.nextElementSibling;
+                    detailsPanel.style.maxHeight = detailsPanel.scrollHeight + "px";
+                }
+            });
         });
     </script>
 </body>
