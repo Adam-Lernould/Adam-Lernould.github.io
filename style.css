@@ -430,13 +430,13 @@ body::before {
 }
 
 .stage-link {
-    display: inline-block; /* Pour que la case s'adapte au texte */
+    display: block; /* Pour que la case s'adapte au texte */
     text-decoration: none; /* On enlève le soulignement */
+    width: fit-content;
     font-weight: bold;
     font-size: 0.85rem; /* Un peu plus petit pour un look discret */
     color: #58a6ff;
-    text-align: center;
-    margin-top: 10px; /* Un peu plus d'espace au-dessus */
+    margin-top: 10px auto 0 auto; /* Un peu plus d'espace au-dessus */
     
     /* --- C'est ici qu'on crée la "case" --- */
     border: 1px solid #58a6ff; /* La bordure bleue */
