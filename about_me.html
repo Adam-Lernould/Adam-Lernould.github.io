@@ -1,103 +1,103 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>À propos de moi - Adam Lernould</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos de moi - Adam Lernould</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Navbar -->
-  <header>
-    <nav class="navbar">
-      <div class="menu-icon">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-      <ul class="nav-links">
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="about_me.html" class="active">À propos de moi</a></li>
-        <li><a href="projects.html">Projets</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+    <header>
+        <nav class="navbar">
+            <div class="menu-icon">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="about_me.html" class="active">À propos de moi</a></li>
+                <li><a href="projects.html">Projets</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- Main Content -->
-  <main>
-    <section class="about-section">
-      <h1 class="main-title">À propos de moi</h1>
-      <p>
-        Je suis Adam Lernould, étudiant en 3ᵉ année de BUT Réseaux et Télécommunications à l’IUT de Béthune. Passionné par les réseaux et la cybersécurité, je m’intéresse particulièrement à l’administration systèmes et réseaux ainsi qu’à la mise en place d’infrastructures sécurisées.
-      </p>
-      <p>
-        Je développe mes compétences à travers mes études, mes projets personnels (déploiement de services sur Raspberry Pi, supervision réseau, virtualisation) et des plateformes spécialisées comme HackTheBox et RootMe, où je participe régulièrement à des challenges et CTF.
-      </p>
-      <p>
-        En dehors de l’informatique, je pratique le vélo pour l’endurance et le bien-être, et je m’intéresse aux jeux vidéo stratégiques qui renforcent mes capacités d’analyse et de résolution de problèmes.
-      </p>
+    <main>
+        <section class="about-section">
+            <h1 class="main-title">À propos de moi</h1>
 
-      <!-- Bouton pour dérouler le CV et conteneur du CV -->
-      <button id="toggle-cv" class="cv-toggle-button">Afficher mon CV</button>
-      <div id="cv-container" style="display: none;">
-        <img src="images/CV - Adam Lernould.png" alt="Aperçu de mon CV" class="cv-preview">
-        <a href="images/CV - Adam Lernould.pdf" download class="download-button">
-          Télécharger mon CV
-        </a>
-      </div>
-      <!-- Section Rapport de stage -->
-<section class="stage-section">
-  <div class="stage-grid">
-    
-    <!-- Carte Stage 1 -->
-    <a href="S4 - Rapport de Stage.pdf" target="_blank" class="stage-card">
-      <div class="stage-logo">
-        <img src="images/visuel-logo-cheops_informatique_gestion.webp" alt="Logo Cheops Informatique">
-      </div>
-      <h2 class="stage-title">Stage - Technicien en Infrastructures Réseaux chez Cheops Informatique</h2>
-      <p class="stage-description">
-        Déploiement d’environnements virtualisés (VMware, Proxmox),
-        services Windows (AD, RDS, SQL), supervision (Centreon, Ansible),
-        bastion sécurisé (Teleport). Gestion réseau (VLAN, Wi-Fi
-        UniFi/Omada, DHCP relay), sauvegarde (Veeam) et stockage NAS.
-        Interventions sur site client.
-      </p>
-    </a>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>
+                        Architecte des réseaux de demain et passionné par la cybersécurité, je suis actuellement en 3ᵉ année de BUT R&T, où je me spécialise dans la conception d'infrastructures sécurisées.
+                    </p>
+                    
+                    <h3>Comment j'apprends et je pratique</h3>
+                    <p>
+                        Je ne me contente pas de la théorie : je suis un bâtisseur. Je donne vie à mes compétences à travers des projets concrets sur Raspberry Pi et des solutions de virtualisation. Pour me challenger, mon terrain de jeu, ce sont les CTF de <strong>HackTheBox et RootMe</strong>, où j'affine chaque jour mes réflexes en sécurité.
+                    </p>
 
+                    <h3>Au-delà du terminal</h3>
+                    <p>
+                        Quand je ne suis pas devant un terminal, vous me trouverez probablement sur mon vélo pour l'endurance, ou au cœur d'une partie de jeu de stratégie pour entraîner ma logique. Pour moi, tout est une question d'analyse et de résolution de problèmes.
+                    </p>
+                </div>
 
-  </div>
-</section>
+                <div class="about-sidebar">
+                    <img src="images/photo_profil.jpg" alt="Photo de Adam Lernould" class="profile-photo">
+                    
+                    <div class="stage-card">
+                        <div class="stage-logo">
+                            <img src="images/visuel-logo-cheops_informatique_gestion.webp" alt="Logo Cheops Informatique">
+                        </div>
+                        <h2 class="stage-title">Stage - Technicien Infrastructures</h2>
+                        <p class="stage-description">
+                            Déploiement d’environnements virtualisés (VMware, Proxmox), services Windows (AD, RDS), supervision (Centreon, Ansible), bastion sécurisé (Teleport), gestion réseau (VLAN, Wi-Fi), sauvegarde (Veeam) et stockage NAS.
+                        </p>
+                    </div>
+                </div>
+            </div>
 
+            <div class="cv-section">
+                <button id="toggle-cv" class="cv-toggle-button">Afficher mon CV</button>
+                <div id="cv-container">
+                    <img src="images/CV - Adam Lernould.png" alt="Aperçu de mon CV" class="cv-preview">
+                    <a href="CV - Adam Lernould.pdf" download class="download-button">
+                        Télécharger mon CV
+                    </a>
+                </div>
+            </div>
 
+        </section>
+    </main>
 
-  </main>
+    <footer>
+        <p>&copy; 2025 Adam Lernould. Tous droits réservés.</p>
+    </footer>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Adam Lernould. Tous droits réservés.</p>
-  </footer>
+    <script>
+        // --- GESTION DU CV AVEC ANIMATION FLUIDE ---
+        document.getElementById('toggle-cv').addEventListener('click', function() {
+            const cvContainer = document.getElementById('cv-container');
+            const button = this;
 
-  <script>
-    // Gestion de l'affichage/masquage du CV
-    document.getElementById('toggle-cv').addEventListener('click', function() {
-      const cvContainer = document.getElementById('cv-container');
-      if (cvContainer.style.display === "none" || cvContainer.style.display === "") {
-        cvContainer.style.display = "block";
-        this.textContent = "Masquer mon CV";
-      } else {
-        cvContainer.style.display = "none";
-        this.textContent = "Afficher mon CV";
-      }
-    });
+            if (cvContainer.style.maxHeight) {
+                cvContainer.style.maxHeight = null;
+                button.textContent = "Afficher mon CV";
+            } else {
+                cvContainer.style.maxHeight = cvContainer.scrollHeight + "px";
+                button.textContent = "Masquer mon CV";
+            }
+        });
 
-    // Gestion du menu hamburger (si nécessaire)
-    const menuIcon = document.querySelector('.menu-icon');
-    const navLinks = document.querySelector('.nav-links');
-    menuIcon.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-  </script>
+        // --- GESTION DU MENU HAMBURGER ---
+        const menuIcon = document.querySelector('.menu-icon');
+        const navLinks = document.querySelector('.nav-links');
+        menuIcon.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>

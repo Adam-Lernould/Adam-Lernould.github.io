@@ -633,6 +633,62 @@ body::before {
     }
 }
 
+/* ===========================
+   NOUVEAUX STYLES - PAGE "À PROPOS"
+=========================== */
+
+/* Grille principale de la section "À propos" */
+.about-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* 2/3 pour le texte, 1/3 pour la barre latérale */
+    gap: 40px; /* Espace entre les colonnes */
+    align-items: flex-start;
+    margin-top: 30px;
+}
+
+/* Colonne de gauche avec le texte */
+.about-text h3 {
+    font-size: 1.5rem;
+    color: #58a6ff;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.about-text p {
+    line-height: 1.7;
+    color: #c9d1d9;
+}
+
+/* Barre latérale de droite */
+.about-sidebar {
+    position: sticky; /* Pour que la barre reste visible au scroll */
+    top: 100px; /* Espace par rapport au haut de la page */
+}
+
+.profile-photo {
+    width: 100%;
+    border-radius: 50%; /* Rend la photo ronde */
+    border: 3px solid #30363d;
+    margin-bottom: 20px;
+}
+
+/* On s'assure que la carte de stage s'intègre bien */
+.about-sidebar .stage-card {
+    width: 100%;
+    box-sizing: border-box; /* Assure que le padding ne casse pas la largeur */
+}
+
+/* --- AMÉLIORATION DU CV DÉROULANT --- */
+.cv-section {
+    text-align: center;
+    margin-top: 40px;
+}
+
+#cv-container {
+    max-height: 0; /* Caché par défaut */
+    overflow: hidden;
+    transition: max-height 0.7s ease-in-out; /* Animation fluide */
+}
 
 /* ===========================
    Responsive Design
@@ -661,6 +717,16 @@ body::before {
 
     .project-description {
         font-size: 0.7rem;
+    }
+}
+
+    .about-grid {
+        grid-template-columns: 1fr; /* Passe à une seule colonne sur mobile */
+    }
+
+    .about-sidebar {
+        position: static; /* Annule le sticky sur mobile */
+        margin-top: 40px;
     }
 }
 
@@ -709,8 +775,3 @@ footer {
     color: #fff;
 }
 
-/* Conteneur du CV (affiché après clic) */
-#cv-container {
-    margin-top: 20px;
-    text-align: center; /* Centre le texte et les éléments à l'intérieur */
-}
