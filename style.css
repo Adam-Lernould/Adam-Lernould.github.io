@@ -391,7 +391,7 @@ body::before {
     }
 
     .project-button, .projects-grid a {
-        height: 110px; /* Hauteur encore réduite en mobile */
+        height: 120px; /* Hauteur encore réduite en mobile */
     }
 
     .project-logo img {
