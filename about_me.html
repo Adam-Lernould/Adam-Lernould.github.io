@@ -76,26 +76,37 @@
     </footer>
 
     <script>
-        // --- GESTION DU CV AVEC ANIMATION FLUIDE ---
-        document.getElementById('toggle-cv').addEventListener('click', function() {
+            // --- GESTION DU CV AVEC CORRECTION DU CHARGEMENT DE L'IMAGE ---
+            const toggleCvButton = document.getElementById('toggle-cv');
             const cvContainer = document.getElementById('cv-container');
-            const button = this;
+            const cvImage = cvContainer.querySelector('.cv-preview'); // On cible l'image à l'intérieur
 
-            if (cvContainer.style.maxHeight) {
-                cvContainer.style.maxHeight = null;
-                button.textContent = "Afficher mon CV";
-            } else {
-                cvContainer.style.maxHeight = cvContainer.scrollHeight + "px";
-                button.textContent = "Masquer mon CV";
-            }
-        });
+            toggleCvButton.addEventListener('click', function() {
+                if (cvContainer.style.maxHeight) {
+                    cvContainer.style.maxHeight = null;
+                    this.textContent = "Afficher mon CV";
+                } else {
+                    cvContainer.style.maxHeight = cvContainer.scrollHeight + "px";
+                    this.textContent = "Masquer mon CV";
+                }
+            });
 
-        // --- GESTION DU MENU HAMBURGER ---
-        const menuIcon = document.querySelector('.menu-icon');
-        const navLinks = document.querySelector('.nav-links');
-        menuIcon.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-    </script>
+            // On "écoute" l'événement de chargement de l'image
+            cvImage.addEventListener('load', function() {
+                // Si le conteneur est déjà ouvert au moment où l'image finit de charger...
+                if (cvContainer.style.maxHeight && cvContainer.style.maxHeight !== "0px") {
+                    // ...on recalcule sa hauteur pour qu'elle s'adapte à la taille de l'image.
+                    cvContainer.style.maxHeight = cvContainer.scrollHeight + "px";
+                }
+            });
+
+
+            // --- GESTION DU MENU HAMBURGER ---
+            const menuIcon = document.querySelector('.menu-icon');
+            const navLinks = document.querySelector('.nav-links');
+            menuIcon.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        </script>
 </body>
 </html>
