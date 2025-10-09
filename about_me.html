@@ -76,30 +76,17 @@
     </footer>
 
     <script>
-            // --- GESTION DU CV AVEC CORRECTION DU CHARGEMENT DE L'IMAGE ---
-            const toggleCvButton = document.getElementById('toggle-cv');
-            const cvContainer = document.getElementById('cv-container');
-            const cvImage = cvContainer.querySelector('.cv-preview'); // On cible l'image à l'intérieur
-
-            toggleCvButton.addEventListener('click', function() {
-                if (cvContainer.style.maxHeight) {
-                    cvContainer.style.maxHeight = null;
+            // --- GESTION DU CV SANS ANIMATION (SIMPLE AFFICHAGE/MASQUAGE) ---
+            document.getElementById('toggle-cv').addEventListener('click', function() {
+                const cvContainer = document.getElementById('cv-container');
+                if (cvContainer.style.display === "block") {
+                    cvContainer.style.display = "none";
                     this.textContent = "Afficher mon CV";
                 } else {
-                    cvContainer.style.maxHeight = cvContainer.scrollHeight + "px";
+                    cvContainer.style.display = "block";
                     this.textContent = "Masquer mon CV";
                 }
             });
-
-            // On "écoute" l'événement de chargement de l'image
-            cvImage.addEventListener('load', function() {
-                // Si le conteneur est déjà ouvert au moment où l'image finit de charger...
-                if (cvContainer.style.maxHeight && cvContainer.style.maxHeight !== "0px") {
-                    // ...on recalcule sa hauteur pour qu'elle s'adapte à la taille de l'image.
-                    cvContainer.style.maxHeight = cvContainer.scrollHeight + "px";
-                }
-            });
-
 
             // --- GESTION DU MENU HAMBURGER ---
             const menuIcon = document.querySelector('.menu-icon');

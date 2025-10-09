@@ -679,10 +679,8 @@ body::before {
 }
 
 #cv-container {
-    max-height: 0; /* Caché par défaut */
-    overflow: hidden;
-    transition: max-height 0.7s ease-in-out; /* Animation fluide */
     padding-bottom: 20px;
+    display: none;
 }
 
 /* ===========================
