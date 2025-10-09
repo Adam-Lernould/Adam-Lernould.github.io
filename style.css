@@ -14,7 +14,6 @@ body {
 
 main {
     flex-grow: 1; /* Fait en sorte que le contenu principal pousse le footer vers le bas */
-    padding-bottom: 50px;
 }
 
 /* Effet de fond texturé */
