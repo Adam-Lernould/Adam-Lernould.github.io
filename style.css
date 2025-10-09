@@ -408,13 +408,6 @@ body::before {
     border-radius: 6px;
 }
 
-.stage-logo img {
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
-    border-radius: 6px;
-}
-
 .stage-title {
     font-size: 1.1rem;
     font-weight: bold;
@@ -461,8 +454,8 @@ body::before {
     }
 
     .project-logo img {
-        width: 55px !important; /* Logos encore plus petits en mobile */
-        height: 55px !important;
+        width: 55px; /* Logos encore plus petits en mobile */
+        height: 55px;
     }
 
     .project-title {
