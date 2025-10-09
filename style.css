@@ -10,7 +10,10 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    padding-bottom: 50px;
+}
+
+main {
+    flex-grow: 1; /* Fait en sorte que le contenu principal pousse le footer vers le bas */
 }
 
 /* Effet de fond texturé */
@@ -738,11 +741,8 @@ footer {
     color: #c9d1d9;
     text-align: center;
     padding: 10px 0;
-    position: fixed;
-    bottom: 0;
     width: 100%;
     border-top: 1px solid #30363d;
-    z-index: 100;
 }
 
 /* ===========================
