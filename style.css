@@ -169,7 +169,7 @@ body::before {
 =========================== */
 .projects-section {
     padding: 50px 5%;
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -184,14 +184,14 @@ body::before {
 
 /* Boutons projets */
 .project-button, .projects-grid a {
-    width: 80%;
-    height: 200px; 
+    width: 100%;
+    height: auto; 
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 15px;
+    padding: 10px 15px;
     background-color: #161b22;
     border: 1px solid #30363d;
     border-radius: 10px;
@@ -212,8 +212,8 @@ body::before {
 
 /* Logo des projets */
 .project-logo img {
-    width: 60px !important; /* Logos plus grands (forcé) */
-    height: 60px !important;
+    width: 60px; /* Logos plus grands (forcé) */
+    height: 60px;
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 3px;
