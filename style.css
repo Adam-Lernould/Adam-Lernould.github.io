@@ -201,7 +201,9 @@ body::before {
     box-sizing: border-box;
     flex-grow: 1;
     flex-basis: auto;
-    cursor: pointer
+    position: relative;
+    gap: 15px;
+    cursor: pointer;
 }
 
 
