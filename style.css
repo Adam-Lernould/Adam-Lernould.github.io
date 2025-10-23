@@ -72,7 +72,8 @@ body::before {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
-    margin-top: 10px;
+    justify-content: center; 
+    margin-top: 40px; 
 }
 
 .social-link {
