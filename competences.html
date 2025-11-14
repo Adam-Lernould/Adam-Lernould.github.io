@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les 5 Compétences - Adam Lernould</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="menu-icon">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="about_me.html">À propos de moi</a></li>
+                <li><a href="projects.html" class="active">Projets</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="competences-section">
+            <div class="section-header">
+                <h2 class="page-title">Les 5 Compétences du BUT R&T</h2>
+                <p class="page-subtitle">
+                    Voici la répartition de mes projets et compétences selon le référentiel national du BUT Réseaux et Télécommunications.
+                </p>
+            </div>
+
+            <div class="competences-grid">
+                <a href="#" class="competence-card comp-1">
+                    <span class="competence-level">Niveau 3</span>
+                    <span class="competence-title">Concevoir un réseau</span>
+                </a>
+                <a href="#" class="competence-card comp-2">
+                    <span class="competence-level">Niveau 3</span>
+                    <span class="competence-title">Déployer une solution de connexion ou de communication sur IP</span>
+                </a>
+                <a href="#" class="competence-card comp-3">
+                    <span class="competence-level">Niveau 3</span>
+                    <span class="competence-title">Piloter un projet de développement d'une application R&T</span>
+                </a>
+                <a href="#" class="competence-card comp-4">
+                    <span class="competence-level">Niveau 2</span>
+                    <span class="competence-title">Mettre en œuvre un système d'information sécurisé pour une petite structure</span>
+                </a>
+                <a href="#" class="competence-card comp-5">
+                    <span class="competence-level">Niveau 2</span>
+                    <span class="competence-title">Mettre en œuvre le système de surveillance d'incidents de sécurité</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Adam Lernould. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        const menuIcon = document.querySelector('.menu-icon');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuIcon.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
