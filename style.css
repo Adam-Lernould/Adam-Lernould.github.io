@@ -182,8 +182,8 @@ body::before {
 /* Grille des projets */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* <-- Remis à 2 colonnes */
-    gap: 15px;
+    grid-template-columns: 1fr;
+    gap: 15px; /* Espacement réduit entre les boutons */
     justify-content: center;
     align-items: center;
 }
