@@ -30,6 +30,7 @@
                 <h2 class="page-title">Les 5 Compétences du BUT R&T</h2>
                 <p class="page-subtitle">
                     Voici la répartition de mes projets et compétences selon le référentiel national du BUT Réseaux et Télécommunications.
+                    <br><em>(Cliquez sur une compétence pour voir les apprentissages critiques associés)</em>
                 </p>
             </div>
 
@@ -38,23 +39,37 @@
                     <span class="competence-level">Administrer - Niveau 3</span>
                     <span class="competence-title">Concevoir un réseau</span>
                 </a>
+                
                 <a href="#" class="competence-card comp-2">
                     <span class="competence-level">Connecter - Niveau 3</span>
                     <span class="competence-title">Déployer une solution de connexion ou de communication sur IP</span>
                 </a>
+                
                 <a href="#" class="competence-card comp-3">
                     <span class="competence-level">Programmer - Niveau 3</span>
                     <span class="competence-title">Piloter un projet de développement d'une application R&T</span>
                 </a>
+                
                 <a href="#" class="competence-card comp-4">
                     <span class="competence-level">Sécuriser - Niveau 2</span>
                     <span class="competence-title">Mettre en œuvre un système d'information sécurisé pour une petite structure</span>
                 </a>
+                
                 <a href="#" class="competence-card comp-5">
                     <span class="competence-level">Surveiller - Niveau 2</span>
                     <span class="competence-title">Mettre en œuvre le système de surveillance d'incidents de sécurité</span>
                 </a>
             </div>
+
+            <div id="modal-overlay" class="modal-overlay">
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <h3 id="modal-title">Titre de la compétence</h3>
+                    <ul id="modal-list">
+                        </ul>
+                </div>
+            </div>
+
         </section>
     </main>
 
@@ -63,11 +78,110 @@
     </footer>
 
     <script>
+        // --- Menu Mobile ---
         const menuIcon = document.querySelector('.menu-icon');
         const navLinks = document.querySelector('.nav-links');
 
         menuIcon.addEventListener('click', () => {
             navLinks.classList.toggle('active');
+        });
+
+        // --- Données des Compétences (Apprentissages Critiques) ---
+        const dataCompetences = {
+            'comp-1': {
+                title: "Compétence Administrer (Niveau 3)",
+                items: [
+                    "<strong>AC31.01</strong> | Concevoir un projet de réseau informatique d’une entreprise en intégrant les problématiques de haute disponibilité, de QoS, de sécurité et de supervision.",
+                    "<strong>AC31.02</strong> | Réaliser la documentation technique de ce projet.",
+                    "<strong>AC31.03</strong> | Réaliser une maquette de démonstration du projet.",
+                    "<strong>AC31.04</strong> | Défendre / argumenter un projet.",
+                    "<strong>AC31.05</strong> | Communiquer avec les acteurs du projet.",
+                    "<strong>AC31.06</strong> | Gérer le projet et les différentes étapes de sa mise en œuvre en respectant les délais."
+                ]
+            },
+            'comp-2': {
+                title: "Compétence Connecter (Niveau 3)",
+                items: [
+                    "<strong>AC32.01</strong> | Déployer un système de communication pour l’entreprise.",
+                    "<strong>AC32.02</strong> | Déployer un réseau d’accès sans fil pour le réseau d’entreprise en intégrant les enjeux de la sécurité.",
+                    "<strong>AC32.03</strong> | Déployer un réseau d’accès fixe ou mobile pour un opérateur de télécommunications en intégrant la sécurité.",
+                    "<strong>AC32.04</strong> | Permettre aux collaborateurs de se connecter de manière sécurisée au système d’information de l’entreprise.",
+                    "<strong>AC32.05</strong> | Collaborer en mode projet en français et en anglais."
+                ]
+            },
+            'comp-3': {
+                title: "Compétence Programmer (Niveau 3)",
+                items: [
+                    "<strong>AC33.01</strong> | Élaborer les spécifications techniques et le cahier des charges d’une application informatique.",
+                    "<strong>AC33.02</strong> | Mettre en place un environnement de travail collaboratif.",
+                    "<strong>AC33.03</strong> | Participer à la formation des utilisateurs.",
+                    "<strong>AC33.04</strong> | Déployer et maintenir une solution informatique.",
+                    "<strong>AC33.05</strong> | S’informer sur les évolutions et les nouveautés technologiques.",
+                    "<strong>AC33.06</strong> | Sécuriser l'environnement numérique d'une application."
+                ]
+            },
+            'comp-4': {
+                title: "Compétence Sécuriser (Niveau 2)",
+                items: [
+                    "<strong>AC34.01Cyber</strong> | Participer activement à une analyse de risque pour définir une politique de sécurité pour une petite structure.",
+                    "<strong>AC34.02Cyber</strong> | Mettre en œuvre des outils avancés de sécurisation d’une infrastructure du réseau.",
+                    "<strong>AC34.03Cyber</strong> | Sécuriser les systèmes d’exploitation.",
+                    "<strong>AC34.04Cyber</strong> | Proposer une architecture sécurisée des services."
+                ]
+            },
+            'comp-5': {
+                title: "Compétence Surveiller (Niveau 2)",
+                items: [
+                    "<strong>AC35.01Cyber</strong> | Surveiller l’activité du système d’information.",
+                    "<strong>AC35.02Cyber</strong> | Appliquer une méthodologie de tests de pénétration.",
+                    "<strong>AC35.03Cyber</strong> | Réagir face à un incident de sécurité.",
+                    "<strong>AC35.04Cyber</strong> | Administrer les outils de surveillance du système d’information."
+                ]
+            }
+        };
+
+        // --- Logique de la Modale ---
+        const modalOverlay = document.getElementById('modal-overlay');
+        const modalTitle = document.getElementById('modal-title');
+        const modalList = document.getElementById('modal-list');
+        const closeModal = document.querySelector('.close-modal');
+        const buttons = document.querySelectorAll('.competence-card');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault(); // Empêche de remonter en haut de page lors du clic
+                
+                // 1. Identifier quelle compétence a été cliquée
+                let compKey = '';
+                if (button.classList.contains('comp-1')) compKey = 'comp-1';
+                else if (button.classList.contains('comp-2')) compKey = 'comp-2';
+                else if (button.classList.contains('comp-3')) compKey = 'comp-3';
+                else if (button.classList.contains('comp-4')) compKey = 'comp-4';
+                else if (button.classList.contains('comp-5')) compKey = 'comp-5';
+
+                // 2. Remplir la modale avec les données
+                if (compKey && dataCompetences[compKey]) {
+                    const data = dataCompetences[compKey];
+                    modalTitle.textContent = data.title;
+                    // On transforme le tableau de textes en liste HTML <li>
+                    modalList.innerHTML = data.items.map(item => `<li>${item}</li>`).join('');
+                    
+                    // 3. Afficher la modale
+                    modalOverlay.classList.add('show');
+                }
+            });
+        });
+
+        // Fermer la modale au clic sur la croix
+        closeModal.addEventListener('click', () => {
+            modalOverlay.classList.remove('show');
+        });
+
+        // Fermer la modale au clic en dehors de la boîte (sur le fond sombre)
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                modalOverlay.classList.remove('show');
+            }
         });
     </script>
 </body>
