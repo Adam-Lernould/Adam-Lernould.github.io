@@ -881,6 +881,10 @@ body::before {
         margin-top: 40px;
     }
 
+    /* --- Page Projets --- */
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 8px; /* Espacement encore réduit en mobile */
     }
     .project-button {
         /* Tu avais une hauteur fixe ici, mais "auto" est mieux avec l'accordéon */
