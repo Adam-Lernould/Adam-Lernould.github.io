@@ -167,11 +167,13 @@
                     <div class="project-details">
                         <h4>Description détaillée</h4>
                         <p>
-                            Ce projet de synthèse de 3ème année couvre l'intégralité du cycle de vie d'un projet technique. L'objectif est de <strong>concevoir et réaliser une solution d'infrastructure (IaaS)</strong> basée sur l'hyperviseur Proxmox VE.
+                            Ce projet consiste en la conception et la sécurisation d'une infrastructure de virtualisation complète destinée à héberger des travaux pratiques, s'appuyant sur l'hyperviseur Proxmox VE et une stratégie de stockage optimisée par le Thin Provisioning.
                         </p>
                         <p>
-                            Pour cela, j'ai développé une <strong>interface web</strong> dédiée qui communique avec l'API de Proxmox. Ce portail permet d'automatiser le déploiement de machines virtuelles à la demande à partir de templates préconfigurés, en gérant la sécurité et les accès utilisateurs. Le projet inclut l'analyse des besoins, la rédaction des spécifications techniques, la réalisation d'une maquette et la documentation.
+                            La gestion centralisée des identités repose sur un contrôleur de domaine Windows Server 2022 permettant l'intégration de clients Windows et Linux, tandis que l'onboarding des utilisateurs est automatisé via des scripts PowerShell. Pour faciliter l'usage, un portail web en Flask communique avec l'API Proxmox pour l'orchestration des machines virtuelles, dont l'accès distant est assuré par Apache Guacamole.
                         </p>
+                        <p>
+                            L'infrastructure inclut des services de fichiers avancés gérant des quotas stricts via FSRM ainsi qu'une supervision proactive par Prometheus et Grafana. Enfin, ce projet s'inscrit dans une démarche de Green IT en privilégiant la mutualisation des ressources et le réemploi de matériel existant pour limiter l'empreinte environnementale.
                         
                         <h4>Compétences acquises</h4>
                         <ul>
