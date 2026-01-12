@@ -833,6 +833,37 @@ body::before {
     left: 0;
 }
 
+/* Style pour le texte de justification (déjà donné avant) */
+.sae-proof {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 8px;
+    font-size: 0.9em;
+    color: #444;
+    padding-left: 15px;
+    border-left: 3px solid #007bff;
+    font-style: italic;
+}
+
+/* NOUVEAU : Style pour les placeholders de preuves */
+.proof-placeholder {
+    display: inline-block;
+    background-color: #fff3cd; /* Fond jaune clair pour attirer l'oeil */
+    border: 2px dashed #ffc107; /* Bordure pointillée */
+    color: #856404;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.85em;
+    margin-top: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.proof-placeholder:hover {
+    background-color: #ffeeba;
+}
+
 /* ===========================
    Responsive pour les compétences
 =========================== */

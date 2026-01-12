@@ -89,14 +89,37 @@
         // --- Données des Compétences (Apprentissages Critiques) ---
         const dataCompetences = {
             'comp-1': {
-                title: "Compétence Administrer (Niveau 3)",
+                title: "Compétence Administrer (Niveau 3) - SAÉ 5.01",
                 items: [
-                    "<strong>AC31.01</strong> | Concevoir un projet de réseau informatique d’une entreprise en intégrant les problématiques de haute disponibilité, de QoS, de sécurité et de supervision.",
-                    "<strong>AC31.02</strong> | Réaliser la documentation technique de ce projet.",
-                    "<strong>AC31.03</strong> | Réaliser une maquette de démonstration du projet.",
-                    "<strong>AC31.04</strong> | Défendre / argumenter un projet.",
-                    "<strong>AC31.05</strong> | Communiquer avec les acteurs du projet.",
-                    "<strong>AC31.06</strong> | Gérer le projet et les différentes étapes de sa mise en œuvre en respectant les délais."
+                    // AC31.01 : Conception
+                    "<strong>AC31.01 | Concevoir un projet de réseau...</strong><br>" +
+                    "<span class='sae-proof'>SAÉ 5.01 : Conception d'une infrastructure de virtualisation sous Proxmox VE incluant une segmentation réseau (Bridge vmbr0) et Active Directory.</span><br>" +
+                    "<a href='#' class='proof-placeholder'>[PLACEHOLDER : Insérer ici le Schéma de l'architecture (chapitre 3.1 du rapport)]</a>",
+                    
+                    // AC31.02 : Documentation
+                    "<strong>AC31.02 | Réaliser la documentation technique...</strong><br>" +
+                    "<span class='sae-proof'>SAÉ 5.01 : Rédaction d'un Dossier Technique de Référence (DTR) détaillant les procédures d'installation (Sysprep, Drivers VirtIO) et l'intégration Linux SSSD.</span><br>" +
+                    "<a href='#' class='proof-placeholder'>[PLACEHOLDER : Lien vers le PDF 'Dossier Technique SAE 5.01']</a>",
+                    
+                    // AC31.03 : Maquette
+                    "<strong>AC31.03 | Réaliser une maquette de démonstration...</strong><br>" +
+                    "<span class='sae-proof'>SAÉ 5.01 : Mise en production d'une 'Salle de TP Virtuelle' fonctionnelle accessible via le portail Web Flask/Guacamole.</span><br>" +
+                    "<a href='#' class='proof-placeholder'>[PLACEHOLDER : Capture d'écran de l'interface Guacamole ou du Dashboard Flask]</a>",
+                    
+                    // AC31.04 : Argumenter
+                    "<strong>AC31.04 | Défendre/argumenter un projet</strong><br>" +
+                    "<span class='sae-proof'>SAÉ 5.01 : Justification des choix techniques : adoption de la paravirtualisation (VirtIO) pour la performance et démarche Green IT (recyclage serveur).</span><br>" +
+                    "<a href='#' class='proof-placeholder'>[PLACEHOLDER : Extrait du rapport - Tableau comparatif ou section Green IT]</a>",
+                    
+                    // AC31.05 : Communiquer
+                    "<strong>AC31.05 | Communiquer avec les acteurs du projet</strong><br>" +
+                    "<span class='sae-proof'>SAÉ 5.01 : Collaboration en équipe de 4 avec répartition des rôles (Admin Système, Réseau, Dev) et réunions de suivi.</span><br>" +
+                    "<a href='#' class='proof-placeholder'>[PLACEHOLDER : Capture d'écran liste des auteurs ou photo d'équipe]</a>",
+                    
+                    // AC31.06 : Gestion de projet
+                    "<strong>AC31.06 | Gérer le projet en respectant les délais</strong><br>" +
+                    "<span class='sae-proof'>SAÉ 5.01 : Pilotage via la méthode Kanban (Trello) avec découpage en 6 phases et respect des jalons de livraison.</span><br>" +
+                    "<a href='#' class='proof-placeholder'>[PLACEHOLDER : Capture d'écran du Trello (Phase 1 à 6)]</a>"
                 ]
             },
             'comp-2': {
@@ -149,7 +172,7 @@
 
         buttons.forEach(button => {
             button.addEventListener('click', (e) => {
-                e.preventDefault(); // Empêche de remonter en haut de page lors du clic
+                e.preventDefault(); // Empêche de remonter en haut de page
                 
                 // 1. Identifier quelle compétence a été cliquée
                 let compKey = '';
@@ -163,7 +186,8 @@
                 if (compKey && dataCompetences[compKey]) {
                     const data = dataCompetences[compKey];
                     modalTitle.textContent = data.title;
-                    // On transforme le tableau de textes en liste HTML <li>
+                    // On transforme le tableau d'items en liste HTML <li>
+                    // .join('') permet de coller tous les éléments sans virgule entre eux
                     modalList.innerHTML = data.items.map(item => `<li>${item}</li>`).join('');
                     
                     // 3. Afficher la modale
