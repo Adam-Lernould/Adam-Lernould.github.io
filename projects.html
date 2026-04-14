@@ -222,6 +222,38 @@
                     </div>
                 </div>
 
+                <div class="project-item">
+                    <button class="project-button">
+                        <div class="project-logo">
+                            <img src="images/SecAudit_logo.png" alt="Logo Projet SecAudit">
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">SecAudit - Outil d'audit de sécurité Linux</h3>
+                            <p class="project-description">
+                                Script Bash modulaire permettant d'automatiser la détection de vulnérabilités de configuration sur des serveurs Linux.
+                            </p>
+                        </div>
+                    </button>
+                    <div class="project-details">
+                        <h4>Description détaillée</h4>
+                        <p>
+                            <strong>SecAudit</strong> est un outil en ligne de commande (CLI) que j'ai conçu pour faciliter l'audit et le hardening de serveurs Linux. L'objectif était de créer un programme capable d'identifier automatiquement les mauvaises configurations pouvant exposer un système à des attaques.
+                        </p>
+                        <p>
+                            Le script est construit de manière <strong>modulaire</strong>. Il est capable de vérifier dynamiquement l'état des services via <code>systemctl</code> et d'analyser les fichiers de configuration (ou les sorties de commandes en direct) de services critiques tels que <strong>SSH, Apache2, Nginx, Cron et UFW</strong>. Il génère ensuite un rapport textuel centralisant les failles détectées (ex: accès root autorisé, ports non sécurisés ouverts, permissions trop permissives).
+                        </p>
+                        
+                        <h4>Compétences acquises</h4>
+                        <ul>
+                            <li><strong>Scripting Bash avancé :</strong> Manipulation de tableaux, boucles, blocs conditionnels complexes (case), expressions régulières (avec <code>grep</code>) et gestion des flux/redirections.</li>
+                            <li><strong>Administration Système Linux :</strong> Interaction avancée avec les services (<code>systemd</code>), compréhension fine de l'arborescence (fichiers <code>.conf</code>) et gestion des droits et permissions (<code>stat</code>, UID).</li>
+                            <li><strong>Cybersécurité & Hardening :</strong> Connaissance pratique des vulnérabilités de configuration courantes sur les serveurs web (directory listing, server tokens), les accès distants (SSH) et le filtrage réseau (pare-feu).</li>
+                            <li><strong>Expérience Utilisateur (UX CLI) :</strong> Création de menus interactifs robustes avec validation des entrées utilisateur et gestion des erreurs.</li>
+                        </ul>
+                        <a href="https://github.com/Adam-Lernould/SecAudit" target="_blank" class="action-button">Voir le code source sur GitHub</a>
+                    </div>
+                </div>
+
             </div>
         </section>
     </main>
