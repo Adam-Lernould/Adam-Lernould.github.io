@@ -835,7 +835,6 @@ body::before {
     left: 0;
 }
 
-/* Style pour le texte de justification (déjà donné avant) */
 .sae-proof {
     display: block;
     margin-top: 5px;
@@ -847,7 +846,6 @@ body::before {
     font-style: italic;
 }
 
-/* NOUVEAU : Style pour les placeholders de preuves */
 .proof-placeholder {
     display: inline-block;
     background-color: #fff3cd; /* Fond jaune clair pour attirer l'oeil */
@@ -860,6 +858,34 @@ body::before {
     text-decoration: none;
     font-weight: bold;
     cursor: pointer;
+}
+
+.reflexive {
+    margin: 8px 0 4px 0;
+    padding: 12px 15px;
+    background-color: #0d1117;
+    border-left: 3px solid #58a6ff;
+    border-radius: 0 6px 6px 0;
+}
+ 
+.reflexive p {
+    margin: 6px 0;
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+ 
+.reflexive p b {
+    color: #58a6ff;
+}
+ 
+/* Avertissement AC non couvert / à compléter */
+.ac-warning {
+    background-color: #3d2a00;
+    border: 1px solid #ffc107;
+    color: #ffd24d !important;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 0.85em !important;
 }
 
 .proof-placeholder:hover {

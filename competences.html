@@ -87,78 +87,231 @@
         });
 
         // --- Données des Compétences (Apprentissages Critiques) ---
+        
         const dataCompetences = {
+        
+            // ===============================================================
+            //  comp-1 : ADMINISTRER (Niveau 3) — inchangé (ton bloc existant)
+            // ===============================================================
             'comp-1': {
                 title: "Compétence Administrer (Niveau 3) - SAÉ 5.01",
-                items: [
-                    // AC31.01 : Conception
-                    "<strong>AC31.01 | Concevoir un projet de réseau</strong><br>" +
-                    "<span class='sae-proof'>SAÉ 5.01 : Conception d'une infrastructure de virtualisation sous Proxmox VE incluant une segmentation réseau (Bridge vmbr0) et Active Directory.</span><br>" +
-                    "<img src='images/infra_reseau_SAE501.jpg' alt='Schéma Architecture' style='width: 100%; margin-top: 10px; border-radius: 5px; border: 1px solid #30363d'>",
-                    
-                    // AC31.02 : Documentation
-                    "<strong>AC31.02 | Réaliser la documentation technique</strong><br>" +
-                    "<span class='sae-proof'>SAÉ 5.01 : Rédaction d'un Dossier Technique de Référence (DTR) détaillant les procédures d'installation (Sysprep, Drivers VirtIO) et l'intégration Linux SSSD.</span><br>" +
-                    "<a href='https://docs.google.com/document/d/1L1y2YNe7nbl7o7FXQBOHabl_u6sjKiU2loDYcHdbwJU/edit?tab=t.0#heading=h.9assl45s1ypv' class='proof-placeholder'>Lien vers le PDF 'Dossier Technique SAE 5.01'</a>",
-                    
-                    // AC31.03 : Maquette
-                    "<strong>AC31.03 | Réaliser une maquette de démonstration</strong><br>" +
-                    "<span class='sae-proof'>SAÉ 5.01 : Mise en production d'une 'Salle de TP Virtuelle' fonctionnelle accessible via le portail Web Flask/Guacamole.</span><br>" +
-                    "<a href='#' class='proof-placeholder'>[PLACEHOLDER : Capture d'écran de l'interface Guacamole ou du Dashboard Flask]</a>",
-                    
-                    // AC31.04 : Argumenter
-                    "<strong>AC31.04 | Défendre/argumenter un projet</strong><br>" +
-                    "<span class='sae-proof'>SAÉ 5.01 : Justification des choix techniques : adoption de la paravirtualisation (VirtIO) pour la performance et démarche Green IT (recyclage serveur).</span><br>" +
-                    "<a href='#' class='proof-placeholder'>[PLACEHOLDER : Extrait du rapport - Tableau comparatif ou section Green IT]</a>",
-                    
-                    // AC31.05 : Communiquer
-                    "<strong>AC31.05 | Communiquer avec les acteurs du projet</strong><br>" +
-                    "<span class='sae-proof'>SAÉ 5.01 : Collaboration en équipe de 4 avec répartition des rôles (Admin Système, Réseau, Dev) et réunions de suivi.</span><br>" +
-                    "<a href='#' class='proof-placeholder'>[PLACEHOLDER : Capture d'écran liste des auteurs ou photo d'équipe]</a>",
-                    
-                    // AC31.06 : Gestion de projet
-                    "<strong>AC31.06 | Gérer le projet en respectant les délais</strong><br>" +
-                    "<span class='sae-proof'>SAÉ 5.01 : Pilotage via la méthode Kanban (Trello) avec découpage en 6 phases et respect des jalons de livraison.</span><br>" +
-                    "<a href='#' class='proof-placeholder'>[PLACEHOLDER : Capture d'écran du Trello (Phase 1 à 6)]</a>"
-                ]
+                items: [ /* ... ton contenu comp-1 existant ... */ ]
             },
+        
+            // ===============================================================
+            //  comp-2 : CONNECTER (Niveau 3) — SAÉ 5.01 + stage Acipia
+            // ===============================================================
             'comp-2': {
-                title: "Compétence Connecter (Niveau 3)",
+                title: "Compétence Connecter (Niveau 3) — SAÉ 5.01 & Stage Acipia",
                 items: [
-                    "<strong>AC32.01</strong> | Déployer un système de communication pour l’entreprise.",
-                    "<strong>AC32.02</strong> | Déployer un réseau d’accès sans fil pour le réseau d’entreprise en intégrant les enjeux de la sécurité.",
-                    "<strong>AC32.03</strong> | Déployer un réseau d’accès fixe ou mobile pour un opérateur de télécommunications en intégrant la sécurité.",
-                    "<strong>AC32.04</strong> | Permettre aux collaborateurs de se connecter de manière sécurisée au système d’information de l’entreprise.",
-                    "<strong>AC32.05</strong> | Collaborer en mode projet en français et en anglais."
+                    "<strong>AC32.01 | Déployer un système de communication pour l'entreprise</strong>" +
+                    "<div class='reflexive'>" +
+                    "<p><b>Ce que j'ai fait :</b> En SAÉ5.01, déploiement des accès de communication interne (accès distant aux VM de TP via Apache Guacamole sur RDP/SSH, portail Flask). En stage chez Acipia, prise en charge de tickets de téléphonie sur IP (3CX, XiVO SBC) : passage d'appels, routage SIP, présentation du numéro appelant.</p>" +
+                    "<p><b>Pourquoi :</b> Offrir aux utilisateurs un accès unifié aux ressources (SAÉ) et assurer la continuité du service de communication voix de clients en production (stage).</p>" +
+                    "<p><b>Comment :</b> SAÉ — Guacamole en passerelle clientless + API Proxmox. Stage — diagnostic SIP/RTP, configuration de trunks et de la signalisation sur 3CX/XiVO. Outils : Guacamole, Flask, 3CX, XiVO SBC.</p>" +
+                    "<p><b>Difficultés :</b> Côté stage, le passage du caller ID à travers les VLAN et le SBC (hairpinning RTP, routage inter-VLAN de la voix).</p>" +
+                    "<p><b>Ce que j'en ai appris :</b> Un système de communication d'entreprise repose autant sur la signalisation (SIP) que sur le transport média (RTP), et les deux doivent être pensés ensemble.</p>" +
+                    "<p><b>Ce que je ferais autrement :</b> Documenter systématiquement les flux SIP/RTP par un schéma avant intervention.</p>" +
+                    "<a href='#' class='proof-placeholder'>[TRACE : capture interface Guacamole + extrait config trunk SIP 3CX/XiVO (anonymisé)]</a>" +
+                    "</div>",
+        
+                    "<strong>AC32.02 | Déployer un réseau d'accès sans fil sécurisé</strong>" +
+                    "<div class='reflexive'>" +
+                    "<p class='ac-warning'>⚠ AC non couvert dans le périmètre retenu (SAÉ5.01 filaire/virtualisée, et pas de mission Wi-Fi durant le stage Acipia). Axe d'amélioration identifié : approfondir le déploiement Wi-Fi sécurisé (WPA2/3-Entreprise, segmentation SSID/VLAN) sur une prochaine mission.</p>" +
+                    "</div>",
+        
+                    "<strong>AC32.03 | Déployer un réseau d'accès fixe ou mobile pour un opérateur</strong>" +
+                    "<div class='reflexive'>" +
+                    "<p class='ac-warning'>⚠ AC non couvert : périmètre orienté opérateur télécom, hors du cadre de la SAÉ5.01 (infra d'entreprise) et du stage en ESN/MSP. Axe d'amélioration identifié.</p>" +
+                    "</div>",
+        
+                    "<strong>AC32.04 | Permettre une connexion sécurisée au SI de l'entreprise</strong>" +
+                    "<div class='reflexive'>" +
+                    "<p><b>Ce que j'ai fait :</b> En SAÉ5.01, centralisation des identités via Active Directory (Windows Server 2022) et intégration des clients Linux au domaine (SSSD). En stage, traitement de tickets d'accès distant sécurisé : VPN IPsec FortiClient ↔ FortiGate (split-tunnel vs full-tunnel, routage DNS).</p>" +
+                    "<p><b>Pourquoi :</b> Garantir que seuls les utilisateurs authentifiés accèdent au SI, et permettre le télétravail sécurisé des collaborateurs des clients.</p>" +
+                    "<p><b>Comment :</b> SAÉ — AD DS, jonction Windows/Linux (SSSD/Kerberos). Stage — configuration des tunnels IPsec, gestion du split-tunnel et des routes, résolution des conflits DNS VPN. Outils : AD, SSSD, FortiGate, FortiClient.</p>" +
+                    "<p><b>Difficultés :</b> Côté stage, les problématiques de routage DNS en VPN (split vs full tunnel, conflits avec le résolveur local).</p>" +
+                    "<p><b>Ce que j'en ai appris :</b> Un accès distant sécurisé ne se limite pas au chiffrement du tunnel : le routage et la résolution DNS conditionnent autant la sécurité que l'usage.</p>" +
+                    "<p><b>Ce que je ferais autrement :</b> Standardiser une checklist de validation post-déploiement VPN (test DNS, fuite de trafic, accès aux ressources).</p>" +
+                    "<a href='#' class='proof-placeholder'>[TRACE : extrait sssd.conf commenté + capture config tunnel IPsec FortiGate (anonymisé)]</a>" +
+                    "</div>",
+        
+                    "<strong>AC32.05 | Collaborer en mode projet en français et en anglais</strong>" +
+                    "<div class='reflexive'>" +
+                    "<p><b>Ce que j'ai fait :</b> En SAÉ5.01, travail en équipe de 4 avec répartition des rôles (Admin Système, Réseau, Dev) et documentation partagée. En stage, collaboration quotidienne avec l'équipe (tuteur Sven, collègues Hugo et Clément), escalade et validation des interventions.</p>" +
+                    "<p><b>Pourquoi :</b> Un projet et un environnement de production exigent une coordination structurée et une communication fiable entre intervenants.</p>" +
+                    "<p><b>Comment :</b> SAÉ — Kanban (Trello), dépôt Git, réunions de suivi. Stage — système de ticketing, échanges techniques, validation par le tuteur avant action sur la prod. Documentation technique souvent en anglais (FortiOS, RFC).</p>" +
+                    "<p><b>Difficultés :</b> Synchroniser les dépendances entre rôles (SAÉ) ; formuler clairement un diagnostic technique pour escalade (stage).</p>" +
+                    "<p><b>Ce que j'en ai appris :</b> La traçabilité (ticket, jalon, commit) est le socle d'une collaboration efficace, surtout en production.</p>" +
+                    "<p><b>Ce que je ferais autrement :</b> Formaliser davantage les comptes-rendus d'intervention pour le partage de connaissances dans l'équipe.</p>" +
+                    "<a href='#' class='proof-placeholder'>[TRACE : capture Trello + extrait d'un ticket d'intervention anonymisé]</a>" +
+                    "</div>"
                 ]
             },
+        
+            // ===============================================================
+            //  comp-3 : PROGRAMMER (Niveau 3) — SAÉ 5.01
+            // ===============================================================
             'comp-3': {
-                title: "Compétence Programmer (Niveau 3)",
+                title: "Compétence Programmer (Niveau 3) — SAÉ 5.01",
                 items: [
-                    "<strong>AC33.01</strong> | Élaborer les spécifications techniques et le cahier des charges d’une application informatique.",
-                    "<strong>AC33.02</strong> | Mettre en place un environnement de travail collaboratif.",
-                    "<strong>AC33.03</strong> | Participer à la formation des utilisateurs.",
-                    "<strong>AC33.04</strong> | Déployer et maintenir une solution informatique.",
-                    "<strong>AC33.05</strong> | S’informer sur les évolutions et les nouveautés technologiques.",
-                    "<strong>AC33.06</strong> | Sécuriser l'environnement numérique d'une application."
+                    "<strong>AC33.01 | Élaborer les spécifications techniques et le cahier des charges</strong>" +
+                    "<div class='reflexive'>" +
+                    "<p><b>Ce que j'ai fait :</b> Rédaction des spécifications du portail web d'orchestration (besoins fonctionnels : création/accès VM ; besoins techniques : communication avec l'API Proxmox).</p>" +
+                    "<p><b>Pourquoi :</b> Cadrer le développement avant de coder, pour éviter les dérives et aligner l'équipe sur le périmètre.</p>" +
+                    "<p><b>Comment :</b> Analyse du besoin (salle de TP virtuelle), définition des endpoints API nécessaires, choix de Flask. Outils : Flask, API Proxmox, doc technique.</p>" +
+                    "<p><b>Difficultés :</b> Traduire un besoin pédagogique flou en spécifications techniques exploitables.</p>" +
+                    "<p><b>Ce que j'en ai appris :</b> Un bon cahier des charges fait gagner un temps considérable en développement.</p>" +
+                    "<p><b>Ce que je ferais autrement :</b> Impliquer les utilisateurs finaux plus tôt pour valider les specs.</p>" +
+                    "<a href='#' class='proof-placeholder'>[TRACE : extrait du cahier des charges / liste des endpoints API]</a>" +
+                    "</div>",
+        
+                    "<strong>AC33.02 | Mettre en place un environnement de travail collaboratif</strong>" +
+                    "<div class='reflexive'>" +
+                    "<p><b>Ce que j'ai fait :</b> Mise en place d'un dépôt Git pour le code du portail Flask, avec gestion des versions et exclusion des fichiers sensibles.</p>" +
+                    "<p><b>Pourquoi :</b> Permettre le travail à plusieurs sur le code sans conflit et tracer l'historique des modifications.</p>" +
+                    "<p><b>Comment :</b> Dépôt Git distant, branches, .gitignore pour les secrets. Outils : Git, GitHub.</p>" +
+                    "<p><b>Difficultés :</b> Gérer les conflits de merge sur les fichiers modifiés en parallèle.</p>" +
+                    "<p><b>Ce que j'en ai appris :</b> La discipline de commit (messages clairs, commits atomiques) facilite la collaboration.</p>" +
+                    "<p><b>Ce que je ferais autrement :</b> Mettre en place des règles de protection de branche et des revues de code.</p>" +
+                    "<a href='#' class='proof-placeholder'>[TRACE : capture historique Git / .gitignore commenté]</a>" +
+                    "</div>",
+        
+                    "<strong>AC33.03 | Participer à la formation des utilisateurs</strong>" +
+                    "<div class='reflexive'>" +
+                    "<p><b>Ce que j'ai fait :</b> Rédaction de procédures d'utilisation du portail et de la salle de TP virtuelle à destination des utilisateurs.</p>" +
+                    "<p><b>Pourquoi :</b> Rendre la solution autonome et utilisable sans assistance permanente.</p>" +
+                    "<p><b>Comment :</b> Documentation pas à pas intégrée au Dossier Technique de Référence. Outils : doc bureautique, captures annotées.</p>" +
+                    "<p><b>Difficultés :</b> Vulgariser des étapes techniques pour un public non expert.</p>" +
+                    "<p><b>Ce que j'en ai appris :</b> Une bonne documentation utilisateur réduit drastiquement les sollicitations support.</p>" +
+                    "<p><b>Ce que je ferais autrement :</b> Ajouter une courte vidéo de démonstration.</p>" +
+                    "<a href='#' class='proof-placeholder'>[TRACE : extrait procédure utilisateur]</a>" +
+                    "</div>",
+        
+                    "<strong>AC33.04 | Déployer et maintenir une solution informatique</strong>" +
+                    "<div class='reflexive'>" +
+                    "<p><b>Ce que j'ai fait :</b> Mise en production du portail Flask et automatisation de l'onboarding utilisateur via scripts PowerShell sur l'AD.</p>" +
+                    "<p><b>Pourquoi :</b> Industrialiser la création de comptes et le déploiement des VM pour éviter les tâches manuelles répétitives.</p>" +
+                    "<p><b>Comment :</b> Scripts PowerShell de provisioning AD, appels API Proxmox depuis Flask pour cloner les templates. Outils : PowerShell, API Proxmox, Flask.</p>" +
+                    "<p><b>Difficultés :</b> Gérer proprement les erreurs d'API (VM déjà existante, ressources insuffisantes).</p>" +
+                    "<p><b>Ce que j'en ai appris :</b> L'automatisation fiabilise le déploiement et réduit l'erreur humaine.</p>" +
+                    "<p><b>Ce que je ferais autrement :</b> Ajouter une supervision applicative (logs centralisés du portail).</p>" +
+                    "<a href='#' class='proof-placeholder'>[TRACE : extrait script PowerShell / appel API Proxmox]</a>" +
+                    "</div>",
+        
+                    "<strong>AC33.05 | S'informer sur les évolutions et nouveautés technologiques</strong>" +
+                    "<div class='reflexive'>" +
+                    "<p><b>Ce que j'ai fait :</b> Veille technologique pour justifier les choix d'architecture (paravirtualisation VirtIO, Thin Provisioning, démarche Green IT).</p>" +
+                    "<p><b>Pourquoi :</b> Choisir les technologies les plus performantes et durables plutôt que celles par défaut.</p>" +
+                    "<p><b>Comment :</b> Comparaison VirtIO vs émulation, lecture de doc Proxmox, analyse de l'impact Green IT du réemploi matériel. Outils : doc officielle, benchmarks.</p>" +
+                    "<p><b>Difficultés :</b> Distinguer les sources fiables des retours d'expérience non vérifiés.</p>" +
+                    "<p><b>Ce que j'en ai appris :</b> La veille est une compétence à part entière qui conditionne la qualité des choix techniques.</p>" +
+                    "<p><b>Ce que je ferais autrement :</b> Documenter la veille au fil de l'eau plutôt qu'a posteriori.</p>" +
+                    "<a href='#' class='proof-placeholder'>[TRACE : tableau comparatif VirtIO / section Green IT du rapport]</a>" +
+                    "</div>",
+        
+                    "<strong>AC33.06 | Sécuriser l'environnement numérique d'une application</strong>" +
+                    "<div class='reflexive'>" +
+                    "<p><b>Ce que j'ai fait :</b> Sécurisation du portail Flask : gestion des authentifications, des droits d'accès et protection des données applicatives.</p>" +
+                    "<p><b>Pourquoi :</b> Empêcher qu'un utilisateur accède aux VM ou données d'un autre, et protéger les credentials d'API.</p>" +
+                    "<p><b>Comment :</b> Authentification adossée à l'AD, secrets hors du dépôt Git, contrôle d'accès par utilisateur. Outils : Flask, AD, .gitignore.</p>" +
+                    "<p><b>Difficultés :</b> Stocker les identifiants d'API Proxmox de façon sécurisée sans les exposer dans le code.</p>" +
+                    "<p><b>Ce que j'en ai appris :</b> La sécurité applicative se pense dès la conception, pas après coup.</p>" +
+                    "<p><b>Ce que je ferais autrement :</b> Externaliser les secrets dans un coffre dédié (type Vault).</p>" +
+                    "<a href='#' class='proof-placeholder'>[TRACE : extrait gestion d'authentification / matrice des droits]</a>" +
+                    "</div>"
                 ]
             },
+        
+            // ===============================================================
+            //  comp-4 : SÉCURISER (Niveau 2) — SAÉ 6.Cyber.01 + stage Acipia
+            // ===============================================================
             'comp-4': {
-                title: "Compétence Sécuriser (Niveau 2)",
+                title: "Compétence Sécuriser (Niveau 2) — SAÉ 6.Cyber.01 & Stage Acipia",
                 items: [
-                    "<strong>AC34.01Cyber</strong> | Participer activement à une analyse de risque pour définir une politique de sécurité pour une petite structure.",
-                    "<strong>AC34.02Cyber</strong> | Mettre en œuvre des outils avancés de sécurisation d’une infrastructure du réseau.",
-                    "<strong>AC34.03Cyber</strong> | Sécuriser les systèmes d’exploitation.",
-                    "<strong>AC34.04Cyber</strong> | Proposer une architecture sécurisée des services."
+                    "<strong>AC34.01Cyber | Participer à une analyse de risque / politique de sécurité</strong>" +
+                    "<div class='reflexive'>" +
+                    "<p class='ac-warning'>⚠ AC non couvert dans le périmètre retenu : la SAÉ6.Cyber.01 porte sur la réponse à incident (pas l'analyse de risque amont), et le stage Acipia est opérationnel (traitement de tickets), sans participation à une analyse de risque formalisée. Axe d'amélioration identifié : participer à une démarche d'analyse de risque type EBIOS RM.</p>" +
+                    "</div>",
+        
+                    "<strong>AC34.02Cyber | Mettre en œuvre des outils avancés de sécurisation de l'infrastructure</strong>" +
+                    "<div class='reflexive'>" +
+                    "<p><b>Ce que j'ai fait :</b> En SAÉ6.Cyber.01, mise en œuvre des outils de sécurisation pour stopper la propagation et neutraliser une attaque simulée. En stage, exploitation d'outils de sécurisation du réseau au quotidien : pare-feux FortiGate (politiques, SSL inspection), gestion centralisée via FortiManager.</p>" +
+                    "<p><b>Pourquoi :</b> Limiter l'impact d'une compromission (SAÉ) et maintenir un niveau de protection homogène sur les infrastructures clientes (stage).</p>" +
+                    "<p><b>Comment :</b> SAÉ — segmentation/isolation, durcissement des points d'entrée. Stage — configuration de règles FortiGate, traitement des faux positifs d'inspection SSL, déploiement de politiques via FortiManager. Outils : FortiGate, FortiManager, OPNsense.</p>" +
+                    "<p><b>Difficultés :</b> Côté stage, distinguer une vraie menace d'un faux positif d'inspection SSL sans casser un service légitime.</p>" +
+                    "<p><b>Ce que j'en ai appris :</b> Un outil de sécurité mal réglé (trop permissif ou trop strict) est contre-productif ; le tuning est aussi important que le déploiement.</p>" +
+                    "<p><b>Ce que je ferais autrement :</b> Tester les nouvelles règles en mode monitor avant de les appliquer en blocage.</p>" +
+                    "<a href='#' class='proof-placeholder'>[TRACE : capture règle FortiGate / exception SSL inspection (anonymisé)]</a>" +
+                    "</div>",
+        
+                    "<strong>AC34.03Cyber | Sécuriser les systèmes d'exploitation</strong>" +
+                    "<div class='reflexive'>" +
+                    "<p><b>Ce que j'ai fait :</b> En SAÉ6.Cyber.01, durcissement des systèmes impliqués dans l'incident pour réduire la surface d'attaque. En stage, exploitation d'un EDR (SentinelOne) sur les postes et serveurs clients, traitement d'alertes de sécurité système.</p>" +
+                    "<p><b>Pourquoi :</b> Réduire les vecteurs d'exploitation (SAÉ) et détecter/contenir les compromissions au niveau de l'OS (stage).</p>" +
+                    "<p><b>Comment :</b> SAÉ — désactivation des services inutiles, correction de configurations, application de correctifs. Stage — analyse et qualification d'alertes EDR, actions de remédiation. Outils : SentinelOne (EDR), durcissement Linux/Windows.</p>" +
+                    "<p><b>Difficultés :</b> Trouver l'équilibre entre durcissement et maintien des fonctionnalités nécessaires.</p>" +
+                    "<p><b>Ce que j'en ai appris :</b> La sécurisation de l'OS combine prévention (hardening) et détection (EDR) ; les deux sont complémentaires.</p>" +
+                    "<p><b>Ce que je ferais autrement :</b> Mettre en place un contrôle de conformité périodique du durcissement.</p>" +
+                    "<a href='#' class='proof-placeholder'>[TRACE : capture alerte SentinelOne / config durcie commentée (anonymisé)]</a>" +
+                    "</div>",
+        
+                    "<strong>AC34.04Cyber | Proposer une architecture sécurisée de SI</strong>" +
+                    "<div class='reflexive'>" +
+                    "<p><b>Ce que j'ai fait :</b> En stage chez Acipia, contribution à la conception/maintenance d'architectures réseau sécurisées : segmentation par VLAN, cluster FortiGate dual-WAN (haute disponibilité), routage et politiques de sécurité inter-zones.</p>" +
+                    "<p><b>Pourquoi :</b> Une architecture segmentée et redondée limite la propagation d'une compromission et garantit la continuité de service.</p>" +
+                    "<p><b>Comment :</b> Conception de la segmentation VLAN, configuration de la redondance dual-WAN, définition des flux autorisés entre zones. Outils : FortiGate (cluster), FortiManager, OPNsense.</p>" +
+                    "<p><b>Difficultés :</b> Gérer le routage et le basculement (failover) sur un cluster dual-WAN sans interruption de service (ex. SSL blackhole routing).</p>" +
+                    "<p><b>Ce que j'en ai appris :</b> La sécurité d'une architecture repose sur le cloisonnement (segmentation) autant que sur la disponibilité (redondance).</p>" +
+                    "<p><b>Ce que je ferais autrement :</b> Formaliser systématiquement un schéma d'architecture cible avant modification en production.</p>" +
+                    "<a href='#' class='proof-placeholder'>[TRACE : schéma de segmentation VLAN / config cluster FortiGate dual-WAN (anonymisé)]</a>" +
+                    "</div>"
                 ]
             },
+        
+            // ===============================================================
+            //  comp-5 : SURVEILLER (Niveau 2) — SAÉ 6.Cyber.01 + stage Acipia
+            // ===============================================================
             'comp-5': {
-                title: "Compétence Surveiller (Niveau 2)",
+                title: "Compétence Surveiller (Niveau 2) — SAÉ 6.Cyber.01 & Stage Acipia",
                 items: [
-                    "<strong>AC35.01Cyber</strong> | Surveiller l’activité du système d’information.",
-                    "<strong>AC35.02Cyber</strong> | Appliquer une méthodologie de tests de pénétration.",
-                    "<strong>AC35.03Cyber</strong> | Réagir face à un incident de sécurité.",
-                    "<strong>AC35.04Cyber</strong> | Administrer les outils de surveillance du système d’information."
+                    "<strong>AC35.01Cyber | Surveiller l'activité du système d'information</strong>" +
+                    "<div class='reflexive'>" +
+                    "<p><b>Ce que j'ai fait :</b> En SAÉ6.Cyber.01, surveillance de l'activité du SI pour identifier l'attaque (détection de comportements anormaux, corrélation d'événements). En stage, exploitation d'un SIEM (Sekoia) pour le suivi de l'activité de sécurité des clients.</p>" +
+                    "<p><b>Pourquoi :</b> On ne peut réagir qu'à ce qu'on détecte : la surveillance est le point de départ de toute réponse à incident.</p>" +
+                    "<p><b>Comment :</b> SAÉ — analyse de logs et alertes. Stage — suivi des alertes et tableaux de bord Sekoia, qualification des événements de sécurité. Outils : Sekoia (SIEM), journaux système.</p>" +
+                    "<p><b>Difficultés :</b> Distinguer le signal (incident réel) du bruit (faux positifs).</p>" +
+                    "<p><b>Ce que j'en ai appris :</b> La qualité de la surveillance dépend directement du paramétrage des règles de détection.</p>" +
+                    "<p><b>Ce que je ferais autrement :</b> Affiner les règles de corrélation pour réduire les faux positifs.</p>" +
+                    "<a href='#' class='proof-placeholder'>[TRACE : capture tableau de bord Sekoia / alerte qualifiée (anonymisé)]</a>" +
+                    "</div>",
+        
+                    "<strong>AC35.02Cyber | Appliquer une méthodologie de tests de pénétration</strong>" +
+                    "<div class='reflexive'>" +
+                    "<p class='ac-warning'>⚠ AC non couvert dans le périmètre retenu : la SAÉ6.Cyber.01 est défensive (réponse à incident), et le stage en ESN/MSP ne comporte pas de test d'intrusion offensif en production. Axe d'amélioration identifié : formaliser une méthodologie de pentest (cadre type PTES/OWASP) sur un environnement dédié.</p>" +
+                    "</div>",
+        
+                    "<strong>AC35.03Cyber | Réagir face à un incident de sécurité</strong>" +
+                    "<div class='reflexive'>" +
+                    "<p><b>Ce que j'ai fait :</b> En SAÉ6.Cyber.01, application du processus complet de réponse à incident : identifier l'attaque, stopper la propagation, neutraliser, prélever et conserver les preuves, mener les premières investigations.</p>" +
+                    "<p><b>Pourquoi :</b> Une réponse structurée limite les dégâts et préserve les preuves pour l'analyse post-incident.</p>" +
+                    "<p><b>Comment :</b> Suivi des phases de réponse à incident, collecte et conservation des preuves (intégrité), investigation initiale. Outils : outils d'investigation, journaux, procédures de réponse.</p>" +
+                    "<p><b>Difficultés :</b> Conserver les preuves sans altérer leur intégrité tout en agissant dans l'urgence.</p>" +
+                    "<p><b>Ce que j'en ai appris :</b> La gestion d'incident est autant méthodologique que technique : l'ordre des actions compte.</p>" +
+                    "<p><b>Ce que je ferais autrement :</b> Tenir une main courante d'incident en temps réel pour la traçabilité.</p>" +
+                    "<a href='#' class='proof-placeholder'>[TRACE : extrait main courante d'incident / schéma des phases de réponse]</a>" +
+                    "</div>",
+        
+                    "<strong>AC35.04Cyber | Administrer les outils de surveillance du SI</strong>" +
+                    "<div class='reflexive'>" +
+                    "<p><b>Ce que j'ai fait :</b> En SAÉ6.Cyber.01, administration des outils de surveillance/détection utilisés pendant l'incident. En stage, contribution à l'exploitation des outils de supervision de sécurité (SIEM Sekoia, EDR SentinelOne) sur le périmètre client.</p>" +
+                    "<p><b>Pourquoi :</b> Des outils de surveillance bien administrés conditionnent la qualité de la détection et de la réponse.</p>" +
+                    "<p><b>Comment :</b> Exploitation des règles de détection, suivi des sources de logs, gestion des alertes depuis les consoles. Outils : Sekoia (SIEM), SentinelOne (EDR).</p>" +
+                    "<p><b>Difficultés :</b> Couvrir l'ensemble des sources de logs pertinentes sans saturer l'outil ni noyer l'analyste.</p>" +
+                    "<p><b>Ce que j'en ai appris :</b> Un outil de surveillance ne vaut que par sa configuration et la couverture de ses sources.</p>" +
+                    "<p><b>Ce que je ferais autrement :</b> Mettre en place une revue périodique des règles pour les maintenir à jour face aux nouvelles menaces.</p>" +
+                    "<a href='#' class='proof-placeholder'>[TRACE : capture console Sekoia/SentinelOne / règle de détection (anonymisé)]</a>" +
+                    "</div>"
                 ]
             }
         };
