@@ -122,7 +122,7 @@
                 "<p><b>Difficultés :</b> Maintenir la documentation à jour au fil des itérations techniques.</p>" +
                 "<p><b>Ce que j'en ai appris :</b> Une procédure n'est fiable que si elle est testée par quelqu'un qui ne l'a pas écrite.</p>" +
                 "<p><b>Ce que je ferais autrement :</b> Versionner la documentation dans Git, au même titre que le code.</p>" +
-                "<a href='https://docs.google.com/document/d/1L1y2YNe7nbl7o7FXQBOHabl_u6sjKiU2loDYcHdbwJU/edit' class='proof-placeholder' target='_blank'>[TRACE : Dossier Technique de Référence SAÉ5.01]</a>" +
+                "<a href='https://docs.google.com/document/d/1L1y2YNe7nbl7o7FXQBOHabl_u6sjKiU2loDYcHdbwJU/edit' class='proof-placeholder' target='_blank'>[Dossier Technique de Référence SAÉ5.01]</a>" +
                 "</div>",
 
                 "<strong>AC31.03 | Réaliser une maquette de démonstration</strong>" +
@@ -133,7 +133,34 @@
                 "<p><b>Difficultés :</b> Détecter dynamiquement l'IP des VM pour créer la connexion RDP au bon moment (boucle d'attente du guest-agent).</p>" +
                 "<p><b>Ce que j'en ai appris :</b> Une maquette fonctionnelle vaut mille explications théoriques en démonstration.</p>" +
                 "<p><b>Ce que je ferais autrement :</b> Ajouter un retour visuel d'état (VM en cours de démarrage) sur le portail.</p>" +
-                "<a href='#' class='proof-placeholder'>[TRACE : capture portail Flask / interface Guacamole]</a>" +
+                "<p class='trace-legende'>Trace — Extrait du portail Flask : démarrage de la VM et création dynamique de la connexion Guacamole (RDP) après détection de l'IP via le QEMU guest-agent.</p>" +
+                "<div class='trace-code'><pre><code>" +
+                "@app.route(\"/start_vm/&lt;int:vmid&gt;\")\n" +
+                "@login_required\n" +
+                "def start_vm(vmid):\n" +
+                "    proxmox = get_proxmox()\n" +
+                "    guac_user = current_user.guac_username\n" +
+                "\n" +
+                "    # 1) Démarrage de la VM via l'API Proxmox\n" +
+                "    proxmox.nodes(PROXMOX_NODE).qemu(vmid).status.start.post()\n" +
+                "\n" +
+                "    # 2) Détection de l'IP via le qemu-guest-agent\n" +
+                "    cids = get_guac_connection_ids_for_vm(guac_user, vmid)\n" +
+                "    if not cids:\n" +
+                "        ip = get_vm_ip(vmid)   # boucle jusqu'à obtention de l'IP\n" +
+                "        if ip:\n" +
+                "            # 3) Création dynamique de la connexion RDP dans Guacamole\n" +
+                "            create_guac_connection(\n" +
+                "                guac_user, vmid, ip,\n" +
+                "                current_user.rdp_username,\n" +
+                "                current_user.rdp_password,\n" +
+                "            )\n" +
+                "            cids = get_guac_connection_ids_for_vm(guac_user, vmid)\n" +
+                "\n" +
+                "    # 4) Génération de l'URL d'accès Guacamole\n" +
+                "    guac_url = generate_guac_url(cids[0]) if cids else None\n" +
+                "    return redirect(url_for(\"dashboard\"))\n" +
+                "</code></pre></div>" +
                 "</div>",
 
                 "<strong>AC31.04 | Défendre/argumenter un projet</strong>" +

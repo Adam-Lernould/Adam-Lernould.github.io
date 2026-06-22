@@ -903,6 +903,18 @@ body::before {
     background-color: #ffeeba;
 }
 
+.trace-centree {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.trace-legende {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: #8b949e;
+    margin: 10px 0 4px 0;
+}
+
 /* ===========================
    Responsive pour les compétences
 =========================== */
