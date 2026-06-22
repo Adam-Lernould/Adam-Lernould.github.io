@@ -887,6 +887,17 @@ body::before {
     border-radius: 4px;
     font-size: 0.85em !important;
 }
+ 
+/* Note informative (rattachement partiel assumé) */
+.ac-note {
+    background-color: #0d2535;
+    border: 1px solid #1f6feb;
+    color: #79c0ff !important;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 0.85em !important;
+    margin-top: 8px;
+}
 
 .proof-placeholder:hover {
     background-color: #ffeeba;

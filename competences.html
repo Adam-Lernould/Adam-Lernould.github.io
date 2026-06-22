@@ -184,45 +184,57 @@
                 items: [
                     "<strong>AC32.01 | Déployer un système de communication pour l'entreprise</strong>" +
                     "<div class='reflexive'>" +
-                    "<p><b>Ce que j'ai fait :</b> Prise en charge de tickets de téléphonie sur IP en production chez Acipia : routage SIP, présentation du numéro appelant, diagnostic d'appels sur 3CX et XiVO SBC.</p>" +
-                    "<p><b>Pourquoi :</b> Assurer la continuité du service voix des clients, élément critique de leur activité.</p>" +
-                    "<p><b>Comment :</b> Analyse de la signalisation SIP et du flux média RTP, configuration de trunks, résolution de problèmes de caller ID et de hairpinning RTP. Outils : 3CX, XiVO SBC, Wireshark.</p>" +
-                    "<p><b>Difficultés :</b> Le passage du caller ID et le routage RTP à travers les VLAN et le SBC (hairpinning DECT).</p>" +
-                    "<p><b>Ce que j'en ai appris :</b> Un système de communication d'entreprise repose autant sur la signalisation (SIP) que sur le transport média (RTP) ; les deux doivent être analysés ensemble.</p>" +
-                    "<p><b>Ce que je ferais autrement :</b> Tracer systématiquement le flux SIP/RTP par capture avant toute modification.</p>" +
-                    "<a href='#' class='proof-placeholder'>[TRACE : extrait capture SIP/RTP commentée (anonymisé)]</a>" +
+                    "<p><b>Ce que j'ai fait :</b> Déploiement et maintien en condition opérationnelle de solutions de téléphonie sur IP en production : IPBX 3CX et XiVO (moteur Asterisk), auto-provisioning de postes Yealink (T46S/T54W, bases DECT W60B/W80DM, casques WH66), ingénierie de flux d'appels (SVI/IVR, files d'attente, calendriers conditionnels) et diagnostic d'incidents complexes.</p>" +
+                    "<p><b>Pourquoi :</b> La ToIP est le cœur d'activité des clients (Mairies, IME, APEI, SESSAD) ; toute interruption affecte directement la continuité des soins ou du service public.</p>" +
+                    "<p><b>Comment :</b> Auto-provisioning par adresse MAC (Option DHCP 66, fichiers de config XML chiffrés), déploiement DECT multicellulaire (appairage, matrice d'assignation des combinés), analyse de signalisation SIP et de flux RTP à Wireshark. Études de cas résolues : voix robotique due au VAD/Suppression de silence (gigue de 40 s, désynchronisation du Timestamp RTP, paquet 77502), et tromboning SIP sur DECT W80DM (bouclage média local corrigé via l'option « Le PBX délivre l'audio » sur 3CX). Outils : 3CX, XiVO, Yealink, Wireshark, codecs G.711/G.722.</p>" +
+                    "<p><b>Difficultés :</b> Corréler un symptôme applicatif (voix hachée, appels muets) avec sa cause réelle au niveau RTP/SIP ou matériel (firmware de borne) en descendant jusqu'au binaire de l'en-tête RTP.</p>" +
+                    "<p><b>Ce que j'en ai appris :</b> Un système de communication repose autant sur la signalisation (SIP) que sur le transport média (RTP) ; le diagnostic exige une approche par couches du modèle OSI.</p>" +
+                    "<p><b>Ce que je ferais autrement :</b> Capturer systématiquement le flux SIP/RTP en amont pour constituer une preuve technique avant toute escalade vers l'éditeur.</p>" +
+                    "<a href='#' class='proof-placeholder'>[TRACE : capture Wireshark flux RTP commentée (étude de cas VAD) (rapport stage, §5.1)]</a>" +
                     "</div>",
 
                     "<strong>AC32.02 | Déployer un réseau d'accès sans fil sécurisé</strong>" +
                     "<div class='reflexive'>" +
-                    "<p class='ac-warning'>⚠ AC non couvert par cette SAÉ : le périmètre du stage n'a pas comporté de mission de déploiement Wi-Fi sécurisé. Axe d'amélioration identifié pour la suite du parcours.</p>" +
+                    "<p><b>Ce que j'ai fait :</b> Déploiement et administration de réseaux Wi-Fi sécurisés pour des clients (établissements éducatifs et médicalisés) : configuration de contrôleurs TP-Link Omada (OC200), conversion et paramétrage de bornes Cisco Aironet (séries 1600/2700/3700) en ligne de commande.</p>" +
+                    "<p><b>Pourquoi :</b> Assurer la mobilité des collaborateurs (déplacements continus en milieu hospitalier/éducatif) tout en sécurisant l'accès radio au réseau de l'entreprise.</p>" +
+                    "<p><b>Comment :</b> Choix de l'architecture selon le besoin (mode autonome k9w7 vs mode contrôleur CAPWAP k9w8), chiffrement WPA2-PSK couplé à AES-CCM, configuration des interfaces radio (Dot11Radio0/1) et pontage vers le filaire (bridge-group, BVI1). Conversion de firmware via TFTP. Outils : Cisco Aironet (CLI), TP-Link Omada OC200, PuTTY, Tftpd64.</p>" +
+                    "<p><b>Difficultés :</b> Convertir les bornes d'un mode à l'autre (effacement flash + injection OS via TFTP, amorçage de récupération par bouton Mode) et lier correctement l'interface radio au réseau filaire.</p>" +
+                    "<p><b>Ce que j'en ai appris :</b> La maîtrise des couches basses du Wi-Fi (encapsulation, CAPWAP, pontage radio/Ethernet) est indispensable ; un AP n'est pas qu'un équipement « plug-and-play ».</p>" +
+                    "<p><b>Ce que je ferais autrement :</b> Migrer vers WPA3 lorsque le parc client le permet, et privilégier le mode contrôleur pour faciliter le roaming.</p>" +
+                    "<a href='#' class='proof-placeholder'>[TRACE : extrait config radio Aironet (WPA2/AES-CCM, BVI1) (rapport stage, §2.2)]</a>" +
                     "</div>",
 
                     "<strong>AC32.03 | Déployer un réseau d'accès fixe ou mobile pour un opérateur</strong>" +
                     "<div class='reflexive'>" +
-                    "<p class='ac-warning'>⚠ AC non couvert : périmètre orienté opérateur télécom, hors du cadre des missions réalisées en ESN/MSP. Axe d'amélioration identifié.</p>" +
+                    "<p><b>Ce que j'ai fait :</b> Coordination de la portabilité de numéros téléphoniques depuis des opérateurs/hébergeurs tiers (OVH) et déploiement d'architectures d'accès voix opérateur via trunks SIP et Session Border Controllers vers le cloud.</p>" +
+                    "<p><b>Pourquoi :</b> Assurer la continuité du service téléphonique lors des migrations d'opérateur et fournir un accès voix fiable malgré les contraintes des réseaux d'accès clients (NAT, SIP ALG).</p>" +
+                    "<p><b>Comment :</b> Envoi de mandats de portabilité, vérification des listes de numéros et validation de leur attribution le jour J ; déploiement de SBC (matériels type Raspberry Pi ou téléphones-routeurs) encapsulant signalisation et média dans un tunnel chiffré unique (port 5090) vers l'IPBX 3CX central, contournant les limites NAT/SIP ALG des accès clients. Outils : 3CX, SBC, trunk SIP, portabilité OVH.</p>" +
+                    "<p><b>Difficultés :</b> Coordonner la portabilité sans interruption de service (continuité des soins) et remplacer en urgence un SBC défaillant par des téléphones-routeurs pour rétablir la production.</p>" +
+                    "<p><b>Ce que j'en ai appris :</b> L'accès voix opérateur impose une rigueur particulière : toute erreur de portabilité ou de routage SIP coupe directement le service client.</p>" +
+                    "<p><b>Ce que je ferais autrement :</b> Formaliser une procédure type de portabilité avec checklist pour fiabiliser le jour J.</p>" +
+                    "<a href='#' class='proof-placeholder'>[TRACE : mandat de portabilité anonymisé / schéma trunk SIP + SBC (rapport stage, §3.2 & §6.2)]</a>" +
                     "</div>",
 
                     "<strong>AC32.04 | Permettre une connexion sécurisée au SI de l'entreprise</strong>" +
                     "<div class='reflexive'>" +
-                    "<p><b>Ce que j'ai fait :</b> Traitement de tickets d'accès distant sécurisé : tunnels VPN IPsec FortiClient ↔ FortiGate, gestion du split-tunnel vs full-tunnel et du routage DNS associé.</p>" +
-                    "<p><b>Pourquoi :</b> Permettre aux collaborateurs des clients de se connecter au SI en télétravail de façon sécurisée et fonctionnelle.</p>" +
-                    "<p><b>Comment :</b> Configuration des tunnels IPsec, gestion des routes (ipv4-split-include), résolution des conflits DNS VPN (notamment WSL2/VPN). Outils : FortiGate, FortiClient.</p>" +
-                    "<p><b>Difficultés :</b> Les problématiques de routage DNS en VPN (split vs full tunnel) et la fragmentation IKE FortiClient ↔ FortiGate.</p>" +
-                    "<p><b>Ce que j'en ai appris :</b> Un accès distant sécurisé ne se limite pas au chiffrement : le routage et la résolution DNS conditionnent autant la sécurité que l'usage réel.</p>" +
-                    "<p><b>Ce que je ferais autrement :</b> Standardiser une checklist de validation post-déploiement VPN (test DNS, fuite de trafic, accès ressources).</p>" +
-                    "<a href='#' class='proof-placeholder'>[TRACE : capture config tunnel IPsec / route split-include (anonymisé)]</a>" +
+                    "<p><b>Ce que j'ai fait :</b> Conception de VPN IPsec d'accès distant basés sur une infrastructure à clés publiques (PKI), authentification par certificat X.509 plutôt que par clé pré-partagée, pour sécuriser le télétravail des collaborateurs clients.</p>" +
+                    "<p><b>Pourquoi :</b> L'authentification par certificat assure une authentification mutuelle forte et garantit l'identité cryptographique des machines, contrairement aux clés pré-partagées vulnérables aux attaques par dictionnaire.</p>" +
+                    "<p><b>Comment :</b> Génération d'une autorité de certification et de certificats clients sur pfSense (RSA 2048 bits, Common Name/SAN alignés sur les FQDN), export en conteneur chiffré PKCS#12 (.pfx) et import via certmgr.msc (magasins racine/personnel), configuration de FortiClient en authentification X.509, alignement strict des paramètres IKE (AES-256, SHA-256, Perfect Forward Secrecy via Diffie-Hellman groupe 5). Outils : FortiGate, FortiClient, pfSense, PKCS#12.</p>" +
+                    "<p><b>Difficultés :</b> Aligner parfaitement les paramètres de négociation IKE des deux côtés (le numéro de groupe DH devant être strictement identique) et placer correctement la chaîne de confiance dans les magasins Windows.</p>" +
+                    "<p><b>Ce que j'en ai appris :</b> Un accès distant sécurisé repose sur la rigueur cryptographique : la moindre divergence de paramètre (DH, hachage) fait échouer tout le tunnel.</p>" +
+                    "<p><b>Ce que je ferais autrement :</b> Migrer vers IKEv2 (plus robuste que l'IKEv1 mode agressif) et automatiser la rotation annuelle des certificats.</p>" +
+                    "<a href='#' class='proof-placeholder'>[TRACE : capture config tunnel IPsec FortiGate (params IKE) / export PKCS#12 (rapport stage, §4.3)]</a>" +
                     "</div>",
 
                     "<strong>AC32.05 | Collaborer en mode projet en français et en anglais</strong>" +
                     "<div class='reflexive'>" +
-                    "<p><b>Ce que j'ai fait :</b> Collaboration quotidienne au sein de l'équipe Acipia (tuteur Sven, collègues Hugo et Clément) via un système de ticketing, avec escalade et validation avant action en production.</p>" +
-                    "<p><b>Pourquoi :</b> Un environnement de production exige une coordination structurée et une validation des interventions à risque.</p>" +
-                    "<p><b>Comment :</b> Ticketing, échanges techniques, validation par le tuteur avant action sur la prod, lecture de documentation technique en anglais (FortiOS, RFC). Outils : système de tickets, doc constructeur EN.</p>" +
-                    "<p><b>Difficultés :</b> Formuler un diagnostic technique clair et synthétique pour l'escalade.</p>" +
-                    "<p><b>Ce que j'en ai appris :</b> La traçabilité (ticket, compte-rendu) est le socle d'une collaboration efficace en production, et l'anglais technique est incontournable.</p>" +
-                    "<p><b>Ce que je ferais autrement :</b> Documenter plus systématiquement les résolutions pour enrichir la base de connaissances de l'équipe.</p>" +
-                    "<a href='#' class='proof-placeholder'>[TRACE : extrait d'un ticket d'intervention résolu (anonymisé)]</a>" +
+                    "<p><b>Ce que j'ai fait :</b> Collaboration quotidienne au sein de l'équipe Acipia (tuteur Sven, collègues Hugo et Clément) via la plateforme de ticketing Request Tracker (RT), pilotage de projets de migration et accompagnement pédagogique d'utilisateurs non-initiés (Mairies, IME, APEI, ESAT).</p>" +
+                    "<p><b>Pourquoi :</b> Un environnement de production B2B exige une coordination structurée, une traçabilité des interventions et une communication adaptée à des clients dont l'informatique n'est pas le métier.</p>" +
+                    "<p><b>Comment :</b> Centralisation des demandes via RT (support N1/N2), validation par le tuteur avant action en production, rédaction de tutoriels et notices (ex. distinction transferts supervisés/aveugles pour un secrétariat d'ESAT), coordination de portabilités, lecture de documentation technique constructeur en anglais (FortiOS, notes de version, RFC). Outils : Request Tracker, documentation EN.</p>" +
+                    "<p><b>Difficultés :</b> Vulgariser des concepts techniques complexes pour des utilisateurs finaux et formuler un diagnostic clair pour l'escalade.</p>" +
+                    "<p><b>Ce que j'en ai appris :</b> La traçabilité (ticket, notice) et la pédagogie sont aussi importantes que la résolution technique ; elles préviennent les récurrences et favorisent l'autonomie du client. L'anglais technique est incontournable.</p>" +
+                    "<p><b>Ce que je ferais autrement :</b> Alimenter plus systématiquement une base de connaissances partagée pour capitaliser sur les résolutions.</p>" +
+                    "<a href='#' class='proof-placeholder'>[TRACE : ticket RT résolu / notice utilisateur rédigée (anonymisé) (rapport stage, §6.2)]</a>" +
                     "</div>"
                 ]
             },
@@ -405,7 +417,6 @@
                 ]
             }
         };
-
         // --- Logique de la Modale ---
         const modalOverlay = document.getElementById('modal-overlay');
         const modalTitle = document.getElementById('modal-title');
