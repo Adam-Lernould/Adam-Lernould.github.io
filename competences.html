@@ -334,36 +334,72 @@
 
                 "<strong>AC33.04 | Déployer et maintenir une solution informatique</strong>" +
                 "<div class='reflexive'>" +
-                "<p><b>Ce que j'ai fait :</b> Développement et mise en service de l'application client-serveur capable de traiter plusieurs clients simultanément.</p>" +
-                "<p><b>Pourquoi :</b> Fournir un service de recherche fonctionnel, robuste et capable de gérer la concurrence.</p>" +
-                "<p><b>Comment :</b> Programmation TCP/sockets, gestion du multi-clients, parsing de fichiers multi-formats. Outils : Python (sockets), bibliothèques de parsing.</p>" +
-                "<p><b>Difficultés :</b> Gérer proprement les connexions simultanées sans blocage ni corruption des réponses.</p>" +
-                "<p><b>Ce que j'en ai appris :</b> La gestion de la concurrence est un point critique d'une application réseau.</p>" +
-                "<p><b>Ce que je ferais autrement :</b> Ajouter une gestion d'erreurs plus fine et des logs côté serveur.</p>" +
-                "<a href='#' class='proof-placeholder'>[TRACE : extrait de code gestion multi-clients (sockets)]</a>" +
+                "<p><b>Ce que j'ai fait :</b> Développement et mise en service du serveur de recherche, capable de traiter plusieurs clients simultanément et d'arrêter proprement le service.</p>" +
+                "<p><b>Pourquoi :</b> Fournir un service de recherche fonctionnel, robuste et capable de gérer la concurrence sans blocage.</p>" +
+                "<p><b>Comment :</b> Socket TCP (AF_INET/SOCK_STREAM), un thread par client (threading.Thread) sur la boucle accept(), thread daemon dédié à l'arrêt du serveur. Outils : Python (socket, threading).</p>" +
+                "<p><b>Difficultés :</b> Gérer plusieurs connexions simultanées sans blocage ni corruption des réponses entre clients.</p>" +
+                "<p><b>Ce que j'en ai appris :</b> La gestion de la concurrence (un thread par client) est un point critique d'une application réseau.</p>" +
+                "<p><b>Ce que je ferais autrement :</b> Limiter le nombre de threads (pool) pour éviter la saturation sous forte charge.</p>" +
+                "<p class='trace-legende'>Trace — Boucle d'acceptation multi-clients (server.py) :</p>" +
+                "<div class='trace-code'><pre><code>" +
+                "def main():\n" +
+                "    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server:\n" +
+                "        server.bind((HOST, PORT))\n" +
+                "        server.listen(5)\n" +
+                "        while True:\n" +
+                "            client_socket, addr = server.accept()\n" +
+                "            logging.info(f\"Accepted connection from {addr}\")\n" +
+                "            # Un thread dédié par client pour gérer la concurrence\n" +
+                "            threading.Thread(\n" +
+                "                target=handle_client, args=(client_socket,)\n" +
+                "            ).start()\n" +
+                "</code></pre></div>" +
                 "</div>",
 
                 "<strong>AC33.05 | S'informer sur les évolutions et nouveautés technologiques</strong>" +
                 "<div class='reflexive'>" +
-                "<p><b>Ce que j'ai fait :</b> Recherche des bibliothèques adaptées au parsing de chaque format de document (PDF, xlsx, HTML) et des bonnes pratiques sockets en Python.</p>" +
-                "<p><b>Pourquoi :</b> Choisir les outils les plus adaptés plutôt que de réinventer le parsing.</p>" +
-                "<p><b>Comment :</b> Comparaison de bibliothèques de parsing, lecture de documentation Python. Outils : doc officielle, ressources techniques.</p>" +
-                "<p><b>Difficultés :</b> Évaluer la fiabilité d'une bibliothèque tierce pour un format donné.</p>" +
+                "<p><b>Ce que j'ai fait :</b> Sélection d'une bibliothèque de parsing adaptée à chaque format de document plutôt que de réécrire le traitement à la main.</p>" +
+                "<p><b>Pourquoi :</b> Chaque format (PDF, xlsx, HTML) a une structure propre ; s'appuyer sur des bibliothèques éprouvées fiabilise l'extraction.</p>" +
+                "<p><b>Comment :</b> Veille et choix de PyPDF2 (PDF), openpyxl (Excel), BeautifulSoup (HTML), et du module re pour la recherche par expressions régulières. Outils : documentation officielle, PyPI.</p>" +
+                "<p><b>Difficultés :</b> Évaluer la fiabilité d'une bibliothèque tierce et son adéquation au besoin (extraction texte page par page, lecture cellule par cellule).</p>" +
                 "<p><b>Ce que j'en ai appris :</b> S'appuyer sur l'écosystème existant accélère le développement et fiabilise le résultat.</p>" +
-                "<p><b>Ce que je ferais autrement :</b> Documenter le choix de chaque bibliothèque et sa justification.</p>" +
-                "<a href='#' class='proof-placeholder'>[TRACE : liste des bibliothèques utilisées / justification]</a>" +
+                "<p><b>Ce que je ferais autrement :</b> Documenter dans le README le choix de chaque bibliothèque et figer les versions dans requirements.txt.</p>" +
+                "<p class='trace-legende'>Trace — Bibliothèques retenues, une par format (imports de server.py) :</p>" +
+                "<div class='trace-code'><pre><code>" +
+                "import PyPDF2                  # Extraction de texte des PDF\n" +
+                "import openpyxl                # Lecture des classeurs Excel (.xlsx)\n" +
+                "from bs4 import BeautifulSoup  # Parsing du contenu HTML\n" +
+                "import re                      # Recherche par expressions régulières\n" +
+                "</code></pre></div>" +
                 "</div>",
 
                 "<strong>AC33.06 | Sécuriser l'environnement numérique d'une application</strong>" +
                 "<div class='reflexive'>" +
-                "<p><b>Ce que j'ai fait :</b> Mise en œuvre d'un système d'authentification pour sécuriser les échanges entre client et serveur.</p>" +
-                "<p><b>Pourquoi :</b> Empêcher un accès non autorisé au service de recherche et aux documents.</p>" +
-                "<p><b>Comment :</b> Mécanisme d'authentification à l'établissement de la connexion, contrôle d'accès au service. Outils : Python (sockets, authentification).</p>" +
-                "<p><b>Difficultés :</b> Intégrer l'authentification sans complexifier excessivement le protocole d'échange.</p>" +
-                "<p><b>Ce que j'en ai appris :</b> La sécurité d'une application communicante se conçoit au niveau du protocole, dès la connexion.</p>" +
-                "<p><b>Ce que je ferais autrement :</b> Chiffrer le canal de communication (TLS) en plus de l'authentification.</p>" +
-                "<a href='#' class='proof-placeholder'>[TRACE : extrait de code authentification]</a>" +
-                "</div>"
+                "<p><b>Ce que j'ai fait :</b> Sécurisation des entrées et de l'accès aux fichiers du serveur : validation stricte du format des requêtes et restriction des recherches à des dossiers autorisés.</p>" +
+                "<p><b>Pourquoi :</b> Empêcher qu'une requête malformée fasse planter le serveur ou qu'un client accède à des fichiers hors du périmètre prévu.</p>" +
+                "<p><b>Comment :</b> Contrôle du format attendu (search_target|keyword|extension) avec gestion d'erreur (ValueError), dictionnaire FOLDERS limitant les extensions/dossiers accessibles, construction des chemins via os.path.join et vérification d'existence (os.path.exists). Outils : Python (gestion d'exceptions, os.path).</p>" +
+                "<p><b>Difficultés :</b> Renvoyer un message d'erreur clair sans exposer la structure interne du serveur.</p>" +
+                "<p><b>Ce que j'en ai appris :</b> La sécurité d'une application communicante commence par la validation des entrées et le cloisonnement des accès.</p>" +
+                "<p><b>Ce que je ferais autrement :</b> Ajouter une authentification des clients et chiffrer le canal (TLS), absents de cette première version.</p>" +
+                "<p class='trace-legende'>Trace — Validation du format de requête et accès restreint (server.py) :</p>" +
+                "<div class='trace-code'><pre><code>" +
+                "FOLDERS = {\n" +
+                "    \".txt\": \"data/txt/\", \".pdf\": \"data/pdf/\",\n" +
+                "    \".html\": \"data/html/\", \".xlsx\": \"data/excel/\",\n" +
+                "}\n" +
+                "\n" +
+                "try:\n" +
+                "    # Format imposé : refus de toute requête malformée\n" +
+                "    search_target, keyword, file_extension = client_msg.split(\"|\")\n" +
+                "except ValueError:\n" +
+                "    response = \"Invalid format. Use: \"\\\n" +
+                "               \"&lt;search_target&gt;|&lt;keyword&gt;|&lt;file_extension&gt;\"\n" +
+                "\n" +
+                "# Accès limité aux seuls dossiers déclarés dans FOLDERS\n" +
+                "folder = FOLDERS.get(ext)\n" +
+                "file_path = os.path.join(folder, search_target)\n" +
+                "</code></pre></div>" +
+                "</div>",
             ]
         },
 
