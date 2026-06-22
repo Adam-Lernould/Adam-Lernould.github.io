@@ -187,7 +187,7 @@
                 "<p><b>Difficultés :</b> Synchroniser les dépendances entre les briques (le dev du portail dépendait de l'infra Proxmox et de l'AD).</p>" +
                 "<p><b>Ce que j'en ai appris :</b> La communication régulière évite les blocages liés aux dépendances techniques.</p>" +
                 "<p><b>Ce que je ferais autrement :</b> Tenir des points courts et fréquents plutôt que de longues réunions espacées.</p>" +                  
-                "<a href='https://drive.google.com/drive/folders/1aHNwjIrn4AwhJii6ZXyXuwM7p-0s-say?usp=sharing' class='proof-placeholder' target='_blank'>[Répertoire partagé de Référence SAÉ5.01]</a>" +
+                "<a href='https://drive.google.com/drive/folders/1aHNwjIrn4AwhJii6ZXyXuwM7p-0s-say?usp=sharing' class='proof-placeholder' target='_blank'>[Répertoire partagé de la SAÉ5.01]</a>" +
                 "</div>",
 
                 "<strong>AC31.06 | Gérer le projet en respectant les délais</strong>" +
@@ -198,7 +198,7 @@
                 "<p><b>Difficultés :</b> Arbitrer entre fonctionnalités essentielles et bonus quand le temps se réduit.</p>" +
                 "<p><b>Ce que j'en ai appris :</b> Livrer un socle solide vaut mieux que viser trop de fonctionnalités inachevées.</p>" +
                 "<p><b>Ce que je ferais autrement :</b> Formaliser un vrai rétroplanning daté dès le lancement.</p>" +
-                "<img src='images/trello.png' alt='Schéma Trello' style='width: 100%; margin-top: 10px; border-radius: 5px; border: 1px solid #30363d'>" +                "</div>",
+                "<img src='images/trello.png' alt='Schéma Trello' style='width: 100%; margin-top: 10px; border-radius: 5px; border: 1px solid #30363d'>" +               
                 "</div>"
             ]
         },
@@ -217,7 +217,7 @@
                 "<p><b>Difficultés :</b> Corréler un symptôme applicatif (voix hachée, appels muets) avec sa cause réelle au niveau RTP/SIP ou matériel (firmware de borne) en descendant jusqu'au binaire de l'en-tête RTP.</p>" +
                 "<p><b>Ce que j'en ai appris :</b> Un système de communication repose autant sur la signalisation (SIP) que sur le transport média (RTP) ; le diagnostic exige une approche par couches du modèle OSI.</p>" +
                 "<p><b>Ce que je ferais autrement :</b> Capturer systématiquement le flux SIP/RTP en amont pour constituer une preuve technique avant toute escalade vers l'éditeur.</p>" +
-                "<a href='#' class='proof-placeholder'>[TRACE : capture Wireshark flux RTP commentée (étude de cas VAD) (rapport stage, §5.1)]</a>" +
+                "<img src='images/flux_3cx' alt='Schéma Trello' style='width: 100%; margin-top: 10px; border-radius: 5px; border: 1px solid #30363d'>" +               
                 "</div>",
 
                 "<strong>AC32.02 | Déployer un réseau d'accès sans fil sécurisé</strong>" +
@@ -228,7 +228,29 @@
                 "<p><b>Difficultés :</b> Convertir les bornes d'un mode à l'autre (effacement flash + injection OS via TFTP, amorçage de récupération par bouton Mode) et lier correctement l'interface radio au réseau filaire.</p>" +
                 "<p><b>Ce que j'en ai appris :</b> La maîtrise des couches basses du Wi-Fi (encapsulation, CAPWAP, pontage radio/Ethernet) est indispensable ; un AP n'est pas qu'un équipement « plug-and-play ».</p>" +
                 "<p><b>Ce que je ferais autrement :</b> Migrer vers WPA3 lorsque le parc client le permet, et privilégier le mode contrôleur pour faciliter le roaming.</p>" +
-                "<a href='#' class='proof-placeholder'>[TRACE : extrait config radio Aironet (WPA2/AES-CCM, BVI1) (rapport stage, §2.2)]</a>" +
+                "<p class='trace-legende'>Trace — Configuration représentative d'un point d'accès Cisco Aironet en mode autonome (chiffrement WPA2/AES-CCM, pontage radio vers le filaire), telle que déployée lors du stage :</p>" +
+                "<div class='trace-code'><pre><code>" +
+                "! --- Définition du SSID et de la sécurité WPA2 ---\n" +
+                "dot11 ssid ENTREPRISE\n" +
+                "   authentication open\n" +
+                "   authentication key-management wpa version 2\n" +
+                "   wpa-psk ascii 0 &lt;cle_partagee&gt;\n" +
+                "!\n" +
+                "! --- Interface radio 5 GHz ---\n" +
+                "interface Dot11Radio1\n" +
+                "   encryption mode ciphers aes-ccm\n" +
+                "   ssid ENTREPRISE\n" +
+                "   bridge-group 1\n" +
+                "   no shutdown\n" +
+                "!\n" +
+                "! --- Pontage radio vers le filaire ---\n" +
+                "interface GigabitEthernet0\n" +
+                "   bridge-group 1\n" +
+                "!\n" +
+                "! --- Interface d'administration (IP via DHCP) ---\n" +
+                "interface BVI1\n" +
+                "   ip address dhcp\n" +
+                "</code></pre></div>" +                
                 "</div>",
 
                 "<strong>AC32.03 | Déployer un réseau d'accès fixe ou mobile pour un opérateur</strong>" +
