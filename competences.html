@@ -493,7 +493,18 @@
                 "<p><b>Difficultés :</b> Distinguer les requêtes légitimes des tentatives d'attaque dans le volume de logs.</p>" +
                 "<p><b>Ce que j'en ai appris :</b> La surveillance n'a de valeur que si la journalisation est activée et exploitée régulièrement.</p>" +
                 "<p><b>Ce que je ferais autrement :</b> Centraliser les logs vers un collecteur (SIEM) plutôt que de les consulter localement.</p>" +
-                "<a href='#' class='proof-placeholder'>[TRACE : extrait journal pare-feu / sortie Get-DnsServerCache]</a>" +
+                "<p class='trace-legende'>Activation de la journalisation et vérification du cache DNS (Write-Up SAÉ4.Cyber.01, §8-9) :</p>" +
+                "<div class='trace-code'><pre><code>" +
+                "# Activation de la journalisation complète du pare-feu\n" +
+                "Set-NetFirewallProfile -Profile Domain,Private,Public -LogBlocked True\n" +
+                "\n" +
+                "# Lecture des événements du pare-feu\n" +
+                "Get-WinEvent -LogName \"Microsoft-Windows-Windows \"\\\n" +
+                "  \"Firewall With Advanced Security/Firewall\"\n" +
+                "\n" +
+                "# Vérification de l'intégrité du cache DNS (détection d'anomalies)\n" +
+                "Get-DnsServerCache\n" +
+                "</code></pre></div>" +
                 "</div>",
 
                 "<strong>AC35.02Cyber | Appliquer une méthodologie de tests de pénétration</strong>" +
@@ -504,30 +515,70 @@
                 "<p><b>Difficultés :</b> Reproduire des conditions d'attaque réalistes (rand-source, spoofing) sans déstabiliser tout l'environnement de test.</p>" +
                 "<p><b>Ce que j'en ai appris :</b> Adopter le point de vue de l'attaquant est le meilleur moyen de vérifier la robustesse d'une défense.</p>" +
                 "<p><b>Ce que je ferais autrement :</b> Formaliser les tests dans un référentiel méthodologique (type PTES) avec des résultats chiffrés.</p>" +
-                "<a href='https://github.com/Adam-Lernould' class='proof-placeholder' target='_blank'>[TRACE : commandes de test hping3/Bettercap + résultats (Write-Up SAÉ4.Cyber.01, §9)]</a>" +
+                "<p class='trace-legende'>Séquence de tests offensifs sur le service DNS (Write-Up SAÉ4.Cyber.01, §9) :</p>" +
+                "<div class='trace-code'><pre><code>" +
+                "# 1. Inondation UDP du port DNS (test du throttling)\n" +
+                "sudo hping3 --udp -p 53 192.168.1.10 --flood --rand-source\n" +
+                "\n" +
+                "# 2. Requête ANY (test du blocage des scans DNS)\n" +
+                "dig ANY societeDDLS.pepiniere.rt @192.168.1.10\n" +
+                "\n" +
+                "# 3. DNS spoofing via Bettercap\n" +
+                "set dns.spoof.domains societeDDLS.pepiniere.rt\n" +
+                "set dns.spoof.address 192.168.1.20\n" +
+                "dns.spoof on\n" +
+                "</code></pre></div>" +
                 "</div>",
 
                 "<strong>AC35.03Cyber | Réagir face à un incident de sécurité</strong>" +
                 "<div class='reflexive'>" +
-                "<p><b>Ce que j'ai fait :</b> Mise en place de contre-mesures actives suite aux attaques simulées : règles de throttling DNS (ThrottleLimit), blocage des requêtes ANY, restriction aux IP internes, blocage du DNS en clair, bascule forcée vers DNS-over-TLS.</p>" +
+                "<p><b>Ce que j'ai fait :</b> Mise en place de contre-mesures actives suite aux attaques simulées : throttling DNS, blocage des requêtes ANY, restriction aux IP internes, blocage du DNS en clair, bascule forcée vers DNS-over-TLS.</p>" +
                 "<p><b>Pourquoi :</b> Réagir à une attaque détectée suppose d'appliquer immédiatement des règles de filtrage adaptées pour stopper la menace.</p>" +
                 "<p><b>Comment :</b> Création de règles pare-feu réactives (Block-DNS-Amplification, Block-ANY, Allow-Internal-DNS), chiffrement du transport DNS via Stunnel (DoT). Outils : pare-feu Windows (New-NetFirewallRule), Stunnel.</p>" +
                 "<p><b>Difficultés :</b> Bloquer les attaques sans couper le service DNS légitime des clients internes.</p>" +
                 "<p><b>Ce que j'en ai appris :</b> La réaction à incident consiste à appliquer la contre-mesure la plus ciblée possible, pour neutraliser sans sur-bloquer.</p>" +
                 "<p><b>Ce que je ferais autrement :</b> Préparer ces règles à l'avance sous forme de playbook activable rapidement.</p>" +
-                "<a href='#' class='proof-placeholder'>[TRACE : règles de filtrage réactives DNS (Write-Up, §6-7)]</a>" +
+                "<p class='trace-legende'>Règles de filtrage réactives appliquées après détection (Write-Up SAÉ4.Cyber.01, §6-7) :</p>" +
+                "<div class='trace-code'><pre><code>" +
+                "# Limiter le débit des requêtes DNS UDP (anti-flood)\n" +
+                "New-NetFirewallRule -Name \"Limit-DNS-UDP-Queries\" `\n" +
+                "  -Direction Inbound -Protocol UDP -LocalPort 53 `\n" +
+                "  -Action Allow -ThrottleLimit 20 -Enabled True\n" +
+                "\n" +
+                "# Restreindre le DNS au seul réseau interne\n" +
+                "New-NetFirewallRule -Name \"Allow-Internal-DNS\" `\n" +
+                "  -Direction Inbound -Protocol UDP -LocalPort 53 `\n" +
+                "  -RemoteAddress 192.168.1.0/26 -Action Allow -Enabled True\n" +
+                "\n" +
+                "# Bloquer toute requête de type ANY\n" +
+                "Add-DnsServerQueryResolutionPolicy -Name \"Block-ANY\" `\n" +
+                "  -Action DENY -QType \"eq,ANY\"\n" +
+                "</code></pre></div>" +
                 "</div>",
 
                 "<strong>AC35.04Cyber | Administrer les outils de surveillance du SI</strong>" +
                 "<div class='reflexive'>" +
-                "<p><b>Ce que j'ai fait :</b> Configuration et administration des outils de protection et de surveillance du service DNS : DNSSEC (signature de zone KSK/ZSK), DNS-over-TLS via Stunnel, durcissement du résolveur (cache locking, no-recursion).</p>" +
+                "<p><b>Ce que j'ai fait :</b> Configuration et administration des outils de protection du service DNS : DNSSEC (signature de zone KSK/ZSK), DNS-over-TLS via Stunnel, durcissement du résolveur (cache locking, no-recursion).</p>" +
                 "<p><b>Pourquoi :</b> Garantir l'intégrité (DNSSEC) et la confidentialité (DoT) des réponses DNS, et empêcher l'abus du serveur en résolveur ouvert.</p>" +
                 "<p><b>Comment :</b> Activation DNSSEC (EnableDnsSec, signature KSK/ZSK), durcissement (SecureResponses, CacheLockingPercent, NoRecursion), tunnel TLS via Stunnel sur le port 853. Outils : DNS Windows Server, dnscmd, Stunnel.</p>" +
                 "<p><b>Difficultés :</b> Articuler DNSSEC (intégrité) et DoT (confidentialité) sans casser la résolution.</p>" +
-                "<p><b>Ce que j'en ai appris :</b> Sécuriser un service de surveillance/résolution combine intégrité, confidentialité et durcissement ; ces couches sont complémentaires.</p>" +
+                "<p><b>Ce que j'en ai appris :</b> Sécuriser un service de résolution combine intégrité, confidentialité et durcissement ; ces couches sont complémentaires.</p>" +
                 "<p><b>Ce que je ferais autrement :</b> Automatiser le renouvellement des clés DNSSEC et la rotation des certificats DoT.</p>" +
-                "<a href='#' class='proof-placeholder'>[TRACE : config DNSSEC + stunnel.conf commenté (Write-Up, §3-4)]</a>" +
-                "</div>"
+                "<p class='trace-legende'>Activation DNSSEC et durcissement du résolveur DNS (Write-Up SAÉ4.Cyber.01, §3) :</p>" +
+                "<div class='trace-code'><pre><code>" +
+                "# Activation de DNSSEC et des réponses sécurisées\n" +
+                "dnscmd /config /EnableDnsSec 1\n" +
+                "dnscmd /Config /SecureResponses 1\n" +
+                "\n" +
+                "# Durcissement anti-amplification et anti-empoisonnement\n" +
+                "dnscmd /Config /MaxCacheTTL 300\n" +
+                "dnscmd /Config /CacheLockingPercent 70\n" +
+                "\n" +
+                "# Désactivation de la récursion (pas de résolveur ouvert)\n" +
+                "dnscmd /Config /NoRecursion 1\n" +
+                "Restart-Service DNS\n" +
+                "</code></pre></div>" +
+                "</div>",
             ]
         }
     };
