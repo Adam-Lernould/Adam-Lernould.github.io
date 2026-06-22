@@ -302,7 +302,7 @@
                 "<p><b>Difficultés :</b> Anticiper la gestion de formats de fichiers hétérogènes (txt, HTML, PDF, xlsx) dès la spécification.</p>" +
                 "<p><b>Ce que j'en ai appris :</b> Un cahier des charges bien interprété évite des refontes coûteuses en cours de développement.</p>" +
                 "<p><b>Ce que je ferais autrement :</b> Formaliser les cas d'usage et les formats attendus dans un document dédié dès le départ.</p>" +
-                "<p class='trace-legende'>Trace — Extrait du cahier des charges de la SAÉ3.02 :</p>" +
+                "<p class='trace-legende'>Extrait du cahier des charges de la SAÉ3.02 :</p>" +
                 "<div class='trace-extrait'>" +
                 "<p><b>Besoin fonctionnel :</b> un serveur offre un service de recherche de mots fournis par des clients dans des documents texte (txt), HTML, PDF et Excel (xlsx). Le serveur renvoie des informations contextuelles : ligne(s) où le mot est trouvé, texte environnant, etc.</p>" +
                 "<p><b>Contraintes techniques imposées :</b> code en Python respectant la PEP 8, découpage en fonctions simples avec docstrings, usage de constantes nommées (pas de valeurs en dur), chemins relatifs uniquement, versionnement sur GitLab de l'université.</p>" +
@@ -340,7 +340,7 @@
                 "<p><b>Difficultés :</b> Gérer plusieurs connexions simultanées sans blocage ni corruption des réponses entre clients.</p>" +
                 "<p><b>Ce que j'en ai appris :</b> La gestion de la concurrence (un thread par client) est un point critique d'une application réseau.</p>" +
                 "<p><b>Ce que je ferais autrement :</b> Limiter le nombre de threads (pool) pour éviter la saturation sous forte charge.</p>" +
-                "<p class='trace-legende'>Trace — Boucle d'acceptation multi-clients (server.py) :</p>" +
+                "<p class='trace-legende'>Boucle d'acceptation multi-clients (server.py) :</p>" +
                 "<div class='trace-code'><pre><code>" +
                 "def main():\n" +
                 "    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server:\n" +
@@ -364,7 +364,7 @@
                 "<p><b>Difficultés :</b> Évaluer la fiabilité d'une bibliothèque tierce et son adéquation au besoin (extraction texte page par page, lecture cellule par cellule).</p>" +
                 "<p><b>Ce que j'en ai appris :</b> S'appuyer sur l'écosystème existant accélère le développement et fiabilise le résultat.</p>" +
                 "<p><b>Ce que je ferais autrement :</b> Documenter dans le README le choix de chaque bibliothèque et figer les versions dans requirements.txt.</p>" +
-                "<p class='trace-legende'>Trace — Bibliothèques retenues, une par format (imports de server.py) :</p>" +
+                "<p class='trace-legende'>Bibliothèques retenues, une par format (imports de server.py) :</p>" +
                 "<div class='trace-code'><pre><code>" +
                 "import PyPDF2                  # Extraction de texte des PDF\n" +
                 "import openpyxl                # Lecture des classeurs Excel (.xlsx)\n" +
@@ -381,7 +381,7 @@
                 "<p><b>Difficultés :</b> Renvoyer un message d'erreur clair sans exposer la structure interne du serveur.</p>" +
                 "<p><b>Ce que j'en ai appris :</b> La sécurité d'une application communicante commence par la validation des entrées et le cloisonnement des accès.</p>" +
                 "<p><b>Ce que je ferais autrement :</b> Ajouter une authentification des clients et chiffrer le canal (TLS), absents de cette première version.</p>" +
-                "<p class='trace-legende'>Trace — Validation du format de requête et accès restreint (server.py) :</p>" +
+                "<p class='trace-legende'>Validation du format de requête et accès restreint (server.py) :</p>" +
                 "<div class='trace-code'><pre><code>" +
                 "FOLDERS = {\n" +
                 "    \".txt\": \"data/txt/\", \".pdf\": \"data/pdf/\",\n" +
@@ -411,24 +411,43 @@
             items: [
                 "<strong>AC34.01Cyber | Participer à une analyse de risque / politique de sécurité</strong>" +
                 "<div class='reflexive'>" +
-                "<p><b>Ce que j'ai fait :</b> Analyse de risque formalisée selon la méthode EBIOS Risk Manager pour une PME R&D passant de 8 à 80 collaborateurs, avec synthèse des scénarios de risque (exfiltration R&D, ransomware, intrusion physique, vol d'identité).</p>" +
+                "<p><b>Ce que j'ai fait :</b> Analyse de risque formalisée selon la méthode EBIOS Risk Manager pour une PME R&D passant de 8 à 80 collaborateurs, aboutissant à une synthèse des scénarios de risque et de leurs mesures de traitement.</p>" +
                 "<p><b>Pourquoi :</b> Fonder la politique de sécurité sur les risques réels pesant sur les valeurs métier (brevets, schémas R&D, algorithmes propriétaires) plutôt que sur des choix arbitraires.</p>" +
-                "<p><b>Comment :</b> Déroulé des 5 ateliers EBIOS RM (socle/périmètre, sources de risque, scénarios stratégiques et opérationnels, traitement), construction d'une matrice vraisemblance/gravité/mesure. Outils : méthode EBIOS RM, guides d'hygiène ANSSI.</p>" +
-                "<p><b>Difficultés :</b> Évaluer objectivement la vraisemblance et la gravité de chaque scénario pour prioriser les mesures.</p>" +
+                "<p><b>Comment :</b> Déroulé des 5 ateliers EBIOS RM (socle/périmètre, sources de risque, scénarios stratégiques et opérationnels, traitement), puis cotation vraisemblance/gravité et association d'une mesure à chaque scénario. Outils : méthode EBIOS RM, guides d'hygiène ANSSI.</p>" +
+                "<p><b>Difficultés :</b> Coter objectivement vraisemblance et gravité pour prioriser les mesures sans sur- ou sous-estimer un risque.</p>" +
                 "<p><b>Ce que j'en ai appris :</b> L'analyse de risque oriente toute l'architecture : chaque mesure technique répond à un risque identifié et hiérarchisé.</p>" +
-                "<p><b>Ce que je ferais autrement :</b> Impliquer les acteurs métier dans l'évaluation pour affiner la cotation des risques.</p>" +
-                "<a href='#' class='proof-placeholder'>[TRACE : matrice des scénarios de risque EBIOS (rapport, §2)]</a>" +
+                "<p><b>Ce que je ferais autrement :</b> Impliquer les acteurs métier dans la cotation pour affiner l'évaluation des risques.</p>" +
+                "<p class='trace-legende'>Trace — Synthèse des scénarios de risque (EBIOS RM), rapport SAÉ6.Cyber.01 :</p>" +
+                "<div class='trace-tableau'><table>" +
+                "<thead><tr><th>Scénario</th><th>Actif visé</th><th>Vraisemblance</th><th>Gravité</th><th>Mesure de traitement</th></tr></thead>" +
+                "<tbody>" +
+                "<tr><td>Exfiltration R&D</td><td>Fichiers de conception</td><td>Forte</td><td>Critique</td><td>Segmentation VLAN + chiffrement + DLP</td></tr>" +
+                "<tr><td>Ransomware</td><td>Postes administratifs</td><td>Très forte</td><td>Majeure</td><td>EDR + filtrage NGFW + sauvegarde immuable</td></tr>" +
+                "<tr><td>Intrusion physique</td><td>Salle serveur</td><td>Faible</td><td>Majeure</td><td>Contrôle d'accès + vidéosurveillance IP</td></tr>" +
+                "<tr><td>Vol d'identité</td><td>Comptes Microsoft 365</td><td>Forte</td><td>Majeure</td><td>Authentification multi-facteurs (MFA)</td></tr>" +
+                "<tr><td>Interruption réseau</td><td>Lien Internet</td><td>Moyenne</td><td>Majeure</td><td>Double lien FTTO + backup 4G/5G</td></tr>" +
+                "</tbody></table></div>" +
                 "</div>",
 
                 "<strong>AC34.02Cyber | Mettre en œuvre des outils avancés de sécurisation de l'infrastructure</strong>" +
                 "<div class='reflexive'>" +
-                "<p><b>Ce que j'ai fait :</b> Conception de la sécurisation périmétrique : pare-feu nouvelle génération FortiGate 60F en cluster HA, inspection SSL/TLS, licence UTP (IPS, filtrage web, antivirus de flux), routage inter-VLAN soumis à inspection.</p>" +
-                "<p><b>Pourquoi :</b> Sans inspection, le pare-feu est aveugle au trafic chiffré (90 % des flux) ; il faut analyser les flux pour détecter malwares et exfiltrations.</p>" +
-                "<p><b>Comment :</b> Firewall-on-a-stick pour forcer l'inspection à chaque changement de zone, activation IPS/filtrage web/antivirus, Trusted Hosts pour les accès admin. Outils : FortiGate 60F, UTP.</p>" +
+                "<p><b>Ce que j'ai fait :</b> Conception de la sécurisation périmétrique : pare-feu nouvelle génération FortiGate 60F en cluster HA, inspection SSL/TLS, licence UTP (IPS, filtrage web, antivirus de flux), et segmentation VLAN avec routage inter-zones soumis à inspection.</p>" +
+                "<p><b>Pourquoi :</b> Sans inspection, le pare-feu est aveugle au trafic chiffré (90 % des flux) ; il faut analyser les flux et cloisonner les zones pour détecter malwares et exfiltrations.</p>" +
+                "<p><b>Comment :</b> Firewall-on-a-stick pour forcer l'inspection à chaque changement de zone, activation IPS/filtrage web/antivirus, Trusted Hosts pour les accès admin, et politique de sécurité différenciée par VLAN (R&D isolé sans Internet, IoT sans accès LAN, invités en isolation). Outils : FortiGate 60F, UTP, VLAN 802.1Q.</p>" +
                 "<p><b>Difficultés :</b> Justifier l'inspection SSL face à son impact potentiel sur la performance (résolu par les ASIC dédiés).</p>" +
-                "<p><b>Ce que j'en ai appris :</b> La sécurité périmétrique moderne repose sur la visibilité du trafic chiffré, sans quoi la défense est partielle.</p>" +
+                "<p><b>Ce que j'en ai appris :</b> La sécurité périmétrique moderne repose sur la visibilité du trafic chiffré et le cloisonnement par zones, sans quoi la défense est partielle.</p>" +
                 "<p><b>Ce que je ferais autrement :</b> Prévoir une exemption maîtrisée de l'inspection SSL pour les flux sensibles (bancaires, santé).</p>" +
-                "<a href='#' class='proof-placeholder'>[TRACE : schéma firewall-on-a-stick / matrice de flux inter-VLAN (rapport, §5)]</a>" +
+                "<p class='trace-legende'>Trace — Plan de segmentation VLAN et politiques de sécurité, rapport SAÉ6.Cyber.01 :</p>" +
+                "<div class='trace-tableau'><table>" +
+                "<thead><tr><th>VLAN</th><th>Nom</th><th>Plage IP</th><th>QoS</th><th>Politique de sécurité</th></tr></thead>" +
+                "<tbody>" +
+                "<tr><td>10</td><td>MGMT</td><td>10.0.10.0/24</td><td>Haute</td><td>Accès restreint au poste admin uniquement</td></tr>" +
+                "<tr><td>20</td><td>R&amp;D</td><td>10.0.20.0/24</td><td>Normale</td><td>Isolation totale (pas d'Internet), accès NAS seul</td></tr>" +
+                "<tr><td>30</td><td>ADMIN</td><td>10.0.30.0/24</td><td>Normale</td><td>Accès Internet filtré, accès serveurs métiers</td></tr>" +
+                "<tr><td>40</td><td>VOIP</td><td>10.0.40.0/24</td><td>Critique</td><td>Priorisation via CoS 5 / DSCP EF</td></tr>" +
+                "<tr><td>50</td><td>IOT/SEC</td><td>10.0.50.0/24</td><td>Basse</td><td>Caméras et alarmes, aucun accès LAN interne</td></tr>" +
+                "<tr><td>99</td><td>GUEST</td><td>172.16.0.0/24</td><td>Basse</td><td>Internet direct uniquement, isolation inter-clients</td></tr>" +
+                "</tbody></table></div>" +
                 "</div>",
 
                 "<strong>AC34.03Cyber | Sécuriser les systèmes d'exploitation</strong>" +

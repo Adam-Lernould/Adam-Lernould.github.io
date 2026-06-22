@@ -930,6 +930,37 @@ body::before {
     margin: 6px 0;
 }
 
+.trace-tableau {
+    margin-top: 8px;
+    overflow-x: auto;
+}
+
+.trace-tableau table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+}
+
+.trace-tableau th,
+.trace-tableau td {
+    border: 1px solid #30363d;
+    padding: 6px 8px;
+    text-align: left;
+}
+
+.trace-tableau th {
+    background-color: #161b22;
+    color: #58a6ff;
+}
+
+.trace-tableau td {
+    color: #c9d1d9;
+}
+
+.trace-tableau tbody tr:nth-child(even) {
+    background-color: #0d1117;
+}
+
 /* ===========================
    Responsive pour les compétences
 =========================== */
