@@ -133,7 +133,7 @@
                 "<p><b>Difficultés :</b> Détecter dynamiquement l'IP des VM pour créer la connexion RDP au bon moment (boucle d'attente du guest-agent).</p>" +
                 "<p><b>Ce que j'en ai appris :</b> Une maquette fonctionnelle vaut mille explications théoriques en démonstration.</p>" +
                 "<p><b>Ce que je ferais autrement :</b> Ajouter un retour visuel d'état (VM en cours de démarrage) sur le portail.</p>" +
-                "<p class='trace-legende'>Trace — Extrait du portail Flask : démarrage de la VM et création dynamique de la connexion Guacamole (RDP) après détection de l'IP via le QEMU guest-agent.</p>" +
+                "<p class='trace-legende'>Trace - Extrait du portail Flask : démarrage de la VM et création dynamique de la connexion Guacamole (RDP) après détection de l'IP via le QEMU guest-agent.</p>" +
                 "<div class='trace-code'><pre><code>" +
                 "@app.route(\"/start_vm/&lt;int:vmid&gt;\")\n" +
                 "@login_required\n" +
@@ -171,7 +171,12 @@
                 "<p><b>Difficultés :</b> Quantifier le gain de performance pour appuyer l'argument plutôt que de l'affirmer.</p>" +
                 "<p><b>Ce que j'en ai appris :</b> Un bon argument technique s'appuie sur une mesure, pas sur une intuition.</p>" +
                 "<p><b>Ce que je ferais autrement :</b> Présenter un benchmark chiffré VirtIO vs émulation.</p>" +
-                "<a href='#' class='proof-placeholder'>[TRACE : section Green IT / tableau comparatif VirtIO du rapport]</a>" +
+                "<p class='trace-legende'>Trace — Extrait du rapport SAÉ5.01, section « Développement Durable / Green IT » :</p>" +
+                "<div class='trace-extrait'>" +
+                "<p><b>Mutualisation des ressources :</b> la virtualisation remplace 30 postes physiques par un seul serveur robuste, réduisant la consommation électrique et l'empreinte carbone de fabrication.</p>" +
+                "<p><b>Prolongation de la durée de vie :</b> l'accès via un simple navigateur (Guacamole) permet d'utiliser des PC anciens ou peu puissants en thin clients pour atteindre des environnements performants.</p>" +
+                "<p><b>Réemploi de serveur :</b> dans une logique de sobriété numérique, réutilisation d'une station de travail existante pour héberger l'hyperviseur, évitant l'empreinte carbone de fabrication d'un serveur neuf (phase la plus polluante du cycle de vie d'un équipement).</p>" +
+                "</div>" +
                 "</div>",
 
                 "<strong>AC31.05 | Communiquer avec les acteurs du projet</strong>" +
