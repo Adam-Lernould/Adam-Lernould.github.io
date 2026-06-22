@@ -217,7 +217,7 @@
                 "<p><b>Difficultés :</b> Corréler un symptôme applicatif (voix hachée, appels muets) avec sa cause réelle au niveau RTP/SIP ou matériel (firmware de borne) en descendant jusqu'au binaire de l'en-tête RTP.</p>" +
                 "<p><b>Ce que j'en ai appris :</b> Un système de communication repose autant sur la signalisation (SIP) que sur le transport média (RTP) ; le diagnostic exige une approche par couches du modèle OSI.</p>" +
                 "<p><b>Ce que je ferais autrement :</b> Capturer systématiquement le flux SIP/RTP en amont pour constituer une preuve technique avant toute escalade vers l'éditeur.</p>" +
-                "<img src='images/flux_3cx' alt='Schéma Trello' style='width: 100%; margin-top: 10px; border-radius: 5px; border: 1px solid #30363d'>" +               
+                "<img src='images/flux_3cx.png' alt='Capture réseau 3CX' style='width: 100%; margin-top: 10px; border-radius: 5px; border: 1px solid #30363d'>" +               
                 "</div>",
 
                 "<strong>AC32.02 | Déployer un réseau d'accès sans fil sécurisé</strong>" +
@@ -261,7 +261,7 @@
                 "<p><b>Difficultés :</b> Coordonner la portabilité sans interruption de service (continuité des soins) et remplacer en urgence un SBC défaillant par des téléphones-routeurs pour rétablir la production.</p>" +
                 "<p><b>Ce que j'en ai appris :</b> L'accès voix opérateur impose une rigueur particulière : toute erreur de portabilité ou de routage SIP coupe directement le service client.</p>" +
                 "<p><b>Ce que je ferais autrement :</b> Formaliser une procédure type de portabilité avec checklist pour fiabiliser le jour J.</p>" +
-                "<a href='#' class='proof-placeholder'>[TRACE : mandat de portabilité anonymisé / schéma trunk SIP + SBC (rapport stage, §3.2 & §6.2)]</a>" +
+                "<img src='images/mandat.png' alt='Mandat de portabilité' style='width: 100%; margin-top: 10px; border-radius: 5px; border: 1px solid #30363d'>" +               
                 "</div>",
 
                 "<strong>AC32.04 | Permettre une connexion sécurisée au SI de l'entreprise</strong>" +
@@ -272,7 +272,7 @@
                 "<p><b>Difficultés :</b> Aligner parfaitement les paramètres de négociation IKE des deux côtés (le numéro de groupe DH devant être strictement identique) et placer correctement la chaîne de confiance dans les magasins Windows.</p>" +
                 "<p><b>Ce que j'en ai appris :</b> Un accès distant sécurisé repose sur la rigueur cryptographique : la moindre divergence de paramètre (DH, hachage) fait échouer tout le tunnel.</p>" +
                 "<p><b>Ce que je ferais autrement :</b> Migrer vers IKEv2 (plus robuste que l'IKEv1 mode agressif) et automatiser la rotation annuelle des certificats.</p>" +
-                "<a href='#' class='proof-placeholder'>[TRACE : capture config tunnel IPsec FortiGate (params IKE) / export PKCS#12 (rapport stage, §4.3)]</a>" +
+                "<img src='images/vpn_ipsec.png' alt='Config VPN IPSEC' style='width: 100%; margin-top: 10px; border-radius: 5px; border: 1px solid #30363d'>" +               
                 "</div>",
 
                 "<strong>AC32.05 | Collaborer en mode projet en français et en anglais</strong>" +
