@@ -271,7 +271,7 @@
                 "<p><b>Comment :</b> Génération d'une autorité de certification et de certificats clients sur pfSense (RSA 2048 bits, Common Name/SAN alignés sur les FQDN), export en conteneur chiffré PKCS#12 (.pfx) et import via certmgr.msc (magasins racine/personnel), configuration de FortiClient en authentification X.509, alignement strict des paramètres IKE (AES-256, SHA-256, Perfect Forward Secrecy via Diffie-Hellman groupe 5). Outils : FortiGate, FortiClient, pfSense, PKCS#12.</p>" +
                 "<p><b>Difficultés :</b> Aligner parfaitement les paramètres de négociation IKE des deux côtés (le numéro de groupe DH devant être strictement identique) et placer correctement la chaîne de confiance dans les magasins Windows.</p>" +
                 "<p><b>Ce que j'en ai appris :</b> Un accès distant sécurisé repose sur la rigueur cryptographique : la moindre divergence de paramètre (DH, hachage) fait échouer tout le tunnel.</p>" +
-                "<p><b>Ce que je ferais autrement :</b> Migrer vers IKEv2 (plus robuste que l'IKEv1 mode agressif) et automatiser la rotation annuelle des certificats.</p>" +
+                "<p><b>Ce que je ferais autrement :</b> Automatiser la rotation annuelle des certificats.</p>" +
                 "<img src='images/vpn_ipsec.png' alt='Config VPN IPSEC' style='width: 100%; margin-top: 10px; border-radius: 5px; border: 1px solid #30363d'>" +               
                 "</div>",
 
@@ -302,7 +302,12 @@
                 "<p><b>Difficultés :</b> Anticiper la gestion de formats de fichiers hétérogènes (txt, HTML, PDF, xlsx) dès la spécification.</p>" +
                 "<p><b>Ce que j'en ai appris :</b> Un cahier des charges bien interprété évite des refontes coûteuses en cours de développement.</p>" +
                 "<p><b>Ce que je ferais autrement :</b> Formaliser les cas d'usage et les formats attendus dans un document dédié dès le départ.</p>" +
-                "<a href='#' class='proof-placeholder'>[TRACE : extrait du cahier des charges / schéma client-serveur]</a>" +
+                "<p class='trace-legende'>Trace — Extrait du cahier des charges de la SAÉ3.02 :</p>" +
+                "<div class='trace-extrait'>" +
+                "<p><b>Besoin fonctionnel :</b> un serveur offre un service de recherche de mots fournis par des clients dans des documents texte (txt), HTML, PDF et Excel (xlsx). Le serveur renvoie des informations contextuelles : ligne(s) où le mot est trouvé, texte environnant, etc.</p>" +
+                "<p><b>Contraintes techniques imposées :</b> code en Python respectant la PEP 8, découpage en fonctions simples avec docstrings, usage de constantes nommées (pas de valeurs en dur), chemins relatifs uniquement, versionnement sur GitLab de l'université.</p>" +
+                "<p><b>Livrables attendus :</b> README en anglais décrivant l'usage de l'application, et fichier requirements.txt listant les dépendances.</p>" +
+                "</div>" +                
                 "</div>",
 
                 "<strong>AC33.02 | Mettre en place un environnement de travail collaboratif</strong>" +
@@ -313,7 +318,7 @@
                 "<p><b>Difficultés :</b> Coordonner les contributions sur les mêmes fichiers (conflits de merge).</p>" +
                 "<p><b>Ce que j'en ai appris :</b> La discipline de commit facilite grandement le travail à plusieurs.</p>" +
                 "<p><b>Ce que je ferais autrement :</b> Adopter une convention de nommage de branches et des revues de code.</p>" +
-                "<a href='https://github.com/Adam-Lernould/SAE3.02' class='proof-placeholder' target='_blank'>[TRACE : dépôt GitHub SAÉ3.02 / historique des commits]</a>" +
+                "<a href='https://github.com/Adam-Lernould/SAE3.02' class='proof-placeholder' target='_blank'>[Dépôt GitHub SAÉ3.02]</a>" +
                 "</div>",
 
                 "<strong>AC33.03 | Participer à la formation des utilisateurs</strong>" +
@@ -324,7 +329,7 @@
                 "<p><b>Difficultés :</b> Décrire clairement le fonctionnement d'une interface en ligne de commande pour un non-développeur.</p>" +
                 "<p><b>Ce que j'en ai appris :</b> Une bonne doc utilisateur fait partie intégrante du livrable, pas d'un extra.</p>" +
                 "<p><b>Ce que je ferais autrement :</b> Ajouter des captures ou un exemple complet de session.</p>" +
-                "<a href='#' class='proof-placeholder'>[TRACE : extrait du guide d'utilisation]</a>" +
+                "<a href='https://github.com/Adam-Lernould/SAE3.02/blob/main/README.md' class='proof-placeholder' target='_blank'>[README du Dépôt GitHub SAÉ3.02]</a>" +
                 "</div>",
 
                 "<strong>AC33.04 | Déployer et maintenir une solution informatique</strong>" +
