@@ -399,7 +399,7 @@
                 "folder = FOLDERS.get(ext)\n" +
                 "file_path = os.path.join(folder, search_target)\n" +
                 "</code></pre></div>" +
-                "</div>",
+                "</div>"
             ]
         },
 
@@ -493,7 +493,7 @@
                 "<p><b>Difficultés :</b> Distinguer les requêtes légitimes des tentatives d'attaque dans le volume de logs.</p>" +
                 "<p><b>Ce que j'en ai appris :</b> La surveillance n'a de valeur que si la journalisation est activée et exploitée régulièrement.</p>" +
                 "<p><b>Ce que je ferais autrement :</b> Centraliser les logs vers un collecteur (SIEM) plutôt que de les consulter localement.</p>" +
-                "<p class='trace-legende'>Activation de la journalisation et vérification du cache DNS (Write-Up SAÉ4.Cyber.01 : </p>" +
+                "<p class='trace-legende'>Activation de la journalisation et vérification du cache DNS (Write-Up SAÉ4.Cyber.01) : </p>" +
                 "<div class='trace-code'><pre><code>" +
                 "# Activation de la journalisation complète du pare-feu\n" +
                 "Set-NetFirewallProfile -Profile Domain,Private,Public -LogBlocked True\n" +
@@ -515,7 +515,7 @@
                 "<p><b>Difficultés :</b> Reproduire des conditions d'attaque réalistes (rand-source, spoofing) sans déstabiliser tout l'environnement de test.</p>" +
                 "<p><b>Ce que j'en ai appris :</b> Adopter le point de vue de l'attaquant est le meilleur moyen de vérifier la robustesse d'une défense.</p>" +
                 "<p><b>Ce que je ferais autrement :</b> Formaliser les tests dans un référentiel méthodologique (type PTES) avec des résultats chiffrés.</p>" +
-                "<p class='trace-legende'>Séquence de tests offensifs sur le service DNS (Write-Up SAÉ4.Cyber.01 :</p>" +
+                "<p class='trace-legende'>Séquence de tests offensifs sur le service DNS (Write-Up SAÉ4.Cyber.01) :</p>" +
                 "<div class='trace-code'><pre><code>" +
                 "# 1. Inondation UDP du port DNS (test du throttling)\n" +
                 "sudo hping3 --udp -p 53 192.168.1.10 --flood --rand-source\n" +
@@ -538,7 +538,7 @@
                 "<p><b>Difficultés :</b> Bloquer les attaques sans couper le service DNS légitime des clients internes.</p>" +
                 "<p><b>Ce que j'en ai appris :</b> La réaction à incident consiste à appliquer la contre-mesure la plus ciblée possible, pour neutraliser sans sur-bloquer.</p>" +
                 "<p><b>Ce que je ferais autrement :</b> Préparer ces règles à l'avance sous forme de playbook activable rapidement.</p>" +
-                "<p class='trace-legende'>Règles de filtrage réactives appliquées après détection (Write-Up SAÉ4.Cyber.01 :</p>" +
+                "<p class='trace-legende'>Règles de filtrage réactives appliquées après détection (Write-Up SAÉ4.Cyber.01) :</p>" +
                 "<div class='trace-code'><pre><code>" +
                 "# Limiter le débit des requêtes DNS UDP (anti-flood)\n" +
                 "New-NetFirewallRule -Name \"Limit-DNS-UDP-Queries\" `\n" +
@@ -578,7 +578,7 @@
                 "dnscmd /Config /NoRecursion 1\n" +
                 "Restart-Service DNS\n" +
                 "</code></pre></div>" +
-                "</div>",
+                "</div>"
             ]
         }
     };
