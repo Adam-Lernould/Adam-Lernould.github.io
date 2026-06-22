@@ -915,6 +915,21 @@ body::before {
     margin: 10px 0 4px 0;
 }
 
+.trace-extrait {
+    margin-top: 8px;
+    padding: 12px 15px;
+    background-color: #0d1117;
+    border: 1px solid #30363d;
+    border-left: 3px solid #82b440;
+    border-radius: 0 6px 6px 0;
+}
+
+.trace-extrait p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin: 6px 0;
+}
+
 /* ===========================
    Responsive pour les compétences
 =========================== */
