@@ -458,7 +458,12 @@
                 "<p><b>Difficultés :</b> Définir des politiques de conformité strictes sans bloquer le travail légitime des utilisateurs.</p>" +
                 "<p><b>Ce que j'en ai appris :</b> La sécurisation des OS à l'échelle passe par la gestion centralisée et l'accès conditionnel, pas par le poste à poste.</p>" +
                 "<p><b>Ce que je ferais autrement :</b> Ajouter une phase pilote sur un groupe restreint avant le déploiement général des politiques.</p>" +
-                "<a href='#' class='proof-placeholder'>[TRACE : extrait politique de conformité Intune / règle DLP (rapport, §6)]</a>" +
+                "<p class='trace-legende'>Trace — Standardisation et durcissement du parc via Intune, rapport SAÉ6.Cyber.01 (§6) :</p>" +
+                "<div class='trace-extrait'>" +
+                "<p><b>Autopilot :</b> déploiement automatique des logiciels et configurations dès le premier démarrage du PC, sans intervention physique de l'informaticien.</p>" +
+                "<p><b>Politiques de conformité :</b> le poste n'accède aux mails de l'entreprise que si son disque est chiffré par BitLocker, son antivirus à jour et un code de verrouillage complexe configuré.</p>" +
+                "<p><b>Data Loss Prevention :</b> sur les postes R&D, la DLP empêche la copie de fichiers vers des supports externes ou l'envoi de pièces jointes volumineuses vers des adresses personnelles (Gmail), colmatant la faille majeure identifiée à l'audit.</p>" +
+                "</div>" +
                 "</div>",
 
                 "<strong>AC34.04Cyber | Proposer une architecture sécurisée de SI</strong>" +
@@ -469,7 +474,7 @@
                 "<p><b>Difficultés :</b> Concevoir un plan d'adressage et des politiques inter-VLAN cohérents tout en gardant l'administration lisible.</p>" +
                 "<p><b>Ce que j'en ai appris :</b> La sécurité d'une architecture repose sur le cloisonnement (segmentation) autant que sur la disponibilité (redondance LACP, double lien).</p>" +
                 "<p><b>Ce que je ferais autrement :</b> Pousser vers une logique Zero Trust (micro-segmentation) plutôt qu'une segmentation par VLAN seule.</p>" +
-                "<a href='#' class='proof-placeholder'>[TRACE : schéma réseau VLAN / plan d'adressage (rapport, §4 + schéma fourni)]</a>" +
+                "<img src='images/SAE6.cyber01_Schéma_Réseau.jpg' alt='Architecture de la SI' style='width: 100%; margin-top: 10px; border-radius: 5px; border: 1px solid #30363d'>" +               
                 "</div>"
             ]
         },
